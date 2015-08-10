@@ -1662,18 +1662,18 @@ h1{
   -webkit-animation-name: mui-node-inserted;
   animation-name: mui-node-inserted;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 18px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.87);
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   height: 36px;
-  padding: 0 26px;
+  padding:30px 0 30px 30px;
   margin-top: 6px;
   margin-bottom: 6px;
   border: none;
-  border-radius: 2px;
+  border-radius: 0px;
   cursor: pointer;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -1744,7 +1744,7 @@ h1{
 .mui-btn-flat:focus,
 .mui-btn-flat:active {
   box-shadow: none;
-  background-color: #f2f2f2;
+  background-color:transparent;
 }
 
 .mui-btn-raised, .mui-btn-floating {
@@ -2676,13 +2676,14 @@ th {
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 500;
-  font-size: 14px;
-  color: rgba(0, 0, 0, 0.87);
+  font-size: 18px;
+  color: #fff;
   cursor: default;
   height: 48px;
   line-height: 48px;
-  padding-left: 24px;
-  padding-right: 24px;
+  position: relative;
+  left: -18px;
+  top: -15px;
 }
 
 .mui-tabs > li > a:hover {
@@ -2690,7 +2691,7 @@ th {
 }
 
 .mui-tabs > li.mui-active {
-  border-bottom: 2px solid #2196F3;
+  border-bottom: 4px solid #2196F3;
 }
 
 .mui-tabs > li.mui-active > a {

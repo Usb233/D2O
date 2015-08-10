@@ -1,10 +1,14 @@
 /**body**/
 body{
-	background-image: url(../images/background.png);
-	position: fixed;
 	background-repeat: no-repeat;
 	height: 100%;
 	width: 100%;
+}
+
+.bg {/**background**/
+	background-image: url(../images/background-1.png);
+	width: 100%;
+	height: 300px;
 }
 
 .top {
@@ -18,29 +22,19 @@ body{
 	text-align:center;
 	}
 
-/**footer**/
-.footerbar{
-    background-color: #000;
-    opacity:0.2;
-    width: 100%;
-    height: 40px;
-    position: absolute;
-    bottom: 0px;
- }
-.footertext{
-	color: #eee;
-    position: absolute;
-    bottom: 8px;
-    left: 38%;
+/**buttom**/
+
+
+
+/**水平导航栏**/
+.nav{
+	height: 48px;
+	width: 100%;
+    top: 249px;
+	background-color: #516f7a;
 }
 
-/**buttom**/
-.transparen{
-	border-style: solid;
-    border-color: #fff;
-	color: #fff;
-	border-radius:0px;
-	border-width: 1px;
-	padding:15px 30px 15px 30px;
+.mui-tabs {
+	position: absolute;
+	top: 230px;
 }
-.transparen:hover{}
