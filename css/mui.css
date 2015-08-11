@@ -1663,14 +1663,13 @@ h1{
   animation-name: mui-node-inserted;
   font-weight: 500;
   font-size: 18px;
-  text-shadow: 1px 1px 1px #303F9F;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.87);
   text-transform: uppercase;
   transition: all 0.2s ease-in-out;
   display: inline-block;
   height: 36px;
-  padding:15px 0 30px 35px;
+  padding:16px 0 30px 35px;
   border: none;
   border-radius: 0px;
   cursor: pointer;

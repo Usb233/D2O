@@ -5,7 +5,8 @@ body{
 	width: 100%;
 }
 
-.bg {/**background**/
+/**top background**/
+.bg {
 	background-color: #3F51B5;
 	width: 100%;
 	height: 300px;
@@ -17,15 +18,6 @@ body{
     margin-bottom: 20px;
     border-radius: 0;
    }
-
-.center{
-	padding: 0px 15px 0px 15px;
-	text-align:center;
-	}
-
-/**buttom**/
-
-
 
 /**水平导航栏**/
 .nav{
@@ -39,3 +31,5 @@ body{
 	position: absolute;
 	top: 251px;
 }
+
+
