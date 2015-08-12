@@ -7,29 +7,26 @@ body{
 
 /**top background**/
 .bg {
-	background-color: #3F51B5;
 	width: 100%;
 	height: 300px;
 	margin-bottom: 20px;
+	background-color: #3F51B5;
 }
 
-.top {
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 0;
+.bottom-bg {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 251px;
+    background-color: #283593;
    }
-
-/**水平导航栏**/
-.nav{
-	height: 48px;
-	width: 100%;
-    top: 249px;
-	background-color: #516f7a;
-}
 
 .mui-tabs {
 	position: absolute;
 	top: 251px;
 }
 
-
+.mui-panel {
+	margin-left: 4%;
+	margin-right: 4%;
+}
