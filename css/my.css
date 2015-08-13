@@ -1,55 +1,85 @@
-/**body**/
-body{
-	height: 100%;
-	width: 100%;
-	background-repeat: no-repeat;
-	background-color: #eee;
-}
-
-.mui-text-white{
-	padding:70px 10% 0 8%;
-	text-shadow:1px 1px 4px #283593;
-}
-
-/**top background**/
-.bg {
-	width: 100%;
-	height: 300px;
-	margin-bottom: 20px;
-	background-color: #3F51B5;
-}
-
-.bottom-bg {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    top: 251px;
-    background-color: #283593;
-   }
-
-.mui-tabs {
-	position: absolute;
-	top: 251px;
-}
-
-/**content**/
-.home {
-	margin-left: 4%;
-	margin-right: 4%;
-} 
-
-.new{
-	width: 40%;
-	margin-left: 4%;
-	margin-right: 4%;
-} 
-
-.about{
-     margin-left: 4%;
-	 margin-right: 4%;
-}
-
-/**card**/
-.pic{
-	border: 0px 0px 0px 0px!important;
-}
+		/**body**/
+		body{
+		height           : 100%;
+		width            : 100%;
+		background-repeat: no-repeat;
+		background-color : #eee;
+		}
+		
+		.mui-text-white{
+		padding          :70px 10% 0 8%;
+		text-shadow      :1px 1px 4px #283593;
+		}
+		
+		/**top background**/
+		.bg {
+		width            : 100%;
+		height           : 300px;
+		margin-bottom    : 40px;
+		background-color : #3F51B5;
+		}
+		
+		.bottom-bg {
+		width            : 100%;
+		height           : 50px;
+		position         : absolute;
+		top              : 251px;
+		background-color : #283593;
+		}
+		
+		.mui-tabs {
+		position         : absolute;
+		top              : 251px;
+		}
+		
+		/**content**/
+		.home {
+		height           :;
+		margin-left      : 4%;
+		margin-right     : 4%;
+		} 
+		
+		.new{
+		width            : 40%;
+		margin-left      : 4%;
+		margin-right     : 4%;
+		} 
+		
+		.about{
+		margin-left      : 4%;
+		margin-right     : 4%;
+		}
+		
+		/**card**/
+		.pic-card{}
+		
+		.pic-card>img{
+		width            : 100%;
+		padding          : 0px 0px 0px 0px;
+		}
+		
+		.mui-panel{
+		border-radius    : 4px;
+		}
+		
+		.mui-text-subhead{
+		text-indent      : 1em;
+		}
+		
+		/**footer**/
+		.footer{
+		width            : 100%;
+		height           : 30px;
+		position         : absolute;
+		bottom           : 0px;
+		background-color : #283593;
+		padding-top      : 5px;
+		/**font**/
+		color            : #ddd;
+		font-size        : 14px;
+		text-align       : center;
+		}
+		
+		
+		
+		
