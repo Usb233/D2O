@@ -4,6 +4,7 @@
 		width            : 100%;
 		background-repeat: no-repeat;
 		background-color : #eee;
+		z-index: ;
 		}
 		
 		.mui-text-white{
@@ -18,7 +19,7 @@
 		margin-bottom    : 25px;
 		background-color : #3F51B5;
 		}
-		
+        
 		.bottom-bg {
 		width            : 100%;
 		height           : 50px;
@@ -39,10 +40,10 @@
 		margin-right     : 4%;
 		} 
 		
-		.new{
-		width            : 40%;
+		.left{
+		width            : 44%;
 		margin-left      : 4%;
-		margin-right     : 4%;
+		
 		} 
 		
 		.about{
