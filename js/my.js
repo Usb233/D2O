@@ -1,23 +1,14 @@
-$(document).ready(function () {
-$(".1").click(function(){
-  alert("Value: " + $("#test").val());
-});
-});
 
-function imyeah(type){                           //计算函数 
-  var result=0; 
-  num1 = Number(document.jisuanqi.num1.value);   //把字符串强制转换成数字，例如“123abc”会转换成“123” 
-  num2 = Number(document.jisuanqi.num2.value);  
-  if(num1=="" || num2==""){return false;}        //如果没输入计算数则不执行 
-  switch(type){                                  //判断要执行的计算符号 
-    case 0:result=num1+num2;break; 
-    case 1:result=num1-num2;break; 
-    case 2:result=num1*num2;break; 
-    case 3:result=num1/num2;break; 
-    case 4:result=num1%num2;break; 
-  } 
-  document.jisuanqi.jieguo.value=result;         //显示计算结果 
-  } 
+
+$(document).ready(function () {
+  $(".1").click(function(){
+    var l= $("#l").val();
+    var c = $("#c").val();
+    var re = (l*1)-5+(c*1)/2;
+    alert(re);
+    $("#bg").append(re); 
+  });
+});
 
 $(document).ready(function () {
      var isMenuOpen = false;
