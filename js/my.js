@@ -1,14 +1,14 @@
 
-
 $(document).ready(function () {
-  $(".1").click(function(){
-    var l= $("#l").val();
-    var c = $("#c").val();
-    var re = (l*1)-5+(c*1)/2;
-    alert(re);
-    $("#bg").append(re); 
+  $(".1").click(function calculatef() {
+    var f=0;
+    f=1/(2*3.14159*Math.sqrt(document.lc.l.value*document.lc.c.value*1e-9));
+    f=parseInt(f);
+    f=f/1e+3;
+    document.lc.f.value=f;
   });
 });
+
 
 $(document).ready(function () {
      var isMenuOpen = false;
