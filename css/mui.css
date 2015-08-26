@@ -2249,8 +2249,8 @@ textarea.mui-form-control {
 }
 
 input.mui-form-control:focus {
-  height: 33px;
-  margin-bottom: -1px;
+  height:;
+  margin-bottom:;
 }
 
 input[type="search"] {

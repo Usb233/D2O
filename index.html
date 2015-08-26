@@ -36,6 +36,29 @@
     <div class="mui-tab-content">
       <!--home-->
       <div class="mui-tab-pane mui-active" id="pane-default-1">
+        
+        <form name="lc" id="" method="get">
+          <legend>LC谐振电路频率计算:</legend>
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="0.028" id="l" name="l"></span><span class="form-span">mH</span>
+            <label class="mui-form-floating-label">电感量 (L):</label>
+          </div>
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="0.02" id="c" name="c"><span class="form-span">uF</span>
+            <label class="mui-form-floating-label">电容量 (C):</label>
+          </div>
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="" id="f" name="f"><span class="form-span">kHz</span>
+            <label>谐振频率(F):</label>
+          </div>
+
+          <!--定义按钮--> 
+          <input type="button" class="btn 1" value="计算"/> 
+        </form>
+
+      </div>
+      <!--more-->
+      <div class="mui-tab-pane" id="pane-default-2">
         <div class="mui-panel home">
           <div class="mui-text-caption mui-text-accent">
             xxxx-xx-xx
@@ -61,46 +84,7 @@
         <div class="mui-panel left">
           66666
         </div>
-      </div>
-
-      <!--more-->
-      <div class="mui-tab-pane" id="pane-default-2">
-        <form name="jisuanqi" id="jsq" method="get"> 
-          <p> 第一个数： 
-            <input type="text" size="100" name="num1" value="" /> 
-          </p> 
-          <p> 第二个数： 
-            <input type="text" size="100" name="num2" value="" /> 
-          </p> 
-          <p> 计算结果： 
-            <input type="text" size="100" name="jieguo" onfocus="this.select()"/> 
-          </p> 
-          <p> 
-            <!--定义按钮--> 
-            <input type="button" class="btn" value="+" onClick="imyeah(0)"/> 
-            <input type="button" class="btn" value="-" onClick="imyeah(1)"/ > 
-            <input type="button" class="btn" value="*" onClick="imyeah(2)"/> 
-            <input type="button" class="btn" value="/" onClick="imyeah(3)"/> 
-          </p> 
-        </form>
-
-        <form name="lc" id="" method="get"> 
-       
-          <div class="input-field col s6">
-            <input value="1" id="1" type="text" name="l" class="validate"/>
-            <label class="active" for="first_name2">L</label>
-          </div>
-          <p> c： 
-            <input type="text" size="100" name="c" value="" id="c" />
-          </p> 
-          <p> f： 
-            <input type="text" size="100" name="f" id="f"/> 
-          </p> 
-            <!--定义按钮--> 
-            <input type="button" class="btn 1" value="+"/> 
-          </p> 
-          
-        </form> 
+        
       </div>
 
       <!--about-->

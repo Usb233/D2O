@@ -75,6 +75,31 @@
 		text-indent      : 1em;
 		}
 		
+	    /**计算**/
+	    .mui-form-group{
+	    	width: 150px;
+	    }
+
+        label{
+        	font-size: 14px!important;
+        }
+
+        input{
+        white-space: nowrap;
+        }
+
+        .form-span{
+        	position: relative;
+        	left: 150px;
+        	bottom: 42px;
+        	float: left;
+        }
+
+        form{
+        	margin-left: 10px;
+        	display :inline-block;
+        }
+
 		/**footer**/
 		.footer{
 		width            : 100%;
