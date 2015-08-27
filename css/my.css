@@ -4,7 +4,7 @@
 				width            : 100%;
 				background-repeat: no-repeat;
 				background-color : #eee;
-				z-index: ;
+				z-index          : ;
 				}
 				
 				.mui-text-white{
@@ -27,7 +27,7 @@
 				}
 				
 				.mui-tabs {
-				
+					font-weight:600!important;
 				}
 				
 				/**content**/
@@ -50,22 +50,22 @@
 				
 				/**card**/
 				.pic-card{
-				padding      : 0px 0px 10px 0px!important;
+				padding          : 0px 0px 10px 0px!important;
 				}
 				
 				.pic-card>img{
-				width        : 100%;
-				border       :0px 0px 50px 0px!important #000;
+				width            : 100%;
+				border           :0px 0px 50px 0px!important #000;
 				}
 				
 				p{
-				word-wrap: break-word;
-				word-break: break-all;
-				margin: 10px 10px 10px 10px;
+				word-wrap        : break-word;
+				word-break       : break-all;
+				margin           : 10px 10px 10px 10px;
 				}
 				
 				.mui-panel{
-				border-radius: 2px;
+				border-radius    : 2px;
 				}
 				
 				.mui-text-subhead{
@@ -74,34 +74,36 @@
 				
 				/**计算**/
 				form{
-				margin-left: 10px;
-				display :inline-block;
+				margin-left      : 10px;
+				display          :inline-block;
 				}
 				
 				.mui-form-group{
-				width: 150px;
+				width            : 150px;
 				}
 				
 				label{
-				font-size: 14px!important;
+				font-size        : 14px!important;
 				}
 				
 				input{
-				white-space: nowrap;
+				white-space      : nowrap;
 				}
 				
 				.form-span{
-				position: relative;
-				left: 150px;
-				bottom: 42px;
-				float: left;
-				font-size: 18px;
-				padding-right: 30px;
+				position         : relative;
+				left             : 150px;
+				bottom           : 42px;
+				float            : left;
+				font-size        : 18px;
+				padding-right    : 30px;
 				}
 				
 				.btn-lc{
-				position: relative;
-				right: 60px;
+				position         : relative;
+				right            : 60px;
+				padding:7px 25px 10px 25px!important;
+				height: 48px!important;
 				}
 				
 				
