@@ -1,117 +1,122 @@
-		/**body**/
-		body{
-		height           : 100%;
-		width            : 100%;
-		background-repeat: no-repeat;
-		background-color : #eee;
-		z-index: ;
-		}
-		
-		.mui-text-white{
-		padding          :70px 10% 0 8%;
-		text-shadow      :1px 1px 4px #283593;
-		}
-		
-		/**top background**/
-		.bg {
-		width            : 100%;
-		height           : 300px;
-		margin-bottom    : 25px;
-		background-color : #3F51B5;
-		}
-        
-		.bottom-bg {
-		width            : 100%;
-		height           : 50px;
-		position         : absolute;
-		top              : 251px;
-		background-color : #283593;
-		}
-		
-		.mui-tabs {
-		position         : absolute;
-		top              : 251px;
-		}
-		
-		/**content**/
-		.home {
-		height           :;
-		margin-left      : 4%;
-		margin-right     : 4%;
-		} 
-		
-		.left{
-		width            : 44%;
-		margin-left      : 4%;
-		
-		} 
-		
-		.about{
-		margin-left      : 4%;
-		margin-right     : 4%;
-		}
-		
-		/**card**/
-		.pic-card{
-		padding      : 0px 0px 10px 0px!important;
-		}
+				/**body**/
+				body{
+				height           : 100%;
+				width            : 100%;
+				background-repeat: no-repeat;
+				background-color : #eee;
+				z-index: ;
+				}
 				
-		.pic-card>img{
-		width        : 100%;
-		border       :0px 0px 50px 0px!important #000;
-		}
-		
-		p{
-			word-wrap: break-word;
-            word-break: break-all;
-            margin: 10px 10px 10px 10px;
-		}
-
-		.mui-panel{
-		border-radius: 2px;
-		}
+				.mui-text-white{
+				padding          :70px 10% 0 8%;
+				text-shadow      :1px 1px 4px #283593;
+				}
 				
-		.mui-text-subhead{
-		text-indent      : 1em;
-		}
-		
-	    /**计算**/
-	    .mui-form-group{
-	    	width: 150px;
-	    }
-
-        label{
-        	font-size: 14px!important;
-        }
-
-        input{
-        white-space: nowrap;
-        }
-
-        .form-span{
-        	position: relative;
-        	left: 150px;
-        	bottom: 42px;
-        	float: left;
-        }
-
-        form{
-        	margin-left: 10px;
-        	display :inline-block;
-        }
-
-		/**footer**/
-		.footer{
-		width            : 100%;
-		height           : 30px;
-		position         : absolute;
-		bottom           : 0px;
-		background-color : #283593;
-		padding-top      : 5px;
-		/**font**/
-		color            : #ddd;
-		font-size        : 14px;
-		text-align       : center;
-		}
-		
-		
+				/**top background**/
+				.bg {
+				width            : 100%;
+				height           : 160px;
+				background-color : #3F51B5;
+				}
+				
+				.bottom-bg {
+				width            : 100%;
+				height           : 50px;
+				margin-bottom    : 25px;
+				background-color : #283593;
+				}
+				
+				.mui-tabs {
+				
+				}
+				
+				/**content**/
+				.home {
+				height           :;
+				margin-left      : 4%;
+				margin-right     : 4%;
+				} 
+				
+				.left{
+				width            : 44%;
+				margin-left      : 4%;
+				
+				} 
+				
+				.about{
+				margin-left      : 4%;
+				margin-right     : 4%;
+				}
+				
+				/**card**/
+				.pic-card{
+				padding      : 0px 0px 10px 0px!important;
+				}
+				
+				.pic-card>img{
+				width        : 100%;
+				border       :0px 0px 50px 0px!important #000;
+				}
+				
+				p{
+				word-wrap: break-word;
+				word-break: break-all;
+				margin: 10px 10px 10px 10px;
+				}
+				
+				.mui-panel{
+				border-radius: 2px;
+				}
+				
+				.mui-text-subhead{
+				text-indent      : 1em;
+				}
+				
+				/**计算**/
+				form{
+				margin-left: 10px;
+				display :inline-block;
+				}
+				
+				.mui-form-group{
+				width: 150px;
+				}
+				
+				label{
+				font-size: 14px!important;
+				}
+				
+				input{
+				white-space: nowrap;
+				}
+				
+				.form-span{
+				position: relative;
+				left: 150px;
+				bottom: 42px;
+				float: left;
+				font-size: 18px;
+				padding-right: 30px;
+				}
+				
+				.btn-lc{
+				position: relative;
+				right: 60px;
+				}
+				
+				
+				/**footer**/
+				.footer{
+				width            : 100%;
+				height           : 30px;
+				position         : absolute;
+				bottom           : 0px;
+				background-color : #283593;
+				padding-top      : 5px;
+				/**font**/
+				color            : #ddd;
+				font-size        : 14px;
+				text-align       : center;
+				}
+				
+				

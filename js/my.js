@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-  $(".1").click(function calculatef() {
+  $(".btn-lc").click(function calculatef() {
     var f=0;
     f=1/(2*3.14159*Math.sqrt(document.lc.l.value*document.lc.c.value*1e-9));
     f=parseInt(f);

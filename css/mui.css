@@ -2167,9 +2167,9 @@ h4, h5, h6 {
 legend {
   display: block;
   width: 100%;
-  padding: 0;
-  margin-bottom: 10px;
-  font-size: 21px;
+  padding: 0px 10px 0px 0px;
+  margin-bottom: 20px;
+  font-size: 26px;
   color: rgba(0, 0, 0, 0.87);
   line-height: inherit;
   border: 0;
@@ -2205,8 +2205,9 @@ input[type="checkbox"]:disabled {
   outline: none;
   height: 32px;
   width: 100%;
-  font-size: 16px;
-  padding: 0;
+  font-size: 18px!important;
+  padding:0;
+  text-indent: 5px!important;
   box-shadow: none;
   border-radius: 0px;
   background-image: none;
@@ -2260,8 +2261,8 @@ input[type="search"] {
 .mui-form-group {
   display: block;
   width: 100%;
-  padding-top: 15px;
-  margin-bottom: 20px;
+  padding-top: 35px;
+  margin-bottom: 28px;
   position: relative;
 }
 
@@ -2271,9 +2272,9 @@ input[type="search"] {
   display: block;
   width: 100%;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 15px;
+  font-size: 22px!important;
+  font-weight: 500;
+  line-height: 30px!important;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2281,7 +2282,7 @@ input[type="search"] {
 
 .mui-form-group > .mui-form-floating-label {
   position: absolute;
-  top: 15px;
+  top: 36px;
   font-size: 16px;
   line-height: 32px;
   color: rgba(0, 0, 0, 0.26);

@@ -24,20 +24,21 @@
     <!--top-->
     <div class="bg">
       <div class="top-bg mui-text-display4 mui-text-white"></div>
-      <div class="bottom-bg">  </div>
+    </div>
+    <div class="bottom-bg"> 
       <ul class="mui-tabs">
         <li class="mui-active mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-1">首页</a></li>
         <li class="mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-2">更多</a></li>
         <li class="mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-3">关于</a></li>
-      </ul>
+      </ul>  
     </div>
-
+     
     <!--content-->
     <div class="mui-tab-content">
       <!--home-->
       <div class="mui-tab-pane mui-active" id="pane-default-1">
         
-        <form name="lc" id="" method="get">
+        <form name="lc" id="" method="get" class="mui-panel">
           <legend>LC谐振电路频率计算:</legend>
           <div class="mui-form-group">
             <input type="text" class="mui-form-control" value="0.028" id="l" name="l"></span><span class="form-span">mH</span>
@@ -53,7 +54,7 @@
           </div>
 
           <!--定义按钮--> 
-          <input type="button" class="btn 1" value="计算"/> 
+          <input type="button" class="btn btn-lc" value="计算"/> 
         </form>
 
       </div>
