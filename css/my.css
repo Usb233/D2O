@@ -1,124 +1,119 @@
-				/**body**/
-				body{
-				height           : 100%;
-				width            : 100%;
-				background-repeat: no-repeat;
-				background-color : #eee;
-				z-index          : ;
-				}
+   
+    /**body**/
+    body{
+    height           : 100%;
+    width            : 100%;
+    background-color : #eee;
+    }
 				
-				.mui-text-white{
-				padding          :70px 10% 0 8%;
-				text-shadow      :1px 1px 4px #283593;
-				}
+	.mui-text-white{
+	padding          : 70px 10% 0 8%;
+	text-shadow      : 1px 1px 4px #283593;
+	}
 				
-				/**top background**/
-				.bg {
-				width            : 100%;
-				height           : 160px;
-				background-color : #3F51B5;
-				}
+	/**top background**/
+	.bg {
+	width            : 100%;
+	height           : 160px;
+	background-color : #3F51B5;
+	}
 				
-				.bottom-bg {
-				width            : 100%;
-				height           : 50px;
-				margin-bottom    : 25px;
-				background-color : #283593;
-				}
+	.bottom-bg {
+	width            : 100%;
+	height           : 50px;
+	margin-bottom    : 25px;
+	background-color : #283593;
+	}
+						
+	/**content**/
+	.home {
+	margin-left      : 4%;
+	margin-right     : 4%;
+	} 
 				
-				.mui-tabs {
-					font-weight:600!important;
-				}
+	.left{
+	width            : 44%;
+	margin-left      : 4%;
+	} 
 				
-				/**content**/
-				.home {
-				height           :;
-				margin-left      : 4%;
-				margin-right     : 4%;
-				} 
+	.about{
+	margin-left      : 4%;
+	margin-right     : 4%;
+	}
 				
-				.left{
-				width            : 44%;
-				margin-left      : 4%;
+	/**card**/
+	.pic-card{
+	padding          : 0px 0px 10px 0px!important;
+	}
 				
-				} 
+	.pic-card>img{
+	width            : 100%;
+	border           : 0px 0px 50px 0px!important #000;
+	}
 				
-				.about{
-				margin-left      : 4%;
-				margin-right     : 4%;
-				}
+	p{
+	word-wrap        : break-word;
+	word-break       : break-all;
+	margin           : 10px 10px 10px 10px;
+	}
 				
-				/**card**/
-				.pic-card{
-				padding          : 0px 0px 10px 0px!important;
-				}
+	.mui-panel{
+	border-radius    : 2px;
+	}
 				
-				.pic-card>img{
-				width            : 100%;
-				border           :0px 0px 50px 0px!important #000;
-				}
+	.mui-text-subhead{
+	text-indent      : 1em;
+	}
 				
-				p{
-				word-wrap        : break-word;
-				word-break       : break-all;
-				margin           : 10px 10px 10px 10px;
-				}
+	/**计算**/
+	form{
+	margin-left      : 10px;
+	display          : inline-block;
+	}
 				
-				.mui-panel{
-				border-radius    : 2px;
-				}
+	.mui-form-group{
+	width            : 150px;
+	}
 				
-				.mui-text-subhead{
-				text-indent      : 1em;
-				}
+	label{
+	font-size        : 14px!important;
+	}
 				
-				/**计算**/
-				form{
-				margin-left      : 10px;
-				display          :inline-block;
-				}
-				
-				.mui-form-group{
-				width            : 150px;
-				}
-				
-				label{
-				font-size        : 14px!important;
-				}
-				
-				input{
-				white-space      : nowrap;
-				}
-				
-				.form-span{
-				position         : relative;
-				left             : 150px;
-				bottom           : 42px;
-				float            : left;
-				font-size        : 18px;
-				padding-right    : 30px;
-				}
-				
-				.btn-lc{
-				position         : relative;
-				right            : 60px;
-				padding:7px 25px 10px 25px!important;
-				height: 48px!important;
-				}
-				
-				
-				/**footer**/
-				.footer{
-				width            : 100%;
-				height           : 30px;
-				position         : absolute;
-				bottom           : 0px;
-				background-color : #283593;
-				padding-top      : 5px;
-				/**font**/
-				color            : #ddd;
-				font-size        : 14px;
-				text-align       : center;
-				}
+	input{
+	white-space      : nowrap;
+	}
+
+	.lc-card{}
+
+	.btn-lc{
+	position         : relative;
+	right            : 60px;
+	padding          : 7px 25px 10px 25px!important;
+	height           : 48px!important;
+	}
+		
+	/* 单位 */			
+	.form-span{
+	position         : relative;
+	left             : 150px;
+	bottom           : 42px;
+	float            : left;
+	font-size        : 18px;
+	padding-right    : 30px;
+	}
+						
+	/**footer**/
+	.footer{
+	width            : 100%;
+	height           : 30px;
+	position         : absolute;
+	bottom           : 0px;
+	background-color : #283593;
+	padding-top      : 5px;
+	/**font**/
+	color            : #ddd;
+	font-size        : 14px;
+	text-align       : center;
+	}
 				
 				

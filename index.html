@@ -1,105 +1,108 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--主题色-->
-    <meta name="theme-color" content="#3f51b5" charset="UTF-8"/>
-    <!--css-->
-    <link href="css/materialize.css" rel="stylesheet" type="text/css"/>
-  	<link href="css/mui.css" rel="stylesheet" type="text/css"/>
-	  <link href="css/my.css" rel="stylesheet" type="text/css"/>
-	  <!--js-->
-    <script type="text/javascript" src="js/materialize.js"></script>
-	  <script type="text/javascript" src="js/jquery.js"></script>
-	  <script type="text/javascript" src="js/my.js"></script>
-	  <script type="text/javascript" src="js/mui.js"></script>
-    <script type="text/javascript" src="js/pic.js"></script>
-    <!--tittle-->
-	  <title>D2O</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--主题色-->
+  <meta name="theme-color" content="#3f51b5" charset="UTF-8"/>
+  <!--css-->
+  <link href="css/materialize.css" rel="stylesheet" type="text/css"/>
+  <link href="css/mui.css" rel="stylesheet" type="text/css"/>
+  <link href="css/my.css" rel="stylesheet" type="text/css"/>
+  <!--js-->
+  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+  <script type="text/javascript" src="js/mui.js"></script>
+  <script type="text/javascript" src="js/pic.js"></script>
+  <!--tittle-->
+  <title>D2O</title>
+</head>
 
-  <body>
-    <!--top-->
-    <div class="bg">
-      <div class="top-bg mui-text-display4 mui-text-white"></div>
+<body>
+  <!--top-->
+  <div class="bg">
+    <div class="top-bg mui-text-display4 mui-text-white"></div>
+  </div>
+  <div class="bottom-bg">
+    <ul class="mui-tabs">
+      <li class="mui-active mui-btn mui-btn-flat">
+        <a data-mui-toggle="tab" data-mui-controls="pane-default-1">首页</a>
+      </li>
+      <li class="mui-btn mui-btn-flat">
+        <a data-mui-toggle="tab" data-mui-controls="pane-default-2">更多</a>
+      </li>
+      <li class="mui-btn mui-btn-flat">
+        <a data-mui-toggle="tab" data-mui-controls="pane-default-3">关于</a>
+      </li>
+    </ul>
+  </div>
+
+  <!--content-->
+  <div class="mui-tab-content">
+    <!--home-->
+    <div class="mui-tab-pane mui-active" id="pane-default-1">
+      <!-- LC计算模块 -->
+      <form name="lc" id="" method="get" class="mui-panel lc-card">
+        <legend>LC谐振电路频率计算:</legend>
+        <!-- L -->
+        <div class="mui-form-group">
+          <input type="text" class="mui-form-control" value="0.028" id="l" name="l">
+          <span class="form-span">mH</span>
+          <label class="mui-form-floating-label">电感量 (L):</label>
+        </div>
+        <!-- C -->
+        <div class="mui-form-group">
+          <input type="text" class="mui-form-control" value="0.02" id="c" name="c">
+          <span class="form-span">uF</span>
+          <label class="mui-form-floating-label">电容量 (C):</label>
+        </div>
+        <!-- F -->
+        <div class="mui-form-group">
+          <input type="text" class="mui-form-control" value="" id="f" name="f">
+          <span class="form-span">kHz</span>
+          <label>谐振频率(F):</label>
+        </div>
+        <!--定义按钮-->
+        <button type="button" class="mui-btn mui-btn-primary mui-btn-raised btn-lc">计算</button>
+      </form>
+
     </div>
-    <div class="bottom-bg"> 
-      <ul class="mui-tabs">
-        <li class="mui-active mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-1">首页</a></li>
-        <li class="mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-2">更多</a></li>
-        <li class="mui-btn mui-btn-flat"><a data-mui-toggle="tab" data-mui-controls="pane-default-3">关于</a></li>
-      </ul>  
-    </div>
-     
-    <!--content-->
-    <div class="mui-tab-content">
-      <!--home-->
-      <div class="mui-tab-pane mui-active" id="pane-default-1">
-        
-        <form name="lc" id="" method="get" class="mui-panel">
-          <legend>LC谐振电路频率计算:</legend>
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="0.028" id="l" name="l"></span><span class="form-span">mH</span>
-            <label class="mui-form-floating-label">电感量 (L):</label>
-          </div>
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="0.02" id="c" name="c"><span class="form-span">uF</span>
-            <label class="mui-form-floating-label">电容量 (C):</label>
-          </div>
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="" id="f" name="f"><span class="form-span">kHz</span>
-            <label>谐振频率(F):</label>
-          </div>
-
-          <!--定义按钮--> 
-          <button type="button" class="mui-btn mui-btn-primary mui-btn-raised btn-lc">计算</button> 
-        </form>
-
-      </div>
-      <!--more-->
-      <div class="mui-tab-pane" id="pane-default-2">
-        <div class="mui-panel home">
-          <div class="mui-text-caption mui-text-accent">
-            xxxx-xx-xx
-          </div>
-          <div class="mui-text-display2 mui-text-black">
-            Title
-          </div>
-          <div class="mui-text-subhead mui-text-black">
-            content  Nanowerk News) When a light wave penetrates a material, it is usually changed drastically. Scattering and diffraction leads to a superposition of waves, resulting in a complicated pattern of darker and brighter light spots inside the material. In specially tailored high-tech materials, which can locally amplify or absorb light, such effects can be completely suppressed. Calculations at TU Wien (Vienna University of Technology) have now shown that these materials allow new kinds of light waves, which have the same intensity everywhere inside the material, as if there was no wave interference at all (Nature Communications, "Constant-intensity waves and their modulation instability in non-Hermitian potentials").
+    <!--more-->
+    <div class="mui-tab-pane" id="pane-default-2">
+      <div class="mui-panel home">
+        <div class="mui-text-caption mui-text-accent">xxxx-xx-xx</div>
+        <div class="mui-text-display2 mui-text-black">Title</div>
+        <div class="mui-text-subhead mui-text-black">
+          content  Nanowerk News) When a light wave penetrates a material, it is usually changed drastically. Scattering and diffraction leads to a superposition of waves, resulting in a complicated pattern of darker and brighter light spots inside the material. In specially tailored high-tech materials, which can locally amplify or absorb light, such effects can be completely suppressed. Calculations at TU Wien (Vienna University of Technology) have now shown that these materials allow new kinds of light waves, which have the same intensity everywhere inside the material, as if there was no wave interference at all (Nature Communications, "Constant-intensity waves and their modulation instability in non-Hermitian potentials").
             Due to their unusual properties, these new solutions of the wave equation could be useful for technological applications.
             A wave penetrates a material:
             A wave penetrates a material: usually this leads to wave interference, to darker and brighter areas.
             Obstacles Change the Wave
             When a light wave travels through free space, its intensity can be the same everywhere. But as soon as it hits an obstacle, the wave is diffracted. At some points in space, the wave becomes brighter, in other places it becomes darker than it would have been without hitting the object. This is the reason we can see objects that do not emit light by themselves.
             In recent years, however, experiments have been carried out with new materials which have the ability to modify light in a special way: they can locally amplify light, similar to a laser, or absorb light, like sunglasses do. “When such processes are possible, we have to employ a mathematical description of the light wave which is quite different from the one we use for normal, transparent materials,” says Professor Stefan Rotter (TU Wien). “In this case we speak of non-hermitian media.”
-            Read more: Novel material design for undistorted light waves 
-          </div>
-        </div>
-        <div class="mui-panel pic-card left">
-          <img src="images/pic.jpg" data-src="images/pic-1.png" class="lazyload" />
-          <p>666666666666666666666666666666666666666666666666666666666666666666666666666</p>
-        </div>
-        <div class="mui-panel left">
-          66666
-        </div>
-        
-      </div>
-
-      <!--about-->
-      <div class="mui-tab-pane" id="pane-default-3">
-        <div class="mui-panel about">
-          <!--test--> 
-          hhh 
-          <blockquote>
-            This is an example quotation that uses the blockquote tag.
-          </blockquote>
+            Read more: Novel material design for undistorted light waves
         </div>
       </div>
-
+      <div class="mui-panel pic-card left">
+        <img src="images/pic.jpg" data-src="images/pic-1.png" class="lazyload" />
+        <p>
+          666666666666666666666666666666666666666666666666666666666666666666666666666
+        </p>
+      </div>
+      <div class="mui-panel left">66666</div>
     </div>
-  
-  </body>
+
+    <!--about-->
+    <div class="mui-tab-pane" id="pane-default-3">
+      <div class="mui-panel about">
+        <!--test-->
+        hhh
+        <blockquote>This is an example quotation that uses the blockquote tag.</blockquote>
+      </div>
+    </div>
+  <!--content-end-->
+  </div>
+</body>
 </html>
