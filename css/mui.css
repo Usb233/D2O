@@ -2169,7 +2169,7 @@ legend {
   width: 100%;
   padding: 0px 10px 0px 0px;
   margin-bottom: 20px;
-  font-size: 26px;
+  font-size: 24px;
   color: rgba(0, 0, 0, 0.87);
   line-height: inherit;
   border: 0;
@@ -2205,7 +2205,7 @@ input[type="checkbox"]:disabled {
   outline: none;
   height: 32px;
   width: 100%;
-  font-size: 18px!important;
+  font-size: 17px!important;
   padding:0;
   text-indent: 5px!important;
   box-shadow: none;
@@ -2272,7 +2272,7 @@ input[type="search"] {
   display: block;
   width: 100%;
   color: rgba(0, 0, 0, 0.54);
-  font-size: 22px!important;
+  font-size: 21px!important;
   font-weight: 500;
   line-height: 30px!important;
   overflow-x: hidden;

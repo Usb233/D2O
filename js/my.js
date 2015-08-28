@@ -1,3 +1,13 @@
+/*计算模块*/
+
+$(document).ready(function() {
+    $(".js-disable").css("display","none");
+    $(".open").click(function(){
+    $(".js-disable").slideToggle(450);
+  });
+});
+
+
 $(document).ready(function() {
   $(".btn-lc").click(function calculatef() {
     var f = 0;
@@ -7,7 +17,7 @@ $(document).ready(function() {
     document.lc.f.value = f;
   });
 });
-
+/*/计算模块*/
 
 $(document).ready(function() {
   var isMenuOpen = false;

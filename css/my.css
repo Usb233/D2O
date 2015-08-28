@@ -91,14 +91,23 @@
 	padding          : 7px 25px 10px 25px!important;
 	height           : 48px!important;
 	}
-		
+	
+	.pic-lc-card{
+	outline-style    : solid;
+	outline-width    : 15px;
+	outline-color    : #283593;
+	margin-bottom    : 24px;
+	background-color : #283593;
+	opacity          : 0.6;
+	}
+
 	/* 单位 */			
 	.form-span{
 	position         : relative;
 	left             : 150px;
-	bottom           : 42px;
+	bottom           : 43px;
 	float            : left;
-	font-size        : 18px;
+	font-size        : 17px;
 	padding-right    : 30px;
 	}
 						
@@ -115,5 +124,6 @@
 	font-size        : 14px;
 	text-align       : center;
 	}
+	
 				
 				

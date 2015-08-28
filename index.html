@@ -39,33 +39,37 @@
     </ul>
   </div>
 
-  <!--content-->
+  <!--content-->  
   <div class="mui-tab-content">
-    <!--home-->
+    <!--home-->  
     <div class="mui-tab-pane mui-active" id="pane-default-1">
-      <!-- LC计算模块 -->
-      <form name="lc" id="" method="get" class="mui-panel lc-card">
-        <legend>LC谐振电路频率计算:</legend>
-        <!-- L -->
-        <div class="mui-form-group">
-          <input type="text" class="mui-form-control" value="0.028" id="l" name="l">
-          <span class="form-span">mH</span>
-          <label class="mui-form-floating-label">电感量 (L):</label>
-        </div>
-        <!-- C -->
-        <div class="mui-form-group">
-          <input type="text" class="mui-form-control" value="0.02" id="c" name="c">
-          <span class="form-span">uF</span>
-          <label class="mui-form-floating-label">电容量 (C):</label>
-        </div>
-        <!-- F -->
-        <div class="mui-form-group">
-          <input type="text" class="mui-form-control" value="" id="f" name="f">
-          <span class="form-span">kHz</span>
-          <label>谐振频率(F):</label>
-        </div>
-        <!--定义按钮-->
-        <button type="button" class="mui-btn mui-btn-primary mui-btn-raised btn-lc">计算</button>
+      <!-- LC计算模块 -->  
+      <form name="lc" id="" method="get" class="mui-panel mui-z1 lc-card">
+        <img src="images/LC.gif" class="pic-lc-card"/>  
+        <legend class="open">LC谐振电路频率计算:</legend>
+        <!-- js disable -->  
+        <div class="js-disable">
+          <!-- L -->  
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="0.028" id="l" name="l">  
+            <span class="form-span">mH</span>
+            <label class="mui-form-floating-label">电感量 (L):</label>
+          </div>
+          <!-- C -->  
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="0.02" id="c" name="c">  
+            <span class="form-span">uF</span>
+            <label class="mui-form-floating-label">电容量 (C):</label>
+          </div>
+          <!-- F -->  
+          <div class="mui-form-group">
+            <input type="text" class="mui-form-control" value="" id="f" name="f">  
+            <span class="form-span">kHz</span>
+            <label>谐振频率(F):</label>
+          </div>
+          <!--定义按钮-->  
+          <button type="button" class="mui-btn mui-btn-primary mui-btn-raised btn-lc">计算</button>
+          <!-- /js disable --> </div>
       </form>
 
     </div>
@@ -86,7 +90,7 @@
         </div>
       </div>
       <div class="mui-panel pic-card left">
-        <img src="images/pic.jpg" data-src="images/pic-1.png" class="lazyload" />
+        <img src="images/pic-1^.jpg" data-src="images/pic-1.png" class="lazyload" />
         <p>
           666666666666666666666666666666666666666666666666666666666666666666666666666
         </p>
