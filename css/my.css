@@ -7,10 +7,10 @@
     }
 				
 	.mui-text-white{
-	padding          : 70px 10% 0 8%;
-	text-shadow      : 1px 1px 4px #283593;
+	text-align       : center!important;
+	padding-top      : 58px;
 	}
-				
+
 	/**top background**/
 	.bg {
 	width            : 100%;
@@ -24,33 +24,10 @@
 	margin-bottom    : 25px;
 	background-color : #283593;
 	}
-						
-	/**content**/
-	.home {
-	margin-left      : 4%;
-	margin-right     : 4%;
-	} 
-				
-	.left{
-	width            : 44%;
-	margin-left      : 4%;
-	} 
-				
-	.about{
-	margin-left      : 4%;
-	margin-right     : 4%;
-	}
-				
-	/**card**/
-	.pic-card{
-	padding          : 0px 0px 10px 0px!important;
-	}
-				
-	.pic-card>img{
-	width            : 100%;
-	border           : 0px 0px 50px 0px!important #000;
-	}
-				
+		
+    /******** home-css ********/			
+					
+	/**card**/	
 	p{
 	word-wrap        : break-word;
 	word-break       : break-all;
@@ -60,17 +37,36 @@
 	.mui-panel{
 	border-radius    : 2px;
 	}
-				
-	.mui-text-subhead{
-	text-indent      : 1em;
-	}
-				
-	/**计算**/
+							
+	/** 计算模块 **/
 	form{
 	margin-left      : 10px;
 	display          : inline-block;
 	}
-				
+
+	.lc-card > .show-pic{
+    position: relative;
+    right            : 7px;
+    bottom           : 7px;
+	outline-style    : solid;
+	outline-width    : 8px;
+	outline-color    : #283593;
+	background-color : #283593;
+	margin-bottom    : 24px;
+	opacity          : 0.8;
+	}
+
+    .lc-card > .ic{
+    height           : 25px;
+    position         : relative;
+    bottom           : 30px;
+    left             : 265px;
+    transition       : transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+ 
+    .lc-card{
+    padding-right    : 1px!important;}
+
 	.mui-form-group{
 	width            : 150px;
 	}
@@ -83,47 +79,30 @@
 	white-space      : nowrap;
 	}
 
-	.lc-card{}
-
-	.btn-lc{
-	position         : relative;
-	right            : 60px;
+    .btn-lc{
 	padding          : 7px 25px 10px 25px!important;
 	height           : 48px!important;
 	}
 	
-	.pic-lc-card{
-	outline-style    : solid;
-	outline-width    : 15px;
-	outline-color    : #283593;
-	margin-bottom    : 24px;
-	background-color : #283593;
-	opacity          : 0.6;
-	}
-
 	/* 单位 */			
 	.form-span{
 	position         : relative;
 	left             : 150px;
-	bottom           : 43px;
+	bottom           : 25px;
 	float            : left;
 	font-size        : 17px;
 	padding-right    : 30px;
 	}
 						
-	/**footer**/
-	.footer{
-	width            : 100%;
-	height           : 30px;
-	position         : absolute;
-	bottom           : 0px;
-	background-color : #283593;
-	padding-top      : 5px;
-	/**font**/
-	color            : #ddd;
-	font-size        : 14px;
-	text-align       : center;
+	/******** about-css ********/
+    .about{
+	margin-left      : 4%;
+	margin-right     : 4%;
 	}
+
+    blockquote {
+    margin           : 20px 0;
+    padding-left     : 1.5rem;
+    border-left      : 5px solid #ee6e73; 
+    }
 	
-				
-				

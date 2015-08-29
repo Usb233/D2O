@@ -1987,8 +1987,8 @@ fieldset[disabled] .mui-btn-accent.mui-btn-flat:active {
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  -webkit-animation: mui-ripple-animation 2s;
-  animation: mui-ripple-animation 2s;
+  -webkit-animation: mui-ripple-animation 3s;
+  animation: mui-ripple-animation 3s;
 }
 
 @-webkit-keyframes mui-ripple-animation {
@@ -2168,11 +2168,11 @@ legend {
   display: block;
   width: 100%;
   padding: 0px 10px 0px 0px;
-  margin-bottom: 20px;
   font-size: 24px;
   color: rgba(0, 0, 0, 0.87);
   line-height: inherit;
   border: 0;
+  
 }
 
 input[type="search"] {
