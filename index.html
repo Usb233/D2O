@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta property="qc:admins" content="0435433212233671405261774277" />
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--主题色-->
-  <meta name="theme-color" content="#3f51b5"/>
+  <meta name="theme-color" content="#"/>
   <!--css-->
-  <link href="css/mui.css" rel="stylesheet" type="text/css"/>
   <link href="css/my.css" rel="stylesheet" type="text/css"/>
   <!--js-->
-  <script type="text/javascript" src="js/jquery.js"/></script>
-  <script type="text/javascript" src="js/my.js"/></script>
-  <script type="text/javascript" src="js/mui.js"/></script>
-  <script type="text/javascript" src="js/pic.js"/></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/my.js"></script>
+  <script type="text/javascript" src="js/pic.js"></script>
   <!--tittle-->
-  <title>D2O</title>
+  <title>特斯拉线圈设计器</title>
 </head>
 
 <body>
-  <!-- top -->
-  <div class="bg">
-    <div class="top-bg mui-text-display3 mui-text-white">特斯拉线圈设计器</div>
-  </div>
-  <div class="bottom-bg">
-    <ul class="mui-tabs">
-      <li class="mui-active mui-btn mui-btn-flat">
-        <a data-mui-toggle="tab" data-mui-controls="pane-default-1">首页</a>
-      </li>
-      <li class="mui-btn mui-btn-flat">
-        <a data-mui-toggle="tab" data-mui-controls="pane-default-2">关于</a>
-      </li>
-    </ul>
-  </div>
+  <!-- menu -->
+  <h1>特斯拉线圈设计器</h1>
+  <ul class="menu">
+    <li>
+      <a href="#">首页</a>
+    </li>
+    <li>
+      <a href="#">关于</a>
+    </li>
+  </ul>
 
-  <!-- content -->
-  <div class="mui-tab-content">
-    <!-- home -->
-    <div class="mui-tab-pane mui-active" id="pane-default-1">
-      <!-- LC计算模块 -->
-      <form name="lc" method="get" class="mui-panel mui-z1 lc-card">
-        <img src="images/LC.gif" class="show-pic"/>
-        <legend class="open-card">LC谐振电路频率计算:</legend>
-        <img src="images/ic_show_black.png" class="ic open-card" />
-        <!-- hide() -->
-        <div class="hide">
-          <!-- L -->
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="0.028" name="l">
-            <span class="form-span">mH</span>
-            <label class="mui-form-floating-label aaa">电感量 (L):</label>
-          </div>
-          <!-- C -->
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="0.02" name="c">
-            <span class="form-span">uF</span>
-            <label class="mui-form-floating-label">电容量 (C):</label>
-          </div>
-          <!-- F -->
-          <div class="mui-form-group">
-            <input type="text" class="mui-form-control" value="" name="f">
-            <span class="form-span">kHz</span>
-            <label>谐振频率(F):</label>
-          </div>
-          <!--定义按钮-->
-          <button type="button" class="mui-btn mui-btn-primary mui-btn-raised btn-lc">计算</button>
-          <!-- hide()-end --> 
+  <!-- home content -->
+  <div class="home">
+    <div class="card">
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>  
+      <div class="img-title">title</div>
+      <!-- LP计算模块 -->  
+      <form name="lp" method="get" class="card-content">
+        <legend class="lp-open-card">电弧长度估算:</legend>
+        <!-- L -->  
+        <div class="form-group">
+          <input type="number" class="form-control" value="53" name="l" onchange="l()">  
+          <span class="form-span">英寸</span>
+          <label class="form-floating-label">电弧长度 (L):</label>
         </div>
+        <!-- P -->  
+        <div class="form-group">
+          <input type="number" class="form-control" value="1000" name="p" onchange="p()">  
+          <span class="form-span">瓦特</span>
+          <label class="mui-form-floating-label">电源功率 (P):</label>
+        </div>
+        <!--定义按钮-->  
+        <button type="button" class="btn btn-lp">计算</button>
       </form>
+    </div>
 
-    </div>
-    <!-- about -->
-    <div class="mui-tab-pane" id="pane-default-2">
-      <div class="mui-panel about">
-        <!-- test -->
-        hhh
-        <blockquote>This is an example quotation that uses the blockquote tag.</blockquote>
-      </div>
-    </div>
   </div>
-  <!-- content-end --> 
+  <!-- aboutcontent -->
+  <div class="about">
+    
+
+  </div>
 </body>
-</html>

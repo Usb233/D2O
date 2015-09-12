@@ -1,25 +1,47 @@
-/* 计算模块 */
 $(document).ready(function() {
-  
-  var i=0;
-  $(".hide").css("display", "none");
-  $(".open-card").click(function() {
-    $(".hide").slideToggle(400);
-    i++;
-    if (i>2) {i=1};
-    switch(i){
-      case 1:$(".lc-card > .ic").css('transform', 'rotate(180deg)');break;
-      case 2:$(".lc-card > .ic").css('transform', 'rotate(0deg)');break;
-  };
+	/*顶栏*/
+	$(document).bind("scroll", function() {
+		if ($(window).scrollTop() <= 240) {
+			$(".menu").css({
+		    "position":"static",
+			});
+		    $("h1").css({
+			"margin-bottom":"0px",
+		    });
+		} 
+		else {
+			$(".menu").css({
+			"position": "fixed",
+			"top": "0px",
+			});
+			$("h1").css({
+			"margin-bottom":"80px",
+		    });
+		}
+	});
+    
+    /*顶栏超链接*/
+	$(".menu>li:eq(0)>a").css({
+		"border-bottom": "solid #fff 3px"
+	});
+      /*关于*/
+	$(".menu>li:eq(1)>a").click(function() {
+		$(this).css({
+			"border-bottom": "solid #fff 3px"
+		});
+		$(".menu>li:eq(0)>a").css({
+			"border-bottom-width": "0px",
+		});
+		$(".card").fadeOut(100);
+	})
+	  /*首页*/
+	$(".menu>li:eq(0)>a").click(function() {
+		$(this).css({
+			"border-bottom": "solid #fff 3px"
+		});
+		$(".menu>li:eq(1)>a").css({
+			"border-bottom-width": "0px",
+		});
+		$(".card").fadeIn(100);
+	});
 });
-
-  $(".btn-lc").click(function calculatef() {
-    var f = 0;
-    f = 1 / (2 * 3.14159 * Math.sqrt(document.lc.l.value * document.lc.c.value * 1e-9));
-    f = parseInt(f);
-    f = f / 1e+3;
-    document.lc.f.value = f;
-  });
-
-});
-/* 计算模块-end */

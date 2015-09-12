@@ -1,108 +1,130 @@
-   
-    /**body**/
-    body{
-    height           : 100%;
-    width            : 100%;
-    background-color : #eee;
+	/*默认样式*/
+	body{
+	margin            : 0;
+	background-color  : #eee;
+	}
+
+    *{
+    color             : #616161;
+    z-index           : 0;
+    font-size         : 25px
     }
-				
-	.mui-text-white{
-	text-align       : center!important;
-	padding-top      : 58px;
+
+    /*菜单*/
+	h1{
+	height            : 160px;
+	width             : 100%;
+	margin            : 0;
+    color             : #E0F2F1;
+	font-size         : 55px;
+	text-align        : center;
+	padding-top       : 80px;
+	background-color  : #1976D2;
 	}
 
-	/**top background**/
-	.bg {
-	width            : 100%;
-	height           : 160px;
-	background-color : #3F51B5;
-	}
-				
-	.bottom-bg {
-	width            : 100%;
-	height           : 50px;
-	margin-bottom    : 25px;
-	background-color : #283593;
-	}
-		
-    /******** home-css ********/			
-					
-	/**card**/	
-	p{
-	word-wrap        : break-word;
-	word-break       : break-all;
-	margin           : 10px 10px 10px 10px;
-	}
-				
-	.mui-panel{
-	border-radius    : 2px;
-	}
-							
-	/** 计算模块 **/
-	form{
-	margin-left      : 10px;
-	display          : inline-block;
+	.menu{
+	height            : 60px;
+	width             : 100%;
+	margin            : 0;
+    z-index           : 2;
+	background-color  : #1565C0;
+	box-shadow        : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
+	margin-bottom     : 20px;
 	}
 
-	.lc-card > .show-pic{
-    position: relative;
-    right            : 7px;
-    bottom           : 7px;
-	outline-style    : solid;
-	outline-width    : 8px;
-	outline-color    : #283593;
-	background-color : #283593;
-	margin-bottom    : 24px;
-	opacity          : 0.8;
-	}
-
-    .lc-card > .ic{
-    height           : 25px;
-    position         : relative;
-    bottom           : 30px;
-    left             : 265px;
-    transition       : transform 400ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    .menu > li{
+    list-style-type   : none;/*去圆点*/
     }
+
+	.menu > li > a{
+    height            : 60px;
+    line-height       : 65px;
+    padding           : 0px 10px 0px 18px;
+    width             : 50px;
+    float             : left;
+    text-decoration   : none;
+    font-size         : 23px;
+    font-weight       : 600;
+    position          : relative;
+    right             : 40px;
+    bottom            : 3px;
+    color             : #eee;
+	}
+
+	.menu > li > a:active{
+	color             : #bbb;
+	}
  
-    .lc-card{
-    padding-right    : 1px!important;}
-
-	.mui-form-group{
-	width            : 150px;
-	}
-				
-	label{
-	font-size        : 14px!important;
-	}
-				
-	input{
-	white-space      : nowrap;
-	}
-
-    .btn-lc{
-	padding          : 7px 25px 10px 25px!important;
-	height           : 48px!important;
-	}
-	
-	/* 单位 */			
-	.form-span{
-	position         : relative;
-	left             : 150px;
-	bottom           : 25px;
-	float            : left;
-	font-size        : 17px;
-	padding-right    : 30px;
-	}
-						
-	/******** about-css ********/
-    .about{
-	margin-left      : 4%;
-	margin-right     : 4%;
-	}
-
-    blockquote {
-    margin           : 20px 0;
-    padding-left     : 1.5rem;
-    border-left      : 5px solid #ee6e73; 
+    /*home*/
+    .home{}
+      
+    .card{
+    background-color  : #fff;
+    width             : 300px;
+    min-height        : 500px; 
+    margin            : 0px 12px 0px 12px;
+    border-radius     : 2px;
+    box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
     }
-	
+
+    .card > img{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    width             : 100%;
+
+    } 
+
+    .img-title{
+    height            : 60px;
+    width             : 100%;
+    float             : left; 
+    position          : relative;
+    z-index           : 1;
+    bottom            : 66px;
+    opacity           : 0.5;
+    color             : #fff;
+    text-align        : center;
+    line-height       : 60px;
+    background-color  : #000;   
+    }
+
+    .card-content{
+    position          : relative;
+    bottom            : 50px;
+    margin            : 10px 10px 10px 10px;
+    word-wrap         : break-word;
+    }
+
+    /*表单*/
+    input{
+    font-size         : 20px;
+    position          : relative;
+    width             : 60%;
+    border-width      : 0px 0px 2px 0px;
+    border-color      : #E0E0E0;
+    }
+    
+    input             :focus{
+    border-color      : #1976D2;
+    }
+    
+    form > button{
+    border-width      : 2px;
+    border-style      : solid;
+   
+    background-color  : #fff;
+    font-size         : 22px;
+    height            : 48px;
+    padding-left      : 15px;
+    padding-right     : 15px;
+    margin            : 10px 10px 10px 0px;
+    }
+    
+    form > button:hover{
+    background-color  : #1976D2;
+    color             : #fff;
+    border-color      : #1976D2;
+    transition        : all 0.5s;
+   
+    }
+    /*about*/
