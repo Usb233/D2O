@@ -57,6 +57,14 @@ $(document).ready(function() {
     } 	
   });
 
+/*lp计算*/
+	$(".length").change(function() {
+	   $(".power").val(parseInt(($(".length").val() / 1.7) * ($(".length").val() / 1.7)));
+	});
+
+	$(".power").change(function() {
+		$(".length").val(parseInt(1.7 * Math.sqrt($(".power").val())));
+	});
 
 });
 
