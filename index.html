@@ -33,7 +33,7 @@
   <div class="home">
     <!-- LP计算模块 -->
     <div class="card">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload"/>
       <img class="img-title" src="images/spark.gif"/>
       <form class="lp" method="get">
         <legend>电弧长度估算:</legend><img class="show-ic" src="images/show-ic.png">
@@ -52,21 +52,21 @@
     </div>
 
     <div class="card">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>
+      <img src="images/ZC.svg" class="zc"/>
       <div class="img-title">title</div>
       <!-- LP计算模块 -->
-      <form name="lc" method="get" class="card-content">
-        <legend>电弧长度估算:</legend><img class="show-ic" src="images/show-ic.png">
+      <form name="zc" method="get" class="card-content">
+        <legend>电容组与变压器匹配:</legend><img class="show-ic" src="images/show-ic.png">
         <!-- L -->
         <div class="toggle">
-          <label class="form-floating-label">电弧长度 (L):</label>
-          <input type="number" class="form-control" value="53" name="l" onchange="l()">
-          <span class="form-span">英寸</span>
+          <label class="form-floating-label">电压 (E) :</label>
+          <input type="number" value="10000" onchange="l()">
+          <span class="form-span">V</span>
           <br/>
           <!-- P -->
-          <label class="form-floating-label">电源功率 (P):</label>
-          <input type="number" class="form-control" value="1000" name="p" onchange="p()">
-          <span class="form-span">瓦特</span>
+          <label class="form-floating-label">电流(I) :</label>
+          <input type="number" value="100" onchange="p()">
+          <span class="form-span">mA</span>
         </div>
       </form>
     </div>
