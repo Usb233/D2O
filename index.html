@@ -8,7 +8,8 @@
   <!--css-->
   <link href="css/my.css" rel="stylesheet" type="text/css"/>
   <!--js-->
-  <script type="text/javascript" src="js/jquery.js"></script><script type="text/javascript" src="js/jq-animate.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jq-animate.js"></script>
   <script type="text/javascript" src="js/my.js"></script>
   <script type="text/javascript" src="js/pic.js"></script>
   <!--tittle-->
@@ -34,37 +35,41 @@
     <!-- LP计算模块 -->
     <div class="card">
       <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload"/>
-      <img class="img-title" src="images/spark.gif"/>
-      <form class="lp" method="get">
-        <legend>电弧长度估算:</legend><img class="show-ic" src="images/show-ic.png">
+      <img class="img-title" src="images/LP-title.gif"/>
+      <form method="get">
+        <legend>电弧长度估算:</legend>
+        <img class="show-ic" src="images/show-ic.png">
         <!-- L -->
         <div class="toggle">
-          <label class="form-floating-label">电弧长度 (L):</label>
+          <label>电弧长度 (L):</label>
           <input type="number" value="53" class="length">
           <span class="form-span">英寸</span>
           <br/>
           <!-- P -->
-          <label class="form-floating-label">电源功率 (P):</label>
+          <label>电源功率 (P):</label>
           <input type="number" value="1000" class="power">
           <span class="form-span">瓦特</span>
         </div>
       </form>
     </div>
 
+    <!-- LP计算模块 -->
     <div class="card">
-      <img src="images/ZC.svg" class="zc"/>
-      <div class="img-title">title</div>
-      <!-- LP计算模块 -->
-      <form name="zc" method="get" class="card-content">
-        <legend>电容组与变压器匹配:</legend><img class="show-ic" src="images/show-ic.png">
-        <!-- L -->
+      <svg width="300" height="212" class="zc">
+        <image xlink:href="images/ZC.svg" src="images/ZC.png" width="300" height="212"/>
+      </svg>
+      <img class="img-title" src="images/ZC-title.png"/>
+      <form method="get">
+        <legend>电容组与变压器匹配:</legend>
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <label class="form-floating-label">电压 (E) :</label>
+          <!-- E -->
+          <label>电压 (E) :</label><br/>
           <input type="number" value="10000" onchange="l()">
           <span class="form-span">V</span>
           <br/>
-          <!-- P -->
-          <label class="form-floating-label">电流(I) :</label>
+          <!-- I -->
+          <label>电流(I) :</label><br/>
           <input type="number" value="100" onchange="p()">
           <span class="form-span">mA</span>
         </div>
