@@ -1,42 +1,52 @@
-	/*默认样式*/
-	body{
-	margin            : 0;
-	background-color  : #eee;
-	}
+    /*默认样式*/
+    body{
+    margin            : 0;
+    background-color  : #eee;
+    }
 
     *{
+    padding           : 0;
+    margin            : 0;
     color             : #616161;
     z-index           : 0;
-    font-size         : 25px
+    font-size         : 25px;
+    font-family       : Verdana,"Microsoft YaHei";
+    font-weight       : 300;
     }
 
     /*菜单*/
-	h1{
-	height            : 160px;
-	width             : 100%;
-	margin            : 0;
-    color             : #E0F2F1;
-	font-size         : 55px;
-	text-align        : center;
-	padding-top       : 80px;
-	background-color  : #1976D2;
-	}
+    .title{
+    height            : 210px;
+    width             : 100%;
+    text-align        : center;
+    margin-bottom     : 80px;
+    background-color  : #1976D2;
+    }
 
-	.menu{
-	height            : 60px;
-	width             : 100%;
-	margin            : 0;
+    h1{
+    color             : #eee;
+    font-size         : 55px;
+    font-weight       : 300;
+    line-height       : 210px;/*垂直居中*/
+    margin            : 0; 
+    }
+
+    .menu{
+    height            : 60px;
+    width             : 100%;
+    margin            : 0;
+    position          : absolute;
+    top               : 210px;
     z-index           : 2;
-	background-color  : #1565C0;
-	box-shadow        : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
-	margin-bottom     : 20px;
-	}
+    background-color  : #1565C0;
+    box-shadow        : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
+    }
 
     .menu > li{
     list-style-type   : none;/*去圆点*/
     }
 
-	.menu > li > a{
+    .menu > li > a{
     height            : 60px;
     line-height       : 65px;
     padding           : 0px 10px 0px 18px;
@@ -44,25 +54,27 @@
     float             : left;
     text-decoration   : none;
     font-size         : 23px;
-    font-weight       : 600;
+    font-weight       : 400;
     position          : relative;
-    right             : 40px;
     bottom            : 3px;
     color             : #eee;
-	}
+    }
 
-	.menu > li > a:active{
-	color             : #bbb;
-	}
+    .menu > li > a:active{
+    color             : #bbb;
+    }
  
     /*home*/
-    .home{}
+    .home {
+    text-align: center;
+    }
       
     .card{
+    display: inline-block;
+    text-align: left;
     background-color  : #fff;
     width             : 300px;
-    min-height        : 500px; 
-    margin            : 0px 12px 0px 12px;
+    margin            : 0px 12px 15px 12px;
     border-radius     : 2px;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
     }
@@ -71,7 +83,6 @@
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     width             : 100%;
-
     } 
 
     .img-title{
@@ -79,7 +90,6 @@
     width             : 100%;
     float             : left; 
     position          : relative;
-    z-index           : 1;
     bottom            : 66px;
     opacity           : 0.5;
     color             : #fff;
@@ -95,36 +105,31 @@
     word-wrap         : break-word;
     }
 
-    /*表单*/
+    /*表单*/ 
+    legend{
+    margin-bottom     : 20px;
+    }
+ 
+    label{
+    font-size         : 21px;
+    }
+
     input{
     font-size         : 20px;
     position          : relative;
-    width             : 60%;
+    width             : 55%;
     border-width      : 0px 0px 2px 0px;
-    border-color      : #E0E0E0;
+    border-color      : #E0E0E0; 
+    outline           : none;
+    margin            : 20px 0px 20px 0px;
     }
     
-    input             :focus{
+    input:focus{
     border-color      : #1976D2;
+    transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
-    
-    form > button{
-    border-width      : 2px;
-    border-style      : solid;
-   
-    background-color  : #fff;
+
+    .form-span{
     font-size         : 22px;
-    height            : 48px;
-    padding-left      : 15px;
-    padding-right     : 15px;
-    margin            : 10px 10px 10px 0px;
-    }
-    
-    form > button:hover{
-    background-color  : #1976D2;
-    color             : #fff;
-    border-color      : #1976D2;
-    transition        : all 0.5s;
-   
     }
     /*about*/

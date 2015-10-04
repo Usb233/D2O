@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--主题色-->
-  <meta name="theme-color" content="#"/>
+  <meta name="theme-color" content="#1565C0"/>
   <!--css-->
   <link href="css/my.css" rel="stylesheet" type="text/css"/>
   <!--js-->
@@ -17,7 +17,9 @@
 
 <body>
   <!-- menu -->
-  <h1>特斯拉线圈设计器</h1>
+  <div class ="title">
+    <h1>特斯拉线圈设计器</h1>
+  </div>
   <ul class="menu">
     <li>
       <a href="#">首页</a>
@@ -26,36 +28,45 @@
       <a href="#">关于</a>
     </li>
   </ul>
-
   <!-- home content -->
   <div class="home">
+    <!-- LP计算模块 -->
     <div class="card">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>  
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>
       <div class="img-title">title</div>
-      <!-- LP计算模块 -->  
       <form name="lp" method="get" class="card-content">
-        <legend class="lp-open-card">电弧长度估算:</legend>
-        <!-- L -->  
-        <div class="form-group">
-          <input type="number" class="form-control" value="53" name="l" onchange="l()">  
-          <span class="form-span">英寸</span>
-          <label class="form-floating-label">电弧长度 (L):</label>
-        </div>
-        <!-- P -->  
-        <div class="form-group">
-          <input type="number" class="form-control" value="1000" name="p" onchange="p()">  
-          <span class="form-span">瓦特</span>
-          <label class="mui-form-floating-label">电源功率 (P):</label>
-        </div>
-        <!--定义按钮-->  
-        <button type="button" class="btn btn-lp">计算</button>
+        <legend>电弧长度估算:</legend>
+        <!-- L -->
+        <label class="form-floating-label">电弧长度 (L):</label>
+        <input type="number" class="form-control" value="53" name="l" onchange="l()">
+        <span class="form-span">英寸</span>
+        <br/>
+        <!-- P -->
+        <label class="form-floating-label">电源功率 (P):</label>
+        <input type="number" class="form-control" value="1000" name="p" onchange="p()">
+        <span class="form-span">瓦特</span>
       </form>
     </div>
 
+    <div class="card">
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload lp-top"/>
+      <div class="img-title">title</div>
+      <!-- LP计算模块 -->
+      <form name="lp" method="get" class="card-content">
+        <legend>电弧长度估算:</legend>
+        <!-- L -->
+        <label class="form-floating-label">电弧长度 (L):</label>
+        <input type="number" class="form-control" value="53" name="l" onchange="l()">
+        <span class="form-span">英寸</span>
+        <br/>
+        <!-- P -->
+        <label class="form-floating-label">电源功率 (P):</label>
+        <input type="number" class="form-control" value="1000" name="p" onchange="p()">
+        <span class="form-span">瓦特</span>
+      </form>
+    </div>
   </div>
-  <!-- aboutcontent -->
-  <div class="about">
-    
 
-  </div>
+  <!-- aboutcontent -->
+  <div class="about"></div>
 </body>

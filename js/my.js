@@ -1,22 +1,17 @@
 $(document).ready(function() {
 	/*顶栏*/
 	$(document).bind("scroll", function() {
-		if ($(window).scrollTop() <= 240) {
+		if ($(window).scrollTop() <= 210) {
 			$(".menu").css({
-		    "position":"static",
+			"position": "absolute",
+			"top": "210px",
 			});
-		    $("h1").css({
-			"margin-bottom":"0px",
-		    });
 		} 
 		else {
 			$(".menu").css({
 			"position": "fixed",
 			"top": "0px",
 			});
-			$("h1").css({
-			"margin-bottom":"80px",
-		    });
 		}
 	});
     
@@ -44,4 +39,6 @@ $(document).ready(function() {
 		});
 		$(".card").fadeIn(100);
 	});
+
 });
+
