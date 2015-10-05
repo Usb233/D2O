@@ -82,7 +82,7 @@ $(document).ready(function() {
         //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
         if (system.win || system.mac || system.xll||system.ipad) {}
         else {
-            $(".img-title").css("top","-53px")
+            $(".img-title").css("top","-55px")
         };
 
 });
