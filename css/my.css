@@ -81,7 +81,7 @@
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
     } 
 
-    .card > img:first-child,.card > svg:first-child{      
+    .card > img:first-child {      
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     width             : 100%;
@@ -96,7 +96,7 @@
     width             : 100%;
     float             : left; 
     position          : relative;
-    top               : -53.5px;
+    top               : -53px;
     opacity           : 0.5;
     color             : #fff;
     text-align        : center;
