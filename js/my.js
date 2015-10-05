@@ -46,13 +46,15 @@ $(document).ready(function() {
   $(".show-ic").click(function(){
     a++; if (a>2) {a=1};
   	switch (a){
-  	case 1:
+  	case 1:/*open*/
   	$(this).css("transform","rotate(180deg)");
   	$(this).next().slideDown(350,'easeInOutQuart');
+  	$(this).prev().css("margin","48px 0px 20px 0px")
   	break;
-  	case 2:
+  	case 2:/*close*/
   	$(this).css("transform","rotate(0deg)");
     $(this).next().slideUp(350,'easeInOutSine');
+    $(this).prev().css("margin","60px 0px 10px 0px")
   	break;
     } 	
   });
@@ -66,24 +68,36 @@ $(document).ready(function() {
 		$(".length").val(parseInt(1.7 * Math.sqrt($(".power").val())));
 	});
 
- //平台、设备和操作系统
-        var system = {
-            win: false,
-            mac: false,
-            xll: false,
-            ipad:false
-        };
-        //检测平台
-        var p = navigator.platform;
-        system.win = p.indexOf("Win") == 0;
-        system.mac = p.indexOf("Mac") == 0;
-        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
-        //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
-        if (system.win || system.mac || system.xll||system.ipad) {}
-        else {
-            $(".img-title").css("top","-55px")
-        };
+/*zc计算*/
+      
+      $("form:eq(1)").change(function() {
+      var FL = $(":checked").val();
+      var E = $("form:eq(1)").find("input:eq(2)").val();
+      var I = $("form:eq(1)").find("input:eq(3)").val()/1000;
+      var Z = E/I;
+      var C = 1000000/(6.2832*Z*FL);
+      $("form:eq(1)").find("input:eq(4)").val(C.toFixed(4));
+      });
+
+
+
+//检测平台、设备和操作系统
+	var system = {
+		win: false,
+		mac: false,
+		xll: false,
+		ipad: false
+	};
+	//检测平台
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+	//跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+	if (system.win || system.mac || system.xll || system.ipad) {} else {
+		$(".img-title").css("top", "-55px")
+	};
 
 });
 

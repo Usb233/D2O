@@ -42,34 +42,54 @@
         <!-- L -->
         <div class="toggle">
           <label>电弧长度 (L):</label>
-          <input type="number" value="53" class="length">
+          <input type="number" value="53" class="length"/>
           <span class="form-span">英寸</span>
           <br/>
           <!-- P -->
           <label>电源功率 (P):</label>
-          <input type="number" value="1000" class="power">
+          <input type="number" value="1000" class="power"/>
           <span class="form-span">瓦特</span>
         </div>
       </form>
     </div>
 
-    <!-- LP计算模块 -->
+    <!-- ZC计算模块 -->
     <div class="card">
       <img src="images/ZC.png" class="zc">
       <img class="img-title" src="images/ZC-title.png"/>
-      <form method="get">
+      <form method="get" name="capmatchcalc">
         <legend>电容组与变压器匹配:</legend>
         <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- E -->
+          <!-- radio -->
+          <div class="label">电源频率（FL）:</div>
+          <label class="radio">
+            <input type="radio" name="radios" name="units" value="50" checked/>
+            <span class="outer">
+              <span class="inner"></span>
+            </span>
+            50HZ
+          </label>
+          <label class="radio">
+            <input type="radio" name="radios" name="units" value="60" />          
+            <span class="outer">
+              <span class="inner"></span>
+            </span>
+            60HZ
+          </label><hr/>
+          <!-- E -->        
           <label>电压 (E) :</label><br/>
-          <input type="number" value="10000" onchange="l()">
+          <input type="number" value="10000" />
           <span class="form-span">V</span>
           <br/>
           <!-- I -->
           <label>电流(I) :</label><br/>
-          <input type="number" value="100" onchange="p()">
-          <span class="form-span">mA</span>
+          <input type="number" value="100" />
+          <span class="form-span">mA</span><hr/>
+          <!-- C -->
+          <label>C =:</label>
+          <input disabled readonly size="6" type="number" class="disabled" value="0.0318"/>
+          <span class="form-span">uF</span>
         </div>
       </form>
     </div>
