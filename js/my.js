@@ -112,7 +112,7 @@ $(document).ready(function() {
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
 		/*Android优化*/
 		$(".img-title").css("top", "-55px");
-		$(h1).css("font-size","40px")
+		$("h1").css("font-size","40px")
 	};
 
 });
