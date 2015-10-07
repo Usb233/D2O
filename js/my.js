@@ -79,6 +79,22 @@ $(document).ready(function() {
       $("form:eq(1)").find("input:eq(4)").val(C.toFixed(4));
       });
 
+/*LC计算*/
+   $(".l").change(function() {
+     	var l=$(".l").val();
+        var c=$(".c").val();
+        var f=$(".f").val();
+        var f_re=1/(6.28318*Math.sqrt(l*c));
+		$(".f").val(f_re.toFixed(3));
+	});
+   $(".c").change(function() {
+     	var l=$(".l").val();
+        var c=$(".c").val();
+        var f=$(".f").val();
+        var f_re=1/(6.28318*Math.sqrt(l*c));
+		$(".f").val(f_re.toFixed(3));
+	});
+   
 
 /*检测平台、设备和操作系统*/
 	var system = {
@@ -95,7 +111,8 @@ $(document).ready(function() {
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
 		/*Android优化*/
-		$(".img-title").css("top", "-55px")
+		$(".img-title").css("top", "-55px");
+		$(h1).css("font-size","40px")
 	};
 
 });

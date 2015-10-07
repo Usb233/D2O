@@ -76,11 +76,12 @@
  
 /*主页-卡片*/
     .home {
-    text-align        : center;
+    /*text-align        : center;*/
+    padding-left: 10
     }
-      
+
     .card{
-    display           : inline-block;
+    float: left;
     text-align        : left;
     position          : static;
     background-color  : #fff;
@@ -95,11 +96,15 @@
     border-top-right-radius: 2px;
     width             : 100%;
     height            : 213px;
-   }
+    }
    
     .zc{
     background-color  :#B0BEC5;
     } 
+
+    .LC{
+    background-color  : #D1C4E9;
+    }
 
     .img-title{
     width             : 100%;
@@ -147,6 +152,7 @@
     border-color      : #E0E0E0; 
     outline           : none;
     margin            : 20px 0px 20px 0px;
+    padding-left      : 4px;
     }
     
     input[type=number]:focus{

@@ -32,69 +32,95 @@
 
   <!-- home content -->
   <div class="home">
-    <!-- LP计算模块 -->
+    <!-- LP计算模块 -->  
     <div class="card">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload"/>
-      <img class="img-title" src="images/LP-title.gif"/>
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload"/>  
+      <img class="img-title" src="images/LP-title.gif"/>  
       <form method="get">
         <legend>电弧长度估算:</legend>
-        <img class="show-ic" src="images/show-ic.png">
-        <!-- L -->
+        <img class="show-ic" src="images/show-ic.png">  
         <div class="toggle">
+          <!-- L -->  
           <label>电弧长度 (L):</label>
-          <input type="number" value="53" class="length"/>
+          <input type="number" value="53" class="length"/>  
           <span class="form-span">英寸</span>
-          <br/>
-          <!-- P -->
+          <br/>  
+          <!-- P -->  
           <label>电源功率 (P):</label>
-          <input type="number" value="1000" class="power"/>
+          <input type="number" value="1000" class="power"/>  
           <span class="form-span">瓦特</span>
         </div>
       </form>
     </div>
 
-    <!-- ZC计算模块 -->
+    <!-- ZC计算模块 -->  
     <div class="card">
-      <img src="images/ZC.png" class="zc">
-      <img class="img-title" src="images/ZC-title.png"/>
+      <img src="images/ZC.png" class="zc">  
+      <img class="img-title" src="images/ZC-title.png"/>  
       <form method="get" name="capmatchcalc">
         <legend>电容组与变压器匹配:</legend>
-        <img class="show-ic" src="images/show-ic.png"/>
+        <img class="show-ic" src="images/show-ic.png"/>  
         <div class="toggle">
-          <!-- radio -->
+          <!-- radio -->  
           <div class="label">电源频率（FL）:</div>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="50" checked/>
+            <input type="radio" name="radios" name="units" value="50" checked/>  
             <span class="outer">
               <span class="inner"></span>
             </span>
             50HZ
           </label>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="60" />          
+            <input type="radio" name="radios" name="units" value="60" />  
             <span class="outer">
               <span class="inner"></span>
             </span>
             60HZ
-          </label><hr/>
-          <!-- E -->        
-          <label>电压 (E) :</label><br/>
-          <input type="number" value="10000" />
+          </label>
+          <hr/>  
+          <!-- E -->  
+          <label>电压 (E) :</label>
+          <br/>  
+          <input type="number" value="10000" />  
           <span class="form-span">V</span>
-          <br/>
-          <!-- I -->
-          <label>电流(I) :</label><br/>
-          <input type="number" value="100" />
-          <span class="form-span">mA</span><hr/>
-          <!-- C -->
+          <br/>  
+          <!-- I -->  
+          <label>电流(I) :</label>
+          <br/>  
+          <input type="number" value="100" />  
+          <span class="form-span">mA</span>
+          <hr/>  
+          <!-- C -->  
           <label>C =:</label>
-          <input disabled readonly size="6" type="number" class="disabled" value="0.0318"/>
+          <input disabled type="number" class="disabled" value="0.0318"/>  
           <span class="form-span">uF</span>
         </div>
       </form>
     </div>
-  </div>
 
+    <!-- LC计算模块 -->    
+    <div class="card">
+      <img src="images/LC.png" class="LC" />    
+      <img class="img-title" src="images/LC-title.png"/>    
+      <form method="get">
+        <legend>LC谐振电路频率计算:</legend>
+        <img class="show-ic" src="images/show-ic.png">    
+        <div class="toggle">
+          <!-- L -->    
+          <label>电感量 (L):</label><br/>    
+          <input type="number" value="0.028" class="l"/>    
+          <span class="form-span">mH</span><br/>    
+          <!-- C -->    
+          <label>电容量 (C):</label><br/>    
+          <input type="number" value="0.02" class="c"/>    
+          <span class="form-span">uF</span><hr/>    
+          <label>谐振频率(F):</label><br/>    
+          <input type="number" disabled value="212.679" class="f disabled"/>    
+          <span class="form-span">kHZ</span>
+        </div>
+      </form>
+    </div>
+  </div>
   <!-- about-content -->
   <div class="about"></div>
 </body>
