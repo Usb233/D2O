@@ -12,6 +12,7 @@
     font-size         : 25px;
     font-family       : Verdana,"Microsoft YaHei";
     font-weight       : 300;
+    -webkit-tap-highlight-color:rgba(255,255,255,0)
     }
  
     hr{
@@ -22,6 +23,37 @@
     border-radius     : 10px;
     background-color  : #ECEFF1;
     }
+
+    /*选中文本时样式*/
+    ::selection {
+    background        :#f08b3b; 
+    color             :#fff;
+    }
+    
+    ::-moz-selection {
+    background        :#f08b3b; 
+    color             :#fff;
+    }
+    
+    ::-webkit-selection {
+    background        :#f08b3b; 
+    color             :#fff;
+    }
+
+ /*自定义滚动条*/
+ /* ::-webkit-scrollbar{
+    width             : 12px;
+    height            : 12px;
+    background-color:rgba(200,200,200,0.9);
+    }
+
+    ::-webkit-scrollbar-thumb{
+    width             : 10px;
+    height            : 10px;
+    border-radius     : 30px;
+    background-color  : #f08b3b;
+    }
+ */
 
 /*标题-菜单*/
     .title{
@@ -40,15 +72,14 @@
     margin            : 0; 
     }
 
+  /*自适应*/
     @media (max-width: 480px) {
-      h1 {
-      font-size       : 48px;
-      }
+      h1 {font-size   : 48px;}
+      .card{margin: }
     }
+
     @media (max-width: 450px) {
-      h1 {
-      font-size       : 40px;
-      }
+      h1 {font-size   : 40px;}
     }
 
 
@@ -108,14 +139,6 @@
     width             : 100%;
     height            : 213px;
     }
-   
-    .zc{
-    background-color  :#B0BEC5;
-    } 
-
-    .LC{
-    background-color  : #D1C4E9;
-    }
 
     .img-title{
     width             : 100%;
@@ -127,6 +150,18 @@
     text-align        : center;
     line-height       : 48px;
     background-color  : #000;   
+    }
+
+    .ZC >img:first-of-type{
+    background-color  :#B0BEC5;
+    } 
+
+    .LC > img:first-of-type{
+    background-color  : #D1C4E9;
+    }
+
+    .NC > img:first-of-type{
+    background-color  : #C8E6C9;
     }
 
 /*表单*/ 
@@ -169,6 +204,11 @@
     input[type=number]:focus{
     border-color      : #1976D2;
     transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    .NC > form >.toggle > input{
+    margin            : 15px 0px 15px 0px;
+    width: 120px;
     }
 
     .form-span{
@@ -248,6 +288,8 @@
     background-color  : #f08b3b;
     opacity           : 0;
     }
+
+
 
 
 /*关于

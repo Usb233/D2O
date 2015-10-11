@@ -54,8 +54,8 @@
     </div>
 
     <!-- ZC计算模块 -->  
-    <div class="card">
-      <img src="images/ZC.png" class="zc">  
+    <div class="card ZC">
+      <img src="images/ZC.png">  
       <img class="img-title" src="images/ZC-title.png"/>  
       <form method="get" name="capmatchcalc">
         <legend>电容组与变压器匹配:</legend>
@@ -99,9 +99,9 @@
     </div>
 
     <!-- LC计算模块 -->    
-    <div class="card">
-      <img src="images/LC.png" class="LC" />    
-      <img class="img-title" src="images/LC-title.png"/>    
+    <div class="card LC">
+      <img src="images/LC.png"/>    
+      <img class="img-title" src="images/LC-title.png"/>  
       <form method="get">
         <legend>LC谐振电路频率计算:</legend>
         <img class="show-ic" src="images/show-ic.png">    
@@ -120,6 +120,50 @@
         </div>
       </form>
     </div>
+
+    <!-- NC计算模块 -->
+    <div class="card NC">
+      <img src="images/NC.png"/>   
+      <form method="get">
+        <legend>电容组设计:</legend>
+        <img class="show-ic" src="images/show-ic.png"/>  
+        <div class="toggle">
+          <!-- C -->  
+          <label>电容量:</label>
+          <input type="number" value="0.047" class="C"/>  
+          <span class="form-span">uF</span>
+          <br/>  
+          <!-- V -->  
+          <label>耐压:</label>
+          <input type="number" value="1600" class="V"/>  
+          <span class="form-span">V</span>
+          <hr/>
+           <!-- L -->  
+          <label>串联数量:</label>
+          <input type="number" value="11" class="L"/>
+          <br/>  
+          <!-- P -->  
+          <label>并联数量:</label>
+          <input type="number" value="3" class="P"/>
+          <hr/>
+          <!-- re-C -->  
+          <label>电容量:</label>
+          <input type="number" value="0.0128" class="re-C disabled" disabled/>  
+          <span class="form-span">uF</span><br/>
+           <!-- re-V -->  
+          <label>耐压:</label>
+          <input type="number" value="53" class="re-V disabled" disabled/>  
+          <span class="form-span">V</span>
+          <br/>  
+          <!-- C-num -->  
+          <label>总电容个数:</label>
+          <input type="number" value="1000" class="C-num disabled" disabled/> 
+        </div>
+      </form>
+    </div>
+
+
+
   </div>
   <!-- about-content -->
   <div class="about"></div>

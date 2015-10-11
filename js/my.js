@@ -1,5 +1,5 @@
+/*顶栏*/
 $(document).ready(function() {
-	/*顶栏*/
 	$(document).bind("scroll", function() {
 		if ($(window).scrollTop() <= 210) {
 			$(".menu").css({
@@ -13,8 +13,10 @@ $(document).ready(function() {
 			});
 		}
 	});
+});
 
-	/*顶栏超链接*/
+/*顶栏超链接*/
+$(document).ready(function() {
 	$(".menu>li:eq(0)>a").css({
 		"border-bottom": "solid #fff 3px"
 	});
@@ -38,8 +40,10 @@ $(document).ready(function() {
 		});
 		$(".card").fadeIn(100);
 	});
+});
 
-	/*卡片开关*/
+/*卡片开关*/
+$(document).ready(function() {
 	var a = 0;
 	$(".toggle").slideUp(0);
 	$(".show-ic").click(function() {
@@ -62,8 +66,10 @@ $(document).ready(function() {
 				break;
 		}
 	});
+});
 
-	/*lp计算*/
+/*lp计算*/
+$(document).ready(function() {
 	$(".length").change(function() {
 		$(".power").val(parseInt(($(".length").val() / 1.7) * ($(".length").val() / 1.7)));
 	});
@@ -71,9 +77,10 @@ $(document).ready(function() {
 	$(".power").change(function() {
 		$(".length").val(parseInt(1.7 * Math.sqrt($(".power").val())));
 	});
+});
 
-	/*zc计算*/
-	
+/*zc计算*/
+$(document).ready(function() {
 	$("form:eq(1)").change(function() {
 		var FL = $(":checked").val();
 		var E = $("form:eq(1)").find("input:eq(2)").val();
@@ -82,48 +89,60 @@ $(document).ready(function() {
 		var C = 1000000 / (6.2832 * Z * FL);
 		$("form:eq(1)").find("input:eq(4)").val(C.toFixed(4));
 	});
+});
 
-	/*LC计算*/
-	$(document).ready(function() {
-		$(".l").change(function() {
-			var l = $(".l").val();
-			var c = $(".c").val();
-			var f = $(".f").val();
-			var f_re = 1 / (6.28318 * Math.sqrt(l * c));
-			$(".f").val(f_re.toFixed(3));
-		});
-		$(".c").change(function() {
-			var l = $(".l").val();
-			var c = $(".c").val();
-			var f = $(".f").val();
-			var f_re = 1 / (6.28318 * Math.sqrt(l * c));
-			$(".f").val(f_re.toFixed(3));
-		});
+/*LC计算*/
+$(document).ready(function() {
+	$(".l").change(function() {
+		var l = $(".l").val();
+		var c = $(".c").val();
+		var f = $(".f").val();
+		var f_re = 1 / (6.28318 * Math.sqrt(l * c));
+		$(".f").val(f_re.toFixed(3));
 	});
-
-
-	/*检测平台、设备和操作系统*/
-	$(document).ready(function() {
-		var system = {
-			win: false,
-			mac: false,
-			xll: false,
-			ipad: false
-		};
-		var p = navigator.platform;
-		system.win = p.indexOf("Win") == 0;
-		system.mac = p.indexOf("Mac") == 0;
-		system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-		system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
-		if (system.win || system.mac || system.xll || system.ipad) {} else {
-			//Android优化
-			$(".img-title").css("top", "-55px");
-			$("h1").css("font-size", "40px")
-		};
+	$(".c").change(function() {
+		var l = $(".l").val();
+		var c = $(".c").val();
+		var f = $(".f").val();
+		var f_re = 1 / (6.28318 * Math.sqrt(l * c));
+		$(".f").val(f_re.toFixed(3));
 	});
+});
 
-    /*卡片自适应居中*/
-	$(document).ready(function() {
+/*检测平台、设备和操作系统*/
+$(document).ready(function() {
+	var system = {
+		win: false,
+		mac: false,
+		xll: false,
+		ipad: false
+	};
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+	if (system.win || system.mac || system.xll || system.ipad) {} else {
+		//Android优化
+		$(".img-title").css("top", "-55px");
+		$("h1").css("font-size", "40px")
+	};
+});
+
+/*卡片自适应居中*/
+$(document).ready(function() {
+	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	var pad1 = (winWidth - 316) / 2;
+	var pad2 = (winWidth - 632) / 2;
+	var pad3 = (winWidth - 948) / 2;
+	if (winWidth < 316) {}
+	$(".home").css("padding-left", pad1);
+	if (winWidth < 632) {}
+	$(".home").css("padding-left", pad2);
+	if (winWidth < 948) {}
+	$(".home").css("padding-left", pad3);
+	/*改变尺寸*/
+	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var pad1 = (winWidth - 316) / 2;
 		var pad2 = (winWidth - 632) / 2;
@@ -134,20 +153,5 @@ $(document).ready(function() {
 		$(".home").css("padding-left", pad2);
 		if (winWidth < 948) {}
 		$(".home").css("padding-left", pad3);
-	    /*改变尺寸*/
-		$(window).resize(function() {
-			var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-			var pad1 = (winWidth - 316) / 2;
-			var pad2 = (winWidth - 632) / 2;
-			var pad3 = (winWidth - 948) / 2;
-			if (winWidth < 316) {}
-			$(".home").css("padding-left", pad1);
-			if (winWidth < 632) {}
-			$(".home").css("padding-left", pad2);
-			if (winWidth < 948) {}
-			$(".home").css("padding-left", pad3);
-		});
 	});
-
-
 });
