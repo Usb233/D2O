@@ -1,4 +1,4 @@
-    /*默认样式*/
+/*默认样式*/
     body{
     margin            : 0;
     background-color  : #eee;
@@ -14,7 +14,7 @@
     font-weight       : 300;
     }
 
-    /*菜单*/
+/*菜单*/
     .title{
     height            : 210px;
     width             : 100%;
@@ -60,18 +60,20 @@
     color             : #eee;
     }
 
-    .menu > li > a:active{
-    color             : #bbb;
+    .menu > li > a:hover{
+    color             : rgba(255,255,255,0.7);
+     transition       : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
  
-    /*home*/
+/*home*/
     .home {
-    text-align: center;
+    text-align        : center;
     }
       
     .card{
-    display: inline-block;
-    text-align: left;
+    display           : inline-block;
+    text-align        : left;
+    position          : static;
     background-color  : #fff;
     width             : 300px;
     margin            : 0px 12px 15px 12px;
@@ -89,8 +91,8 @@
     height            : 60px;
     width             : 100%;
     float             : left; 
-    position          : relative;
-    bottom            : 66px;
+    position: relative;
+    top: -65px;
     opacity           : 0.5;
     color             : #fff;
     text-align        : center;
@@ -98,18 +100,26 @@
     background-color  : #000;   
     }
 
-    .card-content{
+/*表单*/ 
+    form{
     position          : relative;
-    bottom            : 50px;
-    margin            : 10px 10px 10px 10px;
+    bottom            : 40px;
+    margin            : 0px 10px 0px 10px;
     word-wrap         : break-word;
     }
 
-    /*表单*/ 
     legend{
-    margin-bottom     : 20px;
+    margin            : 60px 0px 10px 0px;
     }
  
+    .show-ic{
+    height            : 35px;
+    position          : absolute;
+    top               : 0px;
+    right             : 5px;
+    transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
     label{
     font-size         : 21px;
     }
@@ -132,4 +142,5 @@
     .form-span{
     font-size         : 22px;
     }
-    /*about*/
+
+/*about*/
