@@ -56,13 +56,13 @@ $(document).ready(function() {
 				/*open*/
 				$(this).css("transform", "rotate(180deg)");
 				$(this).next().slideDown(350, 'easeInOutQuart');
-				$(this).prev().css("margin", "48px 0px 20px 0px")
+				$(this).prev().css("margin", "27px 0px 17px 0px")
 				break;
 			case 2:
 				/*close*/
 				$(this).css("transform", "rotate(0deg)");
 				$(this).next().slideUp(350, 'easeInOutSine');
-				$(this).prev().css("margin", "60px 0px 10px 0px")
+				$(this).prev().css("margin", "35px 0px 8px 0px")
 				break;
 		}
 	});
@@ -107,6 +107,55 @@ $(document).ready(function() {
 		var f_re = 1 / (6.28318 * Math.sqrt(l * c));
 		$(".f").val(f_re.toFixed(3));
 	});
+});
+
+/*NC计算*/
+$(document).ready(function() {
+	function calc() {
+		iC = $(".iC").val();
+		iV = $(".iV").val();
+		iX = $(".iX").val();
+		iY = $(".iY").val();
+		$(".C-num").val(iX * iY);  
+
+		mmcCapacitance = iCap / perString * numOfStrings;
+		mmcCapacitance = mmcCapacitance * 10e+3;
+		mmcCapacitance = parseInt(mmcCapacitance);
+		mmcCapacitance = mmcCapacitance / 10e+3;
+		document.home.nc.nc1.nc2.mmccalc.mmcCapacitance.value = mmcCapacitance;
+		mmcVoltage = iVoltage * perString;
+		document.home.nc.nc1.nc2.mmccalc.mmcVoltage.value = mmcVoltage;
+	}
+
+	function perStringUp() {
+		perString = document.home.nc.nc1.nc2.mmccalc.perString.value;
+		perString = perString * 1 + 1;
+		document.home.nc.nc1.nc2.mmccalc.perString.value = perString;
+		calc();
+	}
+
+	function perStringDown() {
+		perString = document.home.nc.nc1.nc2.mmccalc.perString.value;
+		perString = perString * 1 - 1;
+		if (perString * 1 < 1) perString = 1;
+		document.home.nc.nc1.nc2.mmccalc.perString.value = perString;
+		calc();
+	}
+
+	function numOfStringsUp() {
+		numOfStrings = document.home.nc.nc1.nc2.mmccalc.numOfStrings.value;
+		numOfStrings = numOfStrings * 1 + 1;
+		document.home.nc.nc1.nc2.mmccalc.numOfStrings.value = numOfStrings;
+		calc();
+	}
+
+	function numOfStringsDown() {
+		numOfStrings = document.home.nc.nc1.nc2.mmccalc.numOfStrings.value;
+		numOfStrings = numOfStrings * 1 - 1;
+		if (numOfStrings * 1 < 1) numOfStrings = 1;
+		document.home.nc.nc1.nc2.mmccalc.numOfStrings.value = numOfStrings;
+		calc();
+	}  
 });
 
 /*检测平台、设备和操作系统*/

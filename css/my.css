@@ -12,7 +12,7 @@
     font-size         : 25px;
     font-family       : Verdana,"Microsoft YaHei";
     font-weight       : 300;
-    -webkit-tap-highlight-color:rgba(255,255,255,0)
+    -webkit-tap-highlight-color:rgba(255,255,255,0);
     }
  
     hr{
@@ -123,14 +123,16 @@
     }
 
     .card{
-    float: left;
+    float             : left;
     text-align        : left;
-    position          : static;
+    position          : relative;
     background-color  : #fff;
     width             : 300px;
     margin            : 0px 8px 15px 8px;
     border-radius     : 2px;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
+    /*试验性*/
+    transition       : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     } 
 
     .card > img:first-child {      
@@ -143,7 +145,8 @@
     .img-title{
     width             : 100%;
     float             : left; 
-    position          : relative;
+    position          : absolute;
+    margin-top        : 218px;
     top               : -53px;
     opacity           : 0.5;
     color             : #fff;
@@ -167,13 +170,13 @@
 /*表单*/ 
     form{
     position          : relative;
-    bottom            : 40px;
+    bottom            : 20px;
     margin            : 0px 10px 0px 10px;
     word-wrap         : break-word;
     }
 
     legend{
-    margin            : 60px 0px 10px 0px;
+    margin            : 35px 0px 8px 0px;
     transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
  
