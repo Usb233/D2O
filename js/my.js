@@ -173,7 +173,7 @@ $(document).ready(function() {
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
 		//Android优化
-		$(".img-title").css("top", "-55px");
+		/*$(".img-title").css("top", "-55px");*/
 		$("h1").css("font-size", "40px")
 	};
 });
