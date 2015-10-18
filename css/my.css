@@ -75,13 +75,17 @@
   /*自适应*/
     @media (max-width: 480px) {
       h1 {font-size   : 48px;}
-      .card{margin: }
+      .menu{height    : 50px!important;}
+      .menu > li > a{
+      height          : 50px!important;
+      line-height     : 56px!important;
+      font-size       : 20px!important;
+      }
     }
 
     @media (max-width: 450px) {
       h1 {font-size   : 40px;}
     }
-
 
     .menu{
     height            : 60px;
@@ -92,6 +96,7 @@
     z-index           : 2;
     background-color  : #1565C0;
     box-shadow        : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
+    transition        : height top 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     .menu > li{
@@ -105,15 +110,15 @@
     width             : 50px;
     float             : left;
     text-decoration   : none;
-    font-size         : 23px;
-    font-weight       : 400;
+    font-size         : 22px;
+    font-weight       : 500;
     position          : relative;
     bottom            : 3px;
     color             : #eee;
     }
 
     .menu > li > a:hover{
-    color             : rgba(255,255,255,0.7);
+    color            : rgba(255,255,255,0.7);
     transition       : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
  
@@ -132,7 +137,7 @@
     border-radius     : 2px;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
     /*试验性*/
-    transition       : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     } 
 
     .card > img:first-child {      
@@ -291,8 +296,10 @@
     background-color  : #f08b3b;
     opacity           : 0;
     }
-
-
-
-
-/*关于
+    
+    
+    
+    /*关于*/
+    .about{
+    
+    }

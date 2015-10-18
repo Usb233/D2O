@@ -1,7 +1,7 @@
 /*顶栏*/
 $(document).ready(function() {
 	$(document).bind("scroll", function() {
-		if ($(window).scrollTop() <= 210) {
+		if ($(window).scrollTop() <= 180) {
 			$(".menu").css({
 				"position": "absolute",
 				"top": "210px",
@@ -17,6 +17,7 @@ $(document).ready(function() {
 
 /*顶栏超链接*/
 $(document).ready(function() {
+	$(".about").fadeOut(0);
 	$(".menu>li:eq(0)>a").css({
 		"border-bottom": "solid #fff 3px"
 	});
@@ -29,6 +30,7 @@ $(document).ready(function() {
 				"border-bottom-width": "0px",
 			});
 			$(".card").fadeOut(100);
+			setTimeout(function(){$(".about").fadeIn(250)},100)
 		})
 		/*首页*/
 	$(".menu>li:eq(0)>a").click(function() {
@@ -39,8 +41,17 @@ $(document).ready(function() {
 			"border-bottom-width": "0px",
 		});
 		$(".card").fadeIn(100);
+		$(".about").fadeOut(100);
 	});
 });
+
+/*主页*/
+/*$(document).ready(function() {
+	$(".home").hide(0);
+	$(".LP > .lazyload").load(function() {
+		$(".home").show(0);
+	});
+});*/
 
 /*卡片开关*/
 $(document).ready(function() {
@@ -52,17 +63,20 @@ $(document).ready(function() {
 			a = 1
 		};
 		switch (a) {
+			/*(this为.show-ic)*/
 			case 1:
 				/*open*/
 				$(this).css("transform", "rotate(180deg)");
 				$(this).next().slideDown(350, 'easeInOutQuart');
-				$(this).prev().css("margin", "27px 0px 17px 0px")
+				$(this).prev().css("margin", "27px 0px 17px 0px");
+				$(this).parent().parent().css("box-shadow", "0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23)");
 				break;
 			case 2:
 				/*close*/
 				$(this).css("transform", "rotate(0deg)");
 				$(this).next().slideUp(350, 'easeInOutSine');
-				$(this).prev().css("margin", "35px 0px 8px 0px")
+				$(this).prev().css("margin", "35px 0px 8px 0px");
+				$(this).parent().parent().css("box-shadow", "0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24)");
 				break;
 		}
 	});
@@ -109,51 +123,52 @@ $(document).ready(function() {
 	});
 });
 
-/*NC计算*/
+/*NC计算*/  /*未完成*/
 $(document).ready(function() {
+	$(".iC").change(function() {
 	function calc() {
 		iC = $(".iC").val();
 		iV = $(".iV").val();
 		iX = $(".iX").val();
 		iY = $(".iY").val();
 		$(".C-num").val(iX * iY);  
-
-		mmcCapacitance = iCap / perString * numOfStrings;
+		mmcCapacitance = iC / X * Y;
 		mmcCapacitance = mmcCapacitance * 10e+3;
 		mmcCapacitance = parseInt(mmcCapacitance);
 		mmcCapacitance = mmcCapacitance / 10e+3;
-		document.home.nc.nc1.nc2.mmccalc.mmcCapacitance.value = mmcCapacitance;
-		mmcVoltage = iVoltage * perString;
-		document.home.nc.nc1.nc2.mmccalc.mmcVoltage.value = mmcVoltage;
-	}
+		$(".re-C").val(mmcCapacitance);
+		mmcVoltage = iV * iX;
+		$(".re-V").val(mmcVoltage) ;
+	  }
+    });
 
 	function perStringUp() {
-		perString = document.home.nc.nc1.nc2.mmccalc.perString.value;
+		perString = $(".iX").val();
 		perString = perString * 1 + 1;
-		document.home.nc.nc1.nc2.mmccalc.perString.value = perString;
+		$(".iX").val(perString);
 		calc();
 	}
 
 	function perStringDown() {
-		perString = document.home.nc.nc1.nc2.mmccalc.perString.value;
+	    perString = $(".iX").val();
 		perString = perString * 1 - 1;
 		if (perString * 1 < 1) perString = 1;
-		document.home.nc.nc1.nc2.mmccalc.perString.value = perString;
+		$(".iX").val(perString);
 		calc();
 	}
 
 	function numOfStringsUp() {
-		numOfStrings = document.home.nc.nc1.nc2.mmccalc.numOfStrings.value;
+		numOfStrings = $(".iY").val();
 		numOfStrings = numOfStrings * 1 + 1;
-		document.home.nc.nc1.nc2.mmccalc.numOfStrings.value = numOfStrings;
+		$(".iY").val(numOfStrings);
 		calc();
 	}
 
 	function numOfStringsDown() {
-		numOfStrings = document.home.nc.nc1.nc2.mmccalc.numOfStrings.value;
+		numOfStrings = $(".iY").val();
 		numOfStrings = numOfStrings * 1 - 1;
 		if (numOfStrings * 1 < 1) numOfStrings = 1;
-		document.home.nc.nc1.nc2.mmccalc.numOfStrings.value = numOfStrings;
+		$(".iY").val(numOfStrings);
 		calc();
 	}  
 });
@@ -173,7 +188,7 @@ $(document).ready(function() {
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
 		//Android优化
-		$(".img-title").css("top", "-50px");
+		/*$(".img-title").css("top", "-53px");*/
 		$("h1").css("font-size", "40px")
 	};
 });
