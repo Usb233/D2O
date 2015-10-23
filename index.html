@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--主题色-->
-  <meta name="theme-color" content="#1565C0"/>
+  <meta name="theme-color" content="#1565C0"/>  
   <!--css-->
   <link href="css/my.css" rel="stylesheet" type="text/css"/>
   <!--js-->
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jq-animate.js"></script>
   <script type="text/javascript" src="js/my.js"></script>
-  <script type="text/javascript" src="js/pic.js"></script>
+  <script type="text/javascript" src="js/pic.js"></script> 
   <!--tittle-->
   <title>特斯拉线圈设计器</title>
 </head>
@@ -29,11 +29,12 @@
       <a href="#">关于</a>
     </li>
   </ul>
+
   <!-- home content -->
   <div class="home">
     <!-- LP计算模块 -->  
     <div class="card LP">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload"/>  
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload" alt="电弧长度"/>  
       <img class="img-title" src="images/LP-title.gif"/>  
       <form method="get">
         <legend>电弧长度估算:</legend>
@@ -54,7 +55,7 @@
 
     <!-- ZC计算模块 -->  
     <div class="card ZC">
-      <img src="images/ZC.png">  
+      <img src="images/ZC.png" alt="电容组和变压器匹配"/>  
       <img class="img-title" src="images/ZC-title.png"/>  
       <form method="get" name="capmatchcalc">
         <legend>电容组与变压器匹配:</legend>
@@ -99,7 +100,7 @@
 
     <!-- LC计算模块 -->    
     <div class="card LC">
-      <img src="images/LC.png"/>    
+      <img src="images/LC.png" alt="LC振荡电路频率"/>    
       <img class="img-title" src="images/LC-title.png"/>  
       <form method="get">
         <legend>LC谐振电路频率计算:</legend>
@@ -122,7 +123,7 @@
 
     <!-- NC计算模块 -->
     <div class="card NC">
-      <img src="images/NC.png"/>   
+      <img src="images/NC.png" alt="电容阵列"/>   
       <form method="get">
         <legend>电容组设计:</legend>
         <img class="show-ic" src="images/show-ic.png"/>  
@@ -156,12 +157,10 @@
           <br/>  
           <!-- C-num -->  
           <label>总电容个数:</label>
-          <input type="number" value="1000" class="C-num disabled" disabled/> 
+          <input type="number" value="33" class="C-num disabled" disabled/> 
         </div>
       </form>
     </div>
-
-
 
   </div>
   <!-- about-content -->

@@ -153,6 +153,7 @@
     position          : absolute;
     margin-top        : 218px;
     top               : -53px;
+    left              : 0px;
     opacity           : 0.5;
     color             : #fff;
     text-align        : center;
@@ -216,17 +217,18 @@
 
     .NC > form >.toggle > input{
     margin            : 15px 0px 15px 0px;
-    width: 120px;
+    width             : 120px;
     }
 
     .form-span{
     font-size         : 22px;
     }
 
-    .disabled{
+    input:disabled{
     border            : 0;
     height            : 36px;
     width             : 100px!important;
+    border-radius     : 2px;
     }
 
 /*radio*/
@@ -297,9 +299,7 @@
     opacity           : 0;
     }
     
-    
-    
-    /*关于*/
+/*关于*/
     .about{
-    
+
     }

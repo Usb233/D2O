@@ -1,7 +1,7 @@
 /*顶栏*/
 $(document).ready(function() {
 	$(document).bind("scroll", function() {
-		if ($(window).scrollTop() <= 180) {
+		if ($(window).scrollTop() <= 210) {
 			$(".menu").css({
 				"position": "absolute",
 				"top": "210px",
@@ -123,54 +123,19 @@ $(document).ready(function() {
 	});
 });
 
-/*NC计算*/  /*未完成*/
+/*NC计算*/
 $(document).ready(function() {
-	$(".iC").change(function() {
-	function calc() {
+	$(".NC>form>.toggle>input").change(function() {
 		iC = $(".iC").val();
 		iV = $(".iV").val();
 		iX = $(".iX").val();
 		iY = $(".iY").val();
 		$(".C-num").val(iX * iY);  
-		mmcCapacitance = iC / X * Y;
-		mmcCapacitance = mmcCapacitance * 10e+3;
-		mmcCapacitance = parseInt(mmcCapacitance);
-		mmcCapacitance = mmcCapacitance / 10e+3;
-		$(".re-C").val(mmcCapacitance);
-		mmcVoltage = iV * iX;
-		$(".re-V").val(mmcVoltage) ;
-	  }
+		$(".re-C").val( ( (iC/iX)*iY ).toFixed(4) );
+		$(".re-V").val( iV*iX ) ;
+
     });
 
-	function perStringUp() {
-		perString = $(".iX").val();
-		perString = perString * 1 + 1;
-		$(".iX").val(perString);
-		calc();
-	}
-
-	function perStringDown() {
-	    perString = $(".iX").val();
-		perString = perString * 1 - 1;
-		if (perString * 1 < 1) perString = 1;
-		$(".iX").val(perString);
-		calc();
-	}
-
-	function numOfStringsUp() {
-		numOfStrings = $(".iY").val();
-		numOfStrings = numOfStrings * 1 + 1;
-		$(".iY").val(numOfStrings);
-		calc();
-	}
-
-	function numOfStringsDown() {
-		numOfStrings = $(".iY").val();
-		numOfStrings = numOfStrings * 1 - 1;
-		if (numOfStrings * 1 < 1) numOfStrings = 1;
-		$(".iY").val(numOfStrings);
-		calc();
-	}  
 });
 
 /*检测平台、设备和操作系统*/
