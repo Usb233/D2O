@@ -12,7 +12,9 @@
   <script type="text/javascript" src="js/jq-animate.js"></script>
   <script type="text/javascript" src="js/my.js"></script>
   <script type="text/javascript" src="js/pic.js"></script> 
-  <!--tittle-->
+  <!-- Icon -->
+  <link rel="icon" type="image/x-icon" href="images/Icon.png"/>
+  <!-- tittle -->
   <title>特斯拉线圈设计器</title>
 </head>
 
@@ -158,6 +160,39 @@
           <!-- C-num -->  
           <label>总电容个数:</label>
           <input type="number" value="33" class="C-num disabled" disabled/> 
+        </div>
+      </form>
+    </div>
+
+    <!-- CC计算模块 -->  
+    <div class="card CC">
+      <img src="images/CC.png" alt="平板电容"/>    
+      <img class="img-title" src="images/CC-title.png"/>    
+      <form method="get">
+        <legend>平板电容器计算:</legend>
+        <img class="show-ic" src="images/show-ic.png">    
+        <div class="toggle">
+          <!-- 单位 -->    
+          <label>尺寸单位:</label>
+          <select>
+            <option value="0.001" selected>毫米</option>
+            <option value="0.0254">英寸</option>
+          </select><br/>
+          <!-- 电介质材料 -->    
+          <label>电介质材料:</label>
+          <select>
+            <div>
+              <option selected="" value="2.3">LDPE/HDPE</option>
+              <option value="7.5">Glass</option>
+              <option value="1.0">Air</option>
+              <option value="4.6">PVC</option>
+            </div>
+          </select>
+          <br/>    
+          <!-- P -->    
+          <label>电源功率 (P):</label>
+          <input type="number" value="1000" class="power"/>    
+          <span class="form-span">瓦特</span>
         </div>
       </form>
     </div>
