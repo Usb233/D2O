@@ -209,22 +209,21 @@
     border-width      : 0px 0px 2px 0px;
     border-color      : #E0E0E0; 
     outline           : none;
-    margin            : 20px 0px 20px 0px;
+    margin            : 12px 0px 12px 0px;
     padding-left      : 4px;
     }
-    
+
     input[type=number]:focus{
     border-color      : #1976D2;
     transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     .NC > form >.toggle > input{
-    margin            : 15px 0px 15px 0px;
-    width             : 120px;
+    width             : 40%;
     }
 
-    .form-span{
-    font-size         : 22px;
+    .CC > form >.toggle > input{
+    width             : 32%;
     }
 
     input:disabled{
@@ -234,6 +233,10 @@
     border-radius     : 2px;
     }
 
+    .form-span{
+    font-size         : 22px;
+    }
+  
 /*radio*/
     .radio {
     display           : inline-block;
@@ -306,10 +309,14 @@
     select{
     font-size         : 18px;
     padding           : 2px 6px 2px 6px;
-    border            : 1px solid #f08b3b;
-    border-radius     : 3px;
+    border            : 0;
+    border-radius     : 2px;
     cursor            : pointer;
     outline           : none;
+    }
+
+    select:hover{
+    box-shadow: 0 1px 1.5px 0 rgba(0,0,0,.12), 0 1px 1px 0 rgba(0,0,0,.24);
     }
 
     option{

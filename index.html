@@ -170,7 +170,7 @@
       <img class="img-title" src="images/CC-title.png"/>    
       <form method="get">
         <legend>平板电容器计算:</legend>
-        <img class="show-ic" src="images/show-ic.png">    
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
           <!-- 单位 -->    
           <label>尺寸单位:</label>
@@ -189,10 +189,26 @@
             </div>
           </select>
           <br/>    
-          <!-- P -->    
-          <label>电源功率 (P):</label>
-          <input type="number" value="1000" class="power"/>    
-          <span class="form-span">瓦特</span>
+          <!-- N -->    
+          <label>电极板片数(N):</label>
+          <input type="number" class="N"/>
+          <br/>  
+          <!-- D -->    
+          <label>电极板间距(D):</label>
+          <input type="number" class="D"/> 
+          <br/> 
+          <!-- L -->    
+          <label>重叠部分长度(L):</label>
+          <input type="number" class="L"/> 
+          <br/> 
+          <!-- W -->    
+          <label>重叠部分宽度(W):</label>
+          <input type="number" class="W"/>  
+          <br/>
+          <!-- C -->    
+          <label>电容量:C=</label>
+          <input type="number" class="C" disabled /> 
+          <span class="form-span">uF</span> 
         </div>
       </form>
     </div>
