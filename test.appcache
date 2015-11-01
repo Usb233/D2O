@@ -1,6 +1,9 @@
 CACHE MANIFEST
 # v1 2015-11-1
 index.html
+css/my.css
+js/jquery.js
+js/my.js
 
 # Use from network if available
 NETWORK:
