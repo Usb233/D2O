@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html manifest="test.appcache">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--主题色-->
-  <meta name="theme-color" content="#1565C0"/>  
+  <meta name="theme-color" content="#1565C0"/>
   <!--css-->
   <link href="css/my.css" rel="stylesheet" type="text/css"/>
   <!--js-->
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/jq-animate.js"></script>
   <script type="text/javascript" src="js/my.js"></script>
-  <script type="text/javascript" src="js/pic.js"></script> 
+  <script type="text/javascript" src="js/pic.js"></script>
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="images/Icon.png"/>
   <!-- tittle -->
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-  <!-- menu -->  
+  <!-- menu -->
   <div class ="title">
     <h1>特斯拉线圈设计器</h1>
   </div>
@@ -34,90 +34,95 @@
 
   <!-- home content -->
   <div class="home">
-    <!-- LP计算模块 -->  
+    <!-- LP计算模块 -->
     <div class="card LP">
-      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload" alt="电弧长度"/>  
-      <img class="img-title" src="images/LP-title.gif"/>  
+      <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload" alt="电弧长度"/>
+      <img class="img-title" src="images/LP-title.gif"/>
       <form method="get">
         <legend>电弧长度估算:</legend>
-        <img class="show-ic" src="images/show-ic.png">  
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- L -->  
+          <!-- L -->
           <label>电弧长度 (L):</label>
-          <input type="number" value="53" class="length"/>  
+          <input type="number" value="53" class="length"/>
           <span class="form-span">英寸</span>
-          <br/>  
-          <!-- P -->  
+          <br/>
+          <!-- P -->
           <label>电源功率 (P):</label>
-          <input type="number" value="1000" class="power"/>  
+          <input type="number" value="1000" class="power"/>
           <span class="form-span">瓦特</span>
         </div>
       </form>
     </div>
 
-    <!-- ZC计算模块 -->  
+    <!-- ZC计算模块 -->
     <div class="card ZC">
-      <img src="images/ZC.png" alt="电容组和变压器匹配"/>  
-      <img class="img-title" src="images/ZC-title.png"/>  
+      <img src="images/ZC.png" alt="电容组和变压器匹配"/>
+      <img class="img-title" src="images/ZC-title.png"/>
       <form method="get" name="capmatchcalc">
         <legend>电容组与变压器匹配:</legend>
-        <img class="show-ic" src="images/show-ic.png"/>  
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- radio -->  
+          <!-- radio -->
           <div class="label">电源频率（FL）:</div>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="50" checked/>  
+            <input type="radio" name="radios" name="units" value="50" checked/>
             <span class="outer">
               <span class="inner"></span>
             </span>
             50HZ
           </label>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="60" />  
+            <input type="radio" name="radios" name="units" value="60" />
             <span class="outer">
               <span class="inner"></span>
             </span>
             60HZ
           </label>
-          <hr/>  
-          <!-- E -->  
+          <hr/>
+          <!-- E -->
           <label>电压 (E) :</label>
-          <br/>  
-          <input type="number" value="10000" />  
+          <br/>
+          <input type="number" value="10000" />
           <span class="form-span">V</span>
-          <br/>  
-          <!-- I -->  
+          <br/>
+          <!-- I -->
           <label>电流(I) :</label>
-          <br/>  
-          <input type="number" value="100" />  
+          <br/>
+          <input type="number" value="100" />
           <span class="form-span">mA</span>
-          <hr/>  
-          <!-- C -->  
+          <hr/>
+          <!-- C -->
           <label>C =:</label>
-          <input disabled type="number" class="disabled" value="0.0318"/>  
+          <input disabled type="number" class="disabled" value="0.0318"/>
           <span class="form-span">uF</span>
         </div>
       </form>
     </div>
 
-    <!-- LC计算模块 -->    
+    <!-- LC计算模块 -->
     <div class="card LC">
-      <img src="images/LC.png" alt="LC振荡电路频率"/>    
-      <img class="img-title" src="images/LC-title.png"/>  
+      <img src="images/LC.png" alt="LC振荡电路频率"/>
+      <img class="img-title" src="images/LC-title.png"/>
       <form method="get">
         <legend>LC谐振电路频率计算:</legend>
-        <img class="show-ic" src="images/show-ic.png">    
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- L -->    
-          <label>电感量 (L):</label><br/>    
-          <input type="number" value="0.028" class="l"/>    
-          <span class="form-span">mH</span><br/>    
-          <!-- C -->    
-          <label>电容量 (C):</label><br/>    
-          <input type="number" value="0.02" class="c"/>    
-          <span class="form-span">uF</span><hr/>    
-          <label>谐振频率(F):</label><br/>    
-          <input type="number" disabled value="212.679" class="f disabled"/>    
+          <!-- L -->
+          <label>电感量 (L):</label>
+          <br/>
+          <input type="number" value="0.028" class="l"/>
+          <span class="form-span">mH</span>
+          <br/>
+          <!-- C -->
+          <label>电容量 (C):</label>
+          <br/>
+          <input type="number" value="0.02" class="c"/>
+          <span class="form-span">uF</span>
+          <hr/>
+          <label>谐振频率(F):</label>
+          <br/>
+          <input type="number" disabled value="212.679" class="f disabled"/>
           <span class="form-span">kHZ</span>
         </div>
       </form>
@@ -125,95 +130,107 @@
 
     <!-- NC计算模块 -->
     <div class="card NC">
-      <img src="images/NC.png" alt="电容阵列"/>   
+      <img src="images/NC.png" alt="电容阵列"/>
       <form method="get">
         <legend>电容组设计:</legend>
-        <img class="show-ic" src="images/show-ic.png"/>  
+        <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- C -->  
+          <!-- C -->
           <label>电容量:</label>
-          <input type="number" value="0.047" class="iC"/>  
+          <input type="number" value="0.047" class="iC"/>
           <span class="form-span">uF</span>
-          <br/>  
-          <!-- V -->  
+          <br/>
+          <!-- V -->
           <label>耐压:</label>
-          <input type="number" value="1600" class="iV"/>  
+          <input type="number" value="1600" class="iV"/>
           <span class="form-span">V</span>
           <hr/>
-          <!-- L -->  
+          <!-- L -->
           <label>串联数量:</label>
           <input type="number" value="11" class="iX"/>
-          <br/>  
-          <!-- P -->  
+          <br/>
+          <!-- P -->
           <label>并联数量:</label>
           <input type="number" value="3" class="iY"/>
           <hr/>
-          <!-- re-C -->  
+          <!-- re-C -->
           <label>电容量:</label>
-          <input type="number" value="0.0128" class="re-C disabled" disabled/>  
-          <span class="form-span">uF</span><br/>
-           <!-- re-V -->  
+          <input type="number" value="0.0128" class="re-C disabled" disabled/>
+          <span class="form-span">uF</span>
+          <br/>
+          <!-- re-V -->
           <label>耐压:</label>
-          <input type="number" value="53" class="re-V disabled" disabled/>  
+          <input type="number" value="53" class="re-V disabled" disabled/>
           <span class="form-span">V</span>
-          <br/>  
-          <!-- C-num -->  
+          <br/>
+          <!-- C-num -->
           <label>总电容个数:</label>
-          <input type="number" value="33" class="C-num disabled" disabled/> 
+          <input type="number" value="33" class="C-num disabled" disabled/>
         </div>
       </form>
     </div>
 
-    <!-- CC计算模块 -->  
+    <!-- CC计算模块 -->
     <div class="card CC">
-      <img src="images/CC.png" alt="平板电容"/>    
-      <img class="img-title" src="images/CC-title.png"/>    
+      <img src="images/CC.png" alt="平板电容"/>
+      <img class="img-title" src="images/CC-title.png"/>
       <form method="get">
         <legend>平板电容器计算:</legend>
         <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- 单位 -->    
+          <!-- 单位 -->
           <label>尺寸单位:</label>
-          <select>
+          <select class="UN">
             <option value="0.001" selected>毫米</option>
             <option value="0.0254">英寸</option>
-          </select><br/>
-          <!-- 电介质材料 -->    
-          <label>电介质材料:</label>
-          <select>
-            <div>
-              <option selected="" value="2.3">LDPE/HDPE</option>
-              <option value="7.5">Glass</option>
-              <option value="1.0">Air</option>
-              <option value="4.6">PVC</option>
-            </div>
           </select>
-          <br/>    
-          <!-- N -->    
+          <br/>
+          <!-- 电介质材料 -->
+          <label>电介质材料:</label>
+          <select class="DC">
+            <option selected="" value="2.3">LDPE/HDPE</option>
+            <option value="7.5">Glass</option>
+            <option value="1.0">Air</option>
+            <option value="4.6">PVC</option>
+          </select>
+          <br/>
+          <!-- N -->
           <label>电极板片数(N):</label>
           <input type="number" class="N"/>
-          <br/>  
-          <!-- D -->    
-          <label>电极板间距(D):</label>
-          <input type="number" class="D"/> 
-          <br/> 
-          <!-- L -->    
-          <label>重叠部分长度(L):</label>
-          <input type="number" class="L"/> 
-          <br/> 
-          <!-- W -->    
-          <label>重叠部分宽度(W):</label>
-          <input type="number" class="W"/>  
           <br/>
-          <!-- C -->    
+          <!-- D -->
+          <label>电极板间距(D):</label>
+          <input type="number" class="D"/>
+          <br/>
+          <!-- L -->
+          <label>重叠部分长度(L):</label>
+          <input type="number" class="L"/>
+          <br/>
+          <!-- W -->
+          <label>重叠部分宽度(W):</label>
+          <input type="number" class="W"/>
+          <br/>
+          <!-- C -->
           <label>电容量:C=</label>
-          <input type="number" class="C" disabled /> 
-          <span class="form-span">uF</span> 
+          <input type="number" class="C" disabled />
+          <span class="form-span">uF</span>
         </div>
       </form>
     </div>
 
+    <!-- 数据表 -->
+    <div class="card FO">
+      <img src="images/ufo.jpg" alt="数据表"/>
+      <form method="get">
+        <legend>相关数据表</legend>
+        <img class="show-ic" src="images/show-ic.png"/>
+        <div class="toggle"></div>
+      </form>
+    </div>
   </div>
+
   <!-- about-content -->
   <div class="about">zzz</div>
 </body>
+
+</html>

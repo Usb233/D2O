@@ -68,17 +68,23 @@ $(document).ready(function() {
 				/*open*/
 				$(this).css("transform", "rotate(180deg)");
 				$(this).next().slideDown(350, 'easeInOutQuart');
-				$(this).prev().css("margin", "27px 0px 17px 0px");
+				$(this).prev().css({"margin":"27px 0px 10px 0px","font-size":"22px"});
 				$(this).parent().parent().css("box-shadow", "0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23)");
 				break;
 			case 2:
 				/*close*/
 				$(this).css("transform", "rotate(0deg)");
 				$(this).next().slideUp(350, 'easeInOutSine');
-				$(this).prev().css("margin", "35px 0px 8px 0px");
+				$(this).prev().css({"margin":"35px 0px 8px 0px","font-size":"23px"});
 				$(this).parent().parent().css("box-shadow", "0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24)");
 				break;
 		}
+	});
+	$(".show-ic").click(function() {
+		$(this).css("background-color", "#F2F2F2");
+		setTimeout(function() {
+			$(".show-ic").css("background-color", "#fff")
+		}, 600)
 	});
 });
 
@@ -135,7 +141,22 @@ $(document).ready(function() {
 		$(".re-V").val( iV*iX ) ;
 
     });
+});
 
+/*CC计算*/
+$(document).ready(function() {
+	$("div").click(
+	function(){
+	u = $(".UN").children(":selected").val()
+	d = $(".D").val() * u
+	a = ($(".L").val() * u) * (($(".L").val() * u))
+	n = $(".N").val()
+	dc = $(".DC").children(":selected").val()
+	c = ((8.85e-12 * dc * a) / d) * (n - 1)
+	c *= 1e+12
+	c = parseInt(c) / 1e+6
+	$(".C").val(c)
+  })
 });
 
 /*检测平台、设备和操作系统*/
