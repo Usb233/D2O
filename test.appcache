@@ -1,9 +1,24 @@
 CACHE MANIFEST
-# v1 2015-11-1
+# v1.01 2015-11-1
 index.html
 css/my.css
 js/jquery.js
+js/jq-animate.js
+js/pic.js
 js/my.js
+images/LP-title.gif
+images/LP.jpg
+images/LP~.jpg
+images/ufo.jpg
+images/CC-title.png
+images/CC.png
+images/Icon.png
+images/LC-title.png
+images/LC.png
+images/NC.png
+images/show-ic.png
+images/ZC-title.png
+images/ZC.png
 
 # Use from network if available
 NETWORK:
