@@ -59,7 +59,6 @@ $(document).ready(function() {
 	$(".toggle").slideUp(0);
 	$(".show-ic").click(function() {
 		var thiss = $(this)
-		alert(click())
 		if (true) {};
 		a++;
 		if (a > 2) {
@@ -89,6 +88,7 @@ $(document).ready(function() {
 			$(".show-ic").css("background-color", "#fff")
 		}, 600)
 	});
+
 });
 
 /*lp计算*/
