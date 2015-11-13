@@ -58,6 +58,9 @@ $(document).ready(function() {
 	var a = 0;
 	$(".toggle").slideUp(0);
 	$(".show-ic").click(function() {
+		var thiss = $(this)
+		alert(click())
+		if (true) {};
 		a++;
 		if (a > 2) {
 			a = 1
