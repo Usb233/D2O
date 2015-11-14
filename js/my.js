@@ -57,31 +57,57 @@ $(document).ready(function() {
 $(document).ready(function() {
 	var a = 0;
 	$(".toggle").slideUp(0);
+	$(".show-ic").data("lastClick", "1");
+	$(".show-ic").data("cardSwitch", "close")
+
 	$(".show-ic").click(function() {
-		var thiss = $(this)
-		if (true) {};
+		if ($(this).data("lastClick") == 1) {
+			/*alert("相同");*/
+			$(".show-ic").removeData("lastClick");
+			$(this).data("lastClick", "1");
+		} else {
+			/*alert("不同");*/
+			if ($(this).data("cardSwitch") == "close") {a++};
+			if ($(this).data("cardSwitch") == "open"){if (a>1) {a--};}
+			$(".show-ic").removeData("lastClick");
+			$(this).data("lastClick", "1");
+		}
+		/*if ($(this).data("cardSwitch") == "open") {alert("opened")};
+		if ($(this).data("cardSwitch") == "close") {alert("closed")};*/
 		a++;
 		if (a > 2) {
 			a = 1
-		};
+		};	
 		switch (a) {
 			/*(this为.show-ic)*/
 			case 1:
 				/*open*/
+				$(this).data("cardSwitch", "open")
 				$(this).css("transform", "rotate(180deg)");
 				$(this).next().slideDown(350, 'easeInOutQuart');
-				$(this).prev().css({"margin":"27px 0px 10px 0px","font-size":"22px"});
+				$(this).prev().css({
+					"margin": "27px 0px 10px 0px",
+					"font-size": "22px"
+				});
 				$(this).parent().parent().css("box-shadow", "0 2px 5px 0 rgba(0,0,0,.16), 0 2px 5px 0 rgba(0,0,0,.23)");
+				/*$(this).removeData("cardSwitch")*/
 				break;
 			case 2:
 				/*close*/
+				$(this).data("cardSwitch", "close")
 				$(this).css("transform", "rotate(0deg)");
 				$(this).next().slideUp(350, 'easeInOutSine');
-				$(this).prev().css({"margin":"35px 0px 8px 0px","font-size":"23px"});
+				$(this).prev().css({
+					"margin": "35px 0px 8px 0px",
+					"font-size": "23px"
+				});
 				$(this).parent().parent().css("box-shadow", "0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24)");
+				/*$(this).removeData("cardSwitch")*/
 				break;
 		}
+
 	});
+
 	$(".show-ic").click(function() {
 		$(this).css("background-color", "#F2F2F2");
 		setTimeout(function() {
@@ -90,7 +116,6 @@ $(document).ready(function() {
 	});
 
 });
-
 /*lp计算*/
 $(document).ready(function() {
 	$(".length").change(function() {
