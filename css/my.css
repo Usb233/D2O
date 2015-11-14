@@ -226,6 +226,8 @@
     top               : 0px;
     right             : 0px;
     opacity           : 0.7;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=70); 
     /*transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);*/
     transition        : all 350ms cubic-bezier(0.23, 1, 0.32, 1);
     }
@@ -282,13 +284,17 @@
     -webkit-transform : scale(0.5);
     -ms-transform     : scale(0.5);
     transform         : scale(0.5);
-    opacity           : .5;
+    opacity           : 0.5;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=50); 
     }
  
     .radio input {
     width             : 1px;
     height            : 1px;
     opacity           : 0;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=0); 
     }
  
     .radio input:checked + .outer .inner {
@@ -296,6 +302,8 @@
     -ms-transform     : scale(1);
     transform         : scale(1);
     opacity           : 1;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=100); 
     }
  
     .radio input:checked + .outer { 
@@ -307,6 +315,8 @@
     -ms-transform     : scale(1);
     transform         : scale(1);
     opacity           : 1;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=100); 
     background-color  : #e67012;
     }
  
@@ -335,6 +345,8 @@
     border-radius     : 50%;
     background-color  : #f08b3b;
     opacity           : 0;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=100); 
     }
    
 /*select*/ 
