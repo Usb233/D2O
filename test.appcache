@@ -1,8 +1,8 @@
 CACHE MANIFEST
-# v1.04 2015-11-14
+# v1.05 2015-11-14
 index.html
 css/my.css
-js/jquery(with animate).js
+js/jquery.js
 js/pic.js
 js/my.js
 images/LP-title.gif

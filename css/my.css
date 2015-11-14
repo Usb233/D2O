@@ -17,6 +17,8 @@
  
     hr{
     opacity           : 0.3;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=30); 
     margin-bottom     : 2px;
     height            : 2px;
     border-radius     : 10px;
@@ -175,6 +177,8 @@
     top               : -53px;
     left              : 0px;
     opacity           : 0.5;
+    /* IE 4-9 */  
+    filter            :alpha(opacity=50); 
     color             : #fff;
     text-align        : center;
     line-height       : 48px;
