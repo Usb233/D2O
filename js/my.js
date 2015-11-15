@@ -1,6 +1,6 @@
 /*顶栏*/
 $(document).ready(function() {
-	$(document).bind("scroll", function() {
+	/*$(document).bind("scroll", function() {
 		if ($(window).scrollTop() <= 210) {
 			$(".menu").css({
 				"position": "absolute",
@@ -11,6 +11,20 @@ $(document).ready(function() {
 				"position": "fixed",
 				"top": "0px",
 			});
+		}
+	});*/
+    $(document).bind("scroll", function() {
+		if ($(window).scrollTop() >= 150) {
+			$(".menu").css({
+				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
+				/*"top": "210px",*/
+			})
+		}
+		else{
+			$(".menu").css({
+				"box-shadow": "",
+				/*"top": "210px",*/
+			})
 		}
 	});
 });
