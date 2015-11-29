@@ -13,25 +13,50 @@ $(document).ready(function() {
 			});
 		}
 	});*/
+
     $(document).bind("scroll", function() {
-		if ($(window).scrollTop() >= 150) {
-			$(".menu").css({
+		var top = $(window).scrollTop();
+		console.log(top)
+		var topH = $(".top").css("height"); /*top高度*/
+		var top_h = topH.substring(0, 2);
+		var top_shadow = 210 - top_h;
+
+		if ($(window).scrollTop() >= top_shadow) {
+			$(".top").css({
 				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
 				/*"top": "210px",*/
 			})
 		}
 		else{
-			$(".menu").css({
+			$(".top").css({
 				"box-shadow": "",
 				/*"top": "210px",*/
 			})
 		}
+		h1Size = (3/2500)*top*top-(11/50)*top+40;  /*60/(top/60)*/
+		h1Top = (-9/20)*top+50;
+		if (h1Size<=26) {h1Size=26};
+		if (h1Size>=40) {h1Size=40};
+		if (top>=100) {h1Size=26};
+		var winWidth0 = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth0<=480) {if(h1Top<=7) {h1Top=7};}
+		else {if(h1Top<=11) {h1Top=11};}
+        $("h1").css({"font-size":h1Size+"px"});
+         $("h1").css({"top":h1Top+"px"});
 	});
 });
 
-/*顶栏超链接*/
-/*$(document).ready(function() {
-	$(".about").fadeOut(0);
+/*顶栏选项*/
+$(document).ready(function() {
+
+    $("#moreIc").click(function(){
+        $("#moreList").css("display","inline-block")}
+    	)
+    $("*").not("#moreIc").click(function(){
+        $("#moreList").css("display","none")}
+    	)
+
+	/*$(".about").fadeOut(0);
 	$(".menu>li:eq(0)>a").css({
 		"border-bottom": "solid #fff 3px"
 	});
@@ -56,8 +81,8 @@ $(document).ready(function() {
 		});
 		$(".card").fadeIn(100);
 		$(".about").fadeOut(100);
-	});
-});*/
+	});*/
+});
 
 /*主页*/
 /*$(document).ready(function() {

@@ -2,18 +2,18 @@
 <html manifest="test.appcache">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width", initial-scale="1" user-scalable="no">
   <meta name="keywords" content="tesla coil caculater, 特斯拉线圈, 特斯拉线圈设计器"/>
   <meta name="description" content="改进版特斯拉线圈设计器"/>
   <meta name="robots" content="all">
   <!--主题色-->
   <meta name="theme-color" content="#1565C0"/>
   <!--css-->
-  <link href="css/my.css" rel="stylesheet" type="text/css"/>
+  <link href="css/my.css" rel="stylesheet"/>
   <!--js-->
-  <script type="text/javascript" src="js/jquery.js"></script>
-  <script type="text/javascript" src="js/my.js"></script>
-  <script type="text/javascript" src="js/pic.js"></script>
+  <script src="js/jquery.js"></script>
+  <script src="js/my.js"></script>
+  <script src="js/pic.js"></script>
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="images/Icon.png"/>
   <!-- tittle -->
@@ -22,14 +22,18 @@
 
 <body>
   <!-- menu -->
-  <div class="menu">
-    
-  </div>
-  <div class ="title">
+  <div class="top">
+    <img src="images/more-vert-ic.png" id="moreIc"/>
+    <ul id="moreList">
+      <li><a href="#">setting</a></li>
+      <li><a href="#">about</a></li>
+      <li><a href="#">help</a></li>
+    </ul>
+    <div class=""><!-- 遮罩 --></div>
     <h1>特斯拉线圈设计器</h1>
   </div>
+  <div class="top-bg"></div>
   
-
   <!-- home content -->
   <div class="home">
     <!-- LP计算模块 -->
@@ -235,8 +239,6 @@
     </div>
   </div>
 
-  <!-- about-content -->
-  <!-- <div class="about">zzz</div> -->
 </body>
 
 </html>
