@@ -1,3 +1,8 @@
+/*闭包*/
+function clearLocalStorage(){
+	localStorage.clear();
+}
+
 /*顶栏*/
 $(document).ready(function() {
 	/*$(document).bind("scroll", function() {
@@ -154,12 +159,6 @@ $(document).ready(function() {
 		}, 600)
 	});
 });
-
-/*闭包*/
-function clearLocalStorage(){
-	localStorage.clear();
-}
-
 
 /*LP计算*/
 $(document).ready(function() {
