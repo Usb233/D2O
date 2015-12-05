@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v1.1 2015-12-2
+# v1.2 2015-12-5
 index.html
 css/my.css
 js/jquery.js
@@ -18,7 +18,7 @@ images/NC.png
 images/show-ic.png
 images/ZC-title.png
 images/ZC.png
-more-vert-ic.png
+images/more-vert-ic.png
 
 # Use from network if available
 NETWORK:
