@@ -1,24 +1,13 @@
 /*闭包*/
-function clearLocalStorage(){
-	localStorage.clear();
-}
+$(document).ready(function() {
+	/*清除localStorage*/
+	function clearLocalStorage() {
+		localStorage.clear();
+	}  
+});
 
 /*顶栏*/
 $(document).ready(function() {
-	/*$(document).bind("scroll", function() {
-		if ($(window).scrollTop() <= 210) {
-			$(".menu").css({
-				"position": "absolute",
-				"top": "210px",
-			});
-		} else {
-			$(".menu").css({
-				"position": "fixed",
-				"top": "0px",
-			});
-		}
-	});*/
-
     $(document).bind("scroll", function() {
 		var top = $(window).scrollTop();
 		console.log(top)
@@ -26,7 +15,7 @@ $(document).ready(function() {
 		var top_h = topH.substring(0, 2);
 		var top_shadow = 210 - top_h;
 
-		if ($(window).scrollTop() >= top_shadow) {
+		if ($(window).scrollTop() >= top_shadow || $("#back").css("display")=="block") {
 			$(".top").css({
 				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
 				/*"top": "210px",*/
@@ -43,11 +32,45 @@ $(document).ready(function() {
 		if (h1Size<=26) {h1Size=26};
 		if (h1Size>=40) {h1Size=40};
 		if (top>=100) {h1Size=26};
-		var winWidth0 = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		/*var winWidth0 = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if (winWidth0<=480) {if(h1Top<=7) {h1Top=7};}
-		else {if(h1Top<=11) {h1Top=11};}
+		else {if(h1Top<=11) {h1Top=11};}*/
+		if(h1Top<=11) {h1Top=11};
+
         $("h1").css({"font-size":h1Size+"px"});
         $("h1").css({"top":h1Top+"px"});
+	});
+});
+
+/*界面逻辑*/
+$(document).ready(function() {
+	$("#back").hide();
+
+	/*第二界面*/
+	$("#moreList").find("*").click(function() {
+		$(".card").hide();
+		$("h1").fadeOut(400);
+		$("#back").show();
+		$("#moreIc").hide();
+
+		if (top<=10) {$(".top-bg").animate({
+			height: '60px'
+		}, 450, 'easeInOutCubic')}
+		else{$(".top-bg").animate({
+			height: '60px'
+		}, 10)}
+		
+	});
+
+	/*退出第二界面*/
+	$("#back").click(function() {
+		$(".card").show();
+		$("h1").fadeIn(400);
+		$("#back").hide();
+		$("#moreIc").show();
+		$(".top-bg").animate({
+			height: '210px'
+		}, 450, 'easeInOutCubic');
 	});
 });
 
