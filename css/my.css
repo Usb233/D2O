@@ -71,10 +71,10 @@
     width             : 32px;
     position          : absolute;
     z-index           : 1;
-    right             : -10px;
-    top               : 2px;
+    right             : -6px;
+    top               : 4px;
     display           : inline-block;
-    border            : solid 15px #1976D2;
+    border            : solid 10px #1976D2;
     }
 
     #moreList{
@@ -121,7 +121,7 @@
       h1 {font-size   : 48px;}
       .top{height     : 50px!important;}
       #moreIc{height  : 28px; width:28px;
-              top     : 0px;right:-10px;}
+              top     : 1px;right:-9px;}
     }
     @media (max-width: 450px) {
       h1 {font-size   : 40px;}
