@@ -1,20 +1,24 @@
+//以380px为断电自适应
+
 /*闭包*/
 $(document).ready(function() {
 	/*清除localStorage*/
 	function clearLocalStorage() {
 		localStorage.clear();
-	}  
+	} 
 });
 
-/*顶栏*/
+/*顶栏动画*/
 $(document).ready(function() {
     $(document).bind("scroll", function() {
+    	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var top = $(window).scrollTop();
 		console.log(top)
 		var topH = $(".top").css("height"); /*top高度*/
 		var top_h = topH.substring(0, 2);
 		var top_shadow = 210 - top_h;
 
+     if (winWidth >= 380) {
 		if ($(window).scrollTop() >= top_shadow || $("#back").css("display")=="block") {
 			$(".top").css({
 				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
@@ -39,6 +43,7 @@ $(document).ready(function() {
 
         $("h1").css({"font-size":h1Size+"px"});
         $("h1").css({"top":h1Top+"px"});
+    };
 	});
 });
 
@@ -60,17 +65,42 @@ $(document).ready(function() {
 			height: '60px'
 		}, 10)}
 		
+		if ( $("#back").css("display")=="block") {
+			$(".top").css({
+				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
+			})
+		};
 	});
 
 	/*退出第二界面*/
-	$("#back").click(function() {
+	$("#back").click(function () {
 		$(".card").show();
 		$("h1").fadeIn(400);
 		$("#back").hide();
 		$("#moreIc").show();
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth >= 380) {
 		$(".top-bg").animate({
 			height: '210px'
-		}, 450, 'easeInOutCubic');
+		}, 450, 'easeInOutCubic');}
+
+		if ($("#back").css("display")=="none") {
+			$(".top").css({
+				"box-shadow": "",
+			})};
+
+		var top = $(window).scrollTop();
+		console.log(top)
+		var topH = $(".top").css("height"); /*top高度*/
+		var top_h = topH.substring(0, 2);
+		var top_shadow = 210 - top_h;
+
+		if ($(window).scrollTop() >= top_shadow || $("#back").css("display")=="block") {
+			$(".top").css({
+				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
+				/*"top": "210px",*/
+			})
+		}
 	});
 });
 
@@ -88,8 +118,13 @@ $(document).ready(function() {
         $("#blank").hide();
     });
 
-    $("#blank").click(function() {
+    $("#blank").mousedown(function() {
     	$(this).hide();
+    	$("#moreList").hide();
+    });
+
+    $(document).bind("scroll", function() {
+        $("#blank").hide();
     	$("#moreList").hide();
     });
 
@@ -339,4 +374,28 @@ $(document).ready(function() {
 		if (winWidth < 948) {}
 		$(".home").css("padding-left", pad3);
 	});
+});
+
+/*自适应相关*/
+$(document).ready(function() {
+	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	console.log(winWidth);
+
+		if (winWidth <= 380) {
+			$(".top-bg").css({
+				"height": "60px",
+			});
+            $(".top").css({
+				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
+			});
+			$("h1").css({
+				"font-size": "26px"
+			});
+			$("h1").css({
+				"top": "11px"
+			});
+			$(".LP").css({
+				"margin-top": "50px"
+			});
+		};
 });
