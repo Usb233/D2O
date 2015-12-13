@@ -148,8 +148,20 @@ $(document).ready(function() {
 		$("#blank").hide();
 		$("#moreList").hide();
 	});
-});
 
+
+/*	$("#QA").parent().click(function() {
+		var responseHtml = '<scr' + 'ipt charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></scr' + 'ipt>';
+		$("head").innerHTML = eval(responseHtml);
+
+		$("head").innerHTML =   "<script type="text/javascript">
+		        window.changyan.api.config({
+		        appid: 'cys7Xh1Ma',
+		        conf: 'prod_89b60d1b2330787417e1b7db22466b5c'
+		    });
+		</script>";*/
+	})
+});
 /*主页*/
 /*$(document).ready(function() {
 	$(".home").hide(0);
