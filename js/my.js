@@ -398,26 +398,6 @@ $(document).ready(function() {
 	})
 });
 
-/*检测平台、设备和操作系统*/
-$(document).ready(function() {
-	var system = {
-		win: false,
-		mac: false,
-		xll: false,
-		ipad: false
-	};
-	var p = navigator.platform;
-	system.win = p.indexOf("Win") == 0;
-	system.mac = p.indexOf("Mac") == 0;
-	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
-	if (system.win || system.mac || system.xll || system.ipad) {} else {
-		//Android优化
-		/*$(".img-title").css("top", "-53px");*/
-		/*$("h1").css("font-size", "40px")*/
-	};
-});
-
 /*卡片自适应居中*/
 $(document).ready(function() {
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -466,5 +446,24 @@ $(document).ready(function() {
 		$(".LP").css({
 			"margin-top": "50px"
 		});
+	};
+});
+
+/*检测平台、设备和操作系统*/
+$(document).ready(function() {
+	var system = {
+		win: false,
+		mac: false,
+		xll: false,
+		ipad: false
+	};
+	var p = navigator.platform;
+	system.win = p.indexOf("Win") == 0;
+	system.mac = p.indexOf("Mac") == 0;
+	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
+	if (system.win || system.mac || system.xll || system.ipad) {} else {
+		//Android优化
+		$("h1").css("top", "14px")
 	};
 });
