@@ -159,9 +159,11 @@ $(document).ready(function() {
 		        appid: 'cys7Xh1Ma',
 		        conf: 'prod_89b60d1b2330787417e1b7db22466b5c'
 		    });
-		</script>";*/
-	})
+		</script>";
+	})*/
+
 });
+
 /*主页*/
 /*$(document).ready(function() {
 	$(".home").hide(0);
