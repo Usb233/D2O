@@ -127,6 +127,7 @@
     color             : #eee;
     font-weight       : 100; 
     font-size         : 40px; 
+    cursor            : default;
     position          : relative;
     top               : 50px;
     margin            : 0; 
@@ -154,7 +155,7 @@
     width             : 100%;
     margin            : 0;
     position          : fixed;
-    z-index           : 2;
+    z-index           : 20;
     background-color  : #1976D2;
    /* box-shadow      : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
    */ transition      : height top 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
