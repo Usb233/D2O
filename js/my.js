@@ -6,6 +6,7 @@ $(document).ready(function() {
 	function clearLocalStorage() {
 		localStorage.clear();
 	}
+
 });
 
 /*顶栏动画*/
@@ -176,7 +177,6 @@ $(document).ready(function() {
 				};
 			a(), b()
 		}();
-           
 		window.changyan.api.config({
 			appid: 'cys7Xh1Ma',
 			conf: 'prod_89b60d1b2330787417e1b7db22466b5c'
