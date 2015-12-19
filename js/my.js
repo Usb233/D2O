@@ -1,12 +1,18 @@
 //以380px为断电自适应
 
+/*初始化*/
+$(document).ready(function() {
+	$(".bg").hide();
+	$(".spinner").hide();/*body{height:100%;:hidden;}*/
+	$("body").css({"overflow":"visible"})
+});
+
 /*闭包*/
 $(document).ready(function() {
 	/*清除localStorage*/
 	function clearLocalStorage() {
 		localStorage.clear();
 	}
-
 });
 
 /*顶栏动画*/
@@ -151,8 +157,9 @@ $(document).ready(function() {
 		$("#moreList").hide();
 	});
 
-	$("#QA").parent().click(function() {
-	
+    /*setting*/
+	$("#setting").parent().click(function() {
+
 	})
 
 });

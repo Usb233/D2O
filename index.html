@@ -10,10 +10,36 @@
   <meta name="theme-color" content="#1565C0"/>
   <!--css-->
   <link href="css/my.css" rel="stylesheet"/>
+  <style type="text/css">
+     @keyframes rotate {
+     0% {
+     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+     }
+     50% {
+     transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+     }
+     100% {
+     transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+     }
+     }
+     @keyframes background {
+     0% {
+     background-color: #27ae60;
+     }
+     50% {
+     background-color: #9b59b6;
+     }
+     100% {
+     background-color: #c0392b;
+     }
+     }
+
+     body{height:100%;overflow:hidden;}
+  </style>
   <!--js-->
-  <script src="js/jquery.js"></script>
-  <script src="js/my.js"></script>
-  <script src="js/pic.js"></script>
+  <script src="js/jquery.js" defer></script>
+  <script src="js/my.js" defer></script>
+  <script src="js/pic.js" defer></script>
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="images/Icon.png"/>
   <!-- tittle -->
@@ -21,6 +47,9 @@
 </head>
 
 <body>
+  <!-- 初始化遮罩 -->
+  <div class="bg" style="position: absolute; height: 100%; width: 100%; z-index: 999; background-color: #eee"></div>
+  <div class ="spinner" style="position:absolute; left: 40%; top:30%; z-index: 1000; width: 60px; height: 60px; margin: 60px; animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;"></div>
   <!-- menu -->
   <div class="top">
     <img src="images/back-ic.png" id="back" alt="返回"/>
