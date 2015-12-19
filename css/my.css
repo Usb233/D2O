@@ -142,12 +142,9 @@
       /*h1 {font-size : 36px;}*/
       /*.top{height   : 50px!important;}*/
       #moreIc{height  : 28px; width:28px;
-              right   : -8px;}
+              /*right   : -8px;*/}
       #back{height  : 28px; width:28px;
-              right   : -8px;}
-    }
-    @media (max-width: 450px) {
-      /*h1 {font-size   : 32px;}*/
+              /*right   : -8px;*/}
     }
 
     .top{

@@ -2,11 +2,30 @@
 
 /*初始化*/
 $(document).ready(function() {
-	$(".bg").hide();
-	$(".spinner").hide();/*body{height:100%;:hidden;}*/
-	$("body").css({"overflow":"visible"})
-});
+	setTimeout(function() {
+		$("#bg").fadeOut(280);
+		$("#spinner").fadeOut(280); /*body{height:100%;:hidden;}*/
+		$("body").css({
+			"overflow": "visible"
+		})
+	}, 500)
 
+	var top = $(window).scrollTop();
+	if (top > 0) {
+		$("h1").css({
+			"font-size": "26px"
+		});
+		$("h1").css({
+			"top": "11px"
+		});
+	};
+    if (top>=210) {
+    	$(".top").css({
+			"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
+		})
+    };
+
+});
 /*闭包*/
 $(document).ready(function() {
 	/*清除localStorage*/
@@ -95,8 +114,7 @@ $(document).ready(function() {
 
 	/*退出第二界面*/
 	$("#back").click(function() {
-		/*浪费了= =*/
-		/*$(".card").show();
+		$(".card").show();
 		$("h1").fadeIn(400);
 		$("#back").hide();
 		$("#moreIc").show();
@@ -128,8 +146,8 @@ $(document).ready(function() {
 			$(".top").css({
 				"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
 			})
-		}*/
-		window.location.reload();
+		}
+		/*window.location.reload();*/
 	});
 });
 
