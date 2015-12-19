@@ -152,7 +152,7 @@ $(document).ready(function() {
 
 	$("#QA").parent().click(function() {
 		/*! CHANGYAN2.5 2015-12-18 */
-		/*! function() {
+		! function() {
 			var a = function() {
 					void 0 === window.changyan && (window.changyan = {}, window.changyan.api = {}, window.changyan.api.config = function(a) {
 						window.changyan.api.tmpIsvPageConfig = a
@@ -180,45 +180,7 @@ $(document).ready(function() {
 		window.changyan.api.config({
 			appid: 'cys7Xh1Ma',
 			conf: 'prod_89b60d1b2330787417e1b7db22466b5c'
-		});*/
-
-		(function() {
-			var appid = 'cys7Xh1Ma';
-			var conf = 'cys7Xh1Ma';
-			var width = window.innerWidth || document.documentElement.clientWidth;
-			if (width < 960) {
-				window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>');
-			} else {
-				var loadJs = function(d, a) {
-					var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-					var b = document.createElement("script");
-					b.setAttribute("type", "text/javascript");
-					b.setAttribute("charset", "UTF-8");
-					b.setAttribute("src", d);
-					if (typeof a === "function") {
-						if (window.attachEvent) {
-							b.onreadystatechange = function() {
-								var e = b.readyState;
-								if (e === "loaded" || e === "complete") {
-									b.onreadystatechange = null;
-									a()
-								}
-							}
-						} else {
-							b.onload = a
-						}
-					}
-					c.appendChild(b)
-				};
-				loadJs("http://changyan.sohu.com/upload/changyan.js", function() {
-					window.changyan.api.config({
-						appid: appid,
-						conf: conf
-					})
-				});
-			}
-		})();
-
+		});
 
 		setTimeout(function() {
 			$("#SOHUCS").animate({
@@ -226,18 +188,6 @@ $(document).ready(function() {
 			})
 		}, 4000) /*依网络情况而定。。后期改进*/
 
-        /*$("#talkJs").attr("src","http://changyan.sohu.com/upload/changyan.js")
-        $("#talkJs").attr("src","js/talkJs1.js")*/
-
-		/*var responseHtml = '<scr' + 'ipt charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/changyan.js" ></scr' + 'ipt>';
-		$("head").innerHTML = eval(responseHtml);
-
-		$("head").innerHTML =   "<script type="text/javascript">
-		        window.changyan.api.config({
-		        appid: 'cys7Xh1Ma',
-		        conf: 'prod_89b60d1b2330787417e1b7db22466b5c'
-		    });
-		</script>";*/
 	})
 
 });
