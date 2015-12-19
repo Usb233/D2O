@@ -24,8 +24,8 @@ $(document).ready(function() {
 			"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
 		})
     };
-
 });
+
 /*闭包*/
 $(document).ready(function() {
 	/*清除localStorage*/
@@ -437,31 +437,52 @@ $(document).ready(function() {
 	})
 });
 
-/*卡片自适应居中*/
+/*卡片自适应居中*//*懒得fix bug了= =*/
 $(document).ready(function() {
+
+
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	var pad1 = (winWidth - 316) / 2;
-	var pad2 = (winWidth - 632) / 2;
-	var pad3 = (winWidth - 948) / 2;
-	if (winWidth < 316) {}
-	$(".home").css("padding-left", pad1);
-	if (winWidth < 632) {}
-	$(".home").css("padding-left", pad2);
-	if (winWidth < 948) {}
-	$(".home").css("padding-left", pad3);
-	/*改变尺寸*/
-	$(window).resize(function() {
-		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		var pad1 = (winWidth - 316) / 2;
+
 		var pad2 = (winWidth - 632) / 2;
 		var pad3 = (winWidth - 948) / 2;
-		if (winWidth < 316) {}
-		$(".home").css("padding-left", pad1);
-		if (winWidth < 632) {}
-		$(".home").css("padding-left", pad2);
-		if (winWidth < 948) {}
-		$(".home").css("padding-left", pad3);
-	});
+
+		if (winWidth > 632) {
+		$(".home").css("padding-left", pad2)};
+		if (winWidth > 948) {
+		$(".home").css("padding-left", pad3)};
+
+		// 改变尺寸
+		$(window).resize(function() {
+			var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+			var pad2 = (winWidth - 632) / 2;
+			var pad3 = (winWidth - 948) / 2;
+			if (winWidth >= 632  && winWidth > 380) {
+				$(".home").css("padding-left", pad2)
+			};
+			if (winWidth >= 948 && winWidth > 380) {
+				$(".home").css("padding-left", pad3)
+			};
+		});
+
+	if (winWidth >= 380) {
+		if (winWidth < 631) {
+			cLeft1 = (winWidth - 316) / 2;
+			$(".home").css("padding-left", cLeft1)
+			$(window).resize(function() {
+				var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+				cLeft2 = (winWidth - 316) / 2;
+				$(".home").css("padding-left", cLeft2)
+			});
+			$(".card").css("margin", "0px 8px 15px 8px")
+		};
+	}
+
+	if (winWidth >= 350) {
+		if (winWidth < 380) {
+			cLeft = (winWidth - 350) / 2;
+			$(".card").css("margin-left", cLeft)
+		};
+	};
 });
 
 /*自适应相关*/
@@ -482,10 +503,18 @@ $(document).ready(function() {
 		$("h1").css({
 			"top": "11px"
 		});
-		$(".LP").css({
-			"margin-top": "50px"
+		$(".card").css({
+			"width": "100%",
+			"margin": "5px 0px 5px 0px",
+			"border-radius":"0",
 		});
-	};
+		$(".img-title").css({
+			"top":"-55px",
+		})
+		$(".LP").css({
+			"margin-top": "40px"
+		});
+	}; 
 });
 
 /*检测平台、设备和操作系统*/
