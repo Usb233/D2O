@@ -522,17 +522,17 @@ $(document).ready(function() {
 			var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 			var pad2 = (winWidth - 632) / 2;
 			var pad3 = (winWidth - 948) / 2;
-			if (winWidth >= 632  && winWidth > 380) {
+			if (winWidth >= 632/*  && winWidth > 380*/) {
 				$(".home").css("padding-left", pad2)
 			};
-			if (winWidth >= 948 && winWidth > 380) {
+			if (winWidth >= 948/* && winWidth > 380*/) {
 				$(".home").css("padding-left", pad3)
 			};
 		});
 
 	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		if (winWidth <= 635 && winWidth >= 630) {
+		if (winWidth <= 640 && winWidth >= 620) {
 			setTimeout(function() {
 				window.location.reload()
 			}, 500)
