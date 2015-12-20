@@ -485,7 +485,7 @@ $(document).ready(function() {
 
 	if (winWidth >= 350) {
 		if (winWidth < 380) {
-			cLeft = (winWidth - 350) / 2;alert(cLeft)
+			cLeft = (winWidth - 350) / 2;
 			$(".home").css("padding-left", cLeft)
 		};
 	};

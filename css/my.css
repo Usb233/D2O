@@ -153,6 +153,7 @@
     min-width         : 270px;
     margin            : 0;
     position          : fixed;
+    /*border-bottom: solid #eee 2px;*/
     z-index           : 20;
     background-color  : #1976D2;
    /* box-shadow      : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
