@@ -437,12 +437,9 @@ $(document).ready(function() {
 	})
 });
 
-/*卡片自适应居中*//*懒得fix bug了= =*/
+/*卡片自适应居中*/
 $(document).ready(function() {
-
-
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
 		var pad2 = (winWidth - 632) / 2;
 		var pad3 = (winWidth - 948) / 2;
 
@@ -464,8 +461,17 @@ $(document).ready(function() {
 			};
 		});
 
+	$(window).resize(function() {
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth <= 635 && winWidth >= 630) {
+			setTimeout(function() {
+				window.location.reload()
+			}, 500)
+		};
+	});
+
 	if (winWidth >= 380) {
-		if (winWidth < 631) {
+		if (winWidth <= 632) {
 			cLeft1 = (winWidth - 316) / 2;
 			$(".home").css("padding-left", cLeft1)
 			$(window).resize(function() {
@@ -479,8 +485,8 @@ $(document).ready(function() {
 
 	if (winWidth >= 350) {
 		if (winWidth < 380) {
-			cLeft = (winWidth - 350) / 2;
-			$(".card").css("margin-left", cLeft)
+			cLeft = (winWidth - 350) / 2;alert(cLeft)
+			$(".home").css("padding-left", cLeft)
 		};
 	};
 });
@@ -514,6 +520,7 @@ $(document).ready(function() {
 		$(".LP").css({
 			"margin-top": "40px"
 		});
+		$(".card > img:first-child").css("border-radius","0")
 	}; 
 });
 
