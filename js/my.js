@@ -228,13 +228,18 @@ $(document).ready(function() {
 		if (a > 2) {
 			a = 1
 		};
+
+		var t = 350;
+        var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	    if (winWidth <= 380) {t = 0};
+
 		switch (a) {
 			/*(this为.show-ic)*/
 			case 1:
 				/*open*/
 				$(this).data("cardSwitch", "open")
 				$(this).css("transform", "rotate(180deg)");
-				$(this).next().slideDown(350, 'easeInOutQuart');
+				$(this).next().slideDown(t, 'easeInOutQuart');
 				$(this).prev().css({
 					"margin": "27px 0px 10px 0px",
 					"font-size": "22px"
@@ -246,7 +251,7 @@ $(document).ready(function() {
 				/*close*/
 				$(this).data("cardSwitch", "close")
 				$(this).css("transform", "rotate(0deg)");
-				$(this).next().slideUp(350, 'easeInOutSine');
+				$(this).next().slideUp(t, 'easeInOutSine');
 				$(this).prev().css({
 					"margin": "35px 0px 8px 0px",
 					"font-size": "23px"
