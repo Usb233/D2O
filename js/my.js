@@ -160,29 +160,93 @@ $(document).ready(function() {
 
 /*顶栏选项*/
 $(document).ready(function() {
+	$("#moreList>*").css("opacity","0");
+	
+	/*几个动画含树*/
+	function zoomOut(selector) {
+		var n = 100;
+		var intervalID = window.setInterval(myCallback, 13);
+		function myCallback() {
+			n = n - 10;
+			if (n <= 2) {
+				n = 2;
+				window.clearInterval(intervalID)
+			};
+			$(selector).css("border-radius", n + "%");
+		}
+	}
+
+	function zoomIn(selector) {
+		var n = 2;
+		var intervalID = window.setInterval(myCallback, 13);
+		function myCallback() {
+			n = n + 10;
+			if (n >= 100) {
+				n = 100;
+				window.clearInterval(intervalID)
+			};
+			$(selector).css("border-radius", n + "%");
+		}
+	}
+	
+	function opacityOut(selector) {
+		var op = 0;
+		var intervalID = window.setInterval(myCallback, 13);
+		function myCallback() {
+			op = op + 5;
+			if (op >= 100) {
+				op = 100;
+				window.clearInterval(intervalID)
+			};
+			$(selector).css("opacity", op/100);
+		}
+	}
+
+	function opacityIn(selector) {
+		var op = 100;
+		var intervalID = window.setInterval(myCallback, 13);
+		function myCallback() {
+			op = op - 35;
+			if (op <= 0) {
+				op = 0;
+				window.clearInterval(intervalID)
+			};
+			$(selector).css("opacity", op / 100);
+		}
+	}
+	
 	$("#moreList").hide();
 	$("#blank").hide();
 
 	$("#moreIc").click(function() {
-		$("#moreList").show();
+		$("#moreList").show(240);
+		zoomOut("#moreList");
+		setTimeout(function(){opacityOut("#moreList>*")},200);
 		$("#blank").show();
 	});
+
 	$("#moreList").find("*").click(function() {
-		$("#moreList").hide();
+		$("#moreList").hide(240);
+		zoomIn("#moreList");
+        opacityIn("#moreList>*");
 		$("#blank").hide();
 	});
 
 	$("#blank").mousedown(function() {
 		$(this).hide();
-		$("#moreList").hide();
+		$("#moreList").hide(240);
+		zoomIn("#moreList");
+		 opacityIn("#moreList>*");
 	});
 
 	$(document).bind("scroll", function() {
 		$("#blank").hide();
-		$("#moreList").hide();
+		$("#moreList").hide(240);
+		zoomIn("#moreList");
+		 opacityIn("#moreList>*");
 	});
 
-    /*setting*/
+    // setting
 	$("#setting").parent().click(function() {
 
 	})
