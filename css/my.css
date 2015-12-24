@@ -72,7 +72,7 @@
     width             : 32px;
     position          : absolute;
     z-index           : 3;
-    left              : -4px;
+    /*left              : 4px;*/
     top               : 4px;
     cursor            : pointer;
     display           : inline-block;
@@ -84,7 +84,7 @@
     width             : 32px;
     position          : absolute;
     z-index           : 3;
-    right             : -6px;
+    right             : 0px;
     top               : 4px;
     cursor            : pointer;
     display           : inline-block;
@@ -182,7 +182,7 @@
     background-color  : #fff;
     width             : 300px;
     min-width         : 270px;
-    max-width         : 350px;
+    max-width         : 320px;
     margin            : 0px 8px 15px 8px;
     border-radius     : 2px;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);

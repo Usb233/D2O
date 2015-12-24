@@ -552,11 +552,14 @@ $(document).ready(function() {
 		};
 	}
 
-	if (winWidth >= 350) {
+	if (winWidth >= 320) {
 		if (winWidth < 380) {
-			cLeft = (winWidth - 350) / 2;
+			cLeft = (winWidth - 320) / 2;
 			$(".home").css("padding-left", cLeft)
 		};
+		$(".LP").css({
+			"margin-top": "40px"
+		});
 	};
 });
 
@@ -576,7 +579,8 @@ $(document).ready(function() {
 			"font-size": "26px"
 		});
 		$("h1").css({
-			"top": "11px"
+			"top": "18px",
+			"font-size":"20px"
 		});
 		$(".card").css({
 			"width": "100%",
@@ -587,7 +591,7 @@ $(document).ready(function() {
 			"top":"-55px",
 		})
 		$(".LP").css({
-			"margin-top": "40px"
+			"margin-top": "50px"
 		});
 		$(".card > img:first-child").css("border-radius","0")
 	}; 
@@ -608,6 +612,6 @@ $(document).ready(function() {
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
 		//Android优化
-		$("h1").css("top", "14px")
+		//$("h1").css("top", "14px")
 	};
 });
