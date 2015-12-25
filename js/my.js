@@ -530,6 +530,7 @@ $(document).ready(function() {
 			};
 		});
 
+	/*会引发bug系列
 	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if (winWidth <= 640 && winWidth >= 620) {
@@ -537,7 +538,7 @@ $(document).ready(function() {
 				window.location.reload()
 			}, 500)
 		};
-	});
+	});*/
 
 	if (winWidth >= 380) {
 		if (winWidth <= 632) {
@@ -558,7 +559,10 @@ $(document).ready(function() {
 			$(".home").css("padding-left", cLeft)
 		};
 		$(".LP").css({
-			"margin-top": "40px"
+			//"margin-top": "40px"
+		});
+		$(".h1").css({
+			"top": "20px"
 		});
 	};
 });
@@ -566,7 +570,6 @@ $(document).ready(function() {
 /*自适应相关*/
 $(document).ready(function() {
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	console.log(winWidth);
 
 	if (winWidth <= 380) {
 		$(".top-bg").css({
@@ -614,4 +617,16 @@ $(document).ready(function() {
 		//Android优化
 		//$("h1").css("top", "14px")
 	};
+	
+	/*test*/
+	if(system.win || system.mac){
+		$(window).resize(function() {
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth <= 640 && winWidth >= 620) {
+			setTimeout(function() {
+				window.location.reload()
+			}, 500)
+		};
+	});
+	}
 });
