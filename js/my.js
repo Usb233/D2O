@@ -162,12 +162,12 @@ $(document).ready(function() {
 $(document).ready(function() {
 	$("#moreList>*").css("opacity","0");
 	
-	/*几个动画含树*/
+    /*几个动画含树*/
 	function zoomOut(selector) {
 		var n = 100;
 		var intervalID = window.setInterval(myCallback, 13);
 		function myCallback() {
-			n = n - 10;
+			n = n - 13;
 			if (n <= 2) {
 				n = 2;
 				window.clearInterval(intervalID);
@@ -180,7 +180,7 @@ $(document).ready(function() {
 		var n = 2;
 		var intervalID = window.setInterval(myCallback, 13);
 		function myCallback() {
-			n = n + 10;
+			n = n + 13;
 			if (n >= 100) {
 				n = 100;
 				window.clearInterval(intervalID);
@@ -245,12 +245,32 @@ $(document).ready(function() {
 		zoomIn("#moreList");
 		opacityIn("#moreList>*");
 	});
+   
+});
 
-    // setting
-	$("#setting").parent().click(function() {
-
+/*setting*/
+$(document).ready(function() {
+    // settingLi
+	$("#settingLi").parent().click(function() {
+		$(".setting").css("display","block")
+	});
+    $("#back").click(function() {
+    	$(".setting").css("display","none")
 	});
 
+	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	$(".setting>*>div").css("width", winWidth - 48 + "px");
+	$(window).resize(function() {
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		$(".setting>*>div").css("width", winWidth - 48 + "px")
+	})
+    
+    //themeColor
+	$("#themeColor").change(function() {
+		themeColor = $("#themeColor").val();
+		$(".themecolor").attr("theme-color",themeColor);
+	});
+	
 });
 
 /*主页*/
