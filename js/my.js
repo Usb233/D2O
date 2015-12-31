@@ -294,30 +294,20 @@ $(document).ready(function() {
 	
 	//secondColor
 	//alert($("::selection").css("background"));
-	/*if(localStorage.secondColor) {
-		$("#themeColor").val(localStorage.themeColor);
-		themeColor = $("#themeColor").val();
-		localStorage.themeColor = themeColor;
-		$(".themecolor").attr("content",themeColor);
-		$(".top").css("background-color",themeColor);
-		$(".top-bg").css("background-color",themeColor);
-		$(".radio .outer").css("border","3px solid "+themeColor);
-		$("input").focus(function(){$(this).css("border-color",themeColor);});
-		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
-		$(".settingTittle").css("color",themeColor);
+	if(localStorage.secondColor) {
+		$("#themeColor").val(localStorage.secondColor);
+		secondColor = $("#themeColor").val();
+		localStorage.secondColor = secondColor;
+	    $(".radio .inner").css("background-color",secondColor);
+	    $("option").css("border","1px solid "+ secondColor);
 	}
 	
-	$("#themeColor").change(function() {
-		themeColor = $("#themeColor").val();
-		localStorage.themeColor = themeColor;
-		$(".themecolor").attr("content",themeColor);
-		$(".top").css("background-color",themeColor);
-		$(".top-bg").css("background-color",themeColor);
-		$(".radio .outer").css("border","3px solid "+themeColor);
-		$("input").focus(function(){$(this).css("border-color",themeColor);});
-		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
-	    $(".settingTittle").css("color",themeColor);
-	});*/
+	$("#secondColor").change(function() {
+		secondColor = $("#secondColor").val();
+		localStorage.secondColor = secondColor;
+	    $(".radio .inner").css("background-color",secondColor);
+	    $("option").css("border","1px solid "+ secondColor);
+	});
 	
 });
 
