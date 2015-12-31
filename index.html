@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html manifest="tcCalc.appcache">
+<html>
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0,initial-scale=1,user-scalable=no">
   <meta name="keywords" content="tesla coil,tesla caculater, 特斯拉线圈, 特斯拉线圈设计器"/>
   <meta name="description" content="改进版特斯拉线圈设计器"/>
   <meta name="robots" content="all"/>
@@ -11,30 +11,17 @@
   <!--css-->
   <link href="css/my.css" rel="stylesheet"/>
   <style type="text/css">
-     @keyframes rotate {
-     0% {
-     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+     @keyframes rotate{
+     0% {transform: perspective(120px) rotateX(0deg) rotateY(0deg);}
+     50% {transform: perspective(120px) rotateX(-180deg) rotateY(0deg);}
+     100% {transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);}
      }
-     50% {
-     transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+     @keyframes background{
+     0% {background-color: #27ae60;}
+     50% {background-color: #9b59b6;}
+     100% {background-color: #c0392b;}
      }
-     100% {
-     transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
-     }
-     }
-     @keyframes background {
-     0% {
-     background-color: #27ae60;
-     }
-     50% {
-     background-color: #9b59b6;
-     }
-     100% {
-     background-color: #c0392b;
-     }
-     }
-
-     body{height:100%;overflow:hidden;}
+     body{height:100%; overflow:hidden;}
   </style>
   <!--js-->
   <script src="js/jquery.js" defer></script>
@@ -286,23 +273,23 @@
     </div>
   </div>
 
-  <div class="setting">
+  <div class="setting" id="set1">
+	<h2 class="settingTittle">外观</h2>
     <div id="themeColorLi">
       <img src="images/color-ic.png" class="settingIc ic" />  
       <div>
-        <p>修改状态栏颜色(实验性)</p><br/>
-        <div class="p2">修改 theme-color，仅对chrome有效</div>
+        <p class="">主色调</p><br/>
+        <div class="p2">主题主色调，默认为#1565c0</div>
         <input value="#1565C0" id="themeColor"/>
       </div>
     </div>
     <div class="">
-      <div></div>
-    </div>
-    <div class="">
-      <div></div>
-    </div>
-    <div class="">
-      <div></div>
+      <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
+	  <div>
+	    <p class="">强调色</p><br/>
+		<div class="p2">主题强调色，默认为#f08b3b</div>
+	    <input value="#1565C0" id="secondColor"/>
+	  </div>
     </div>
     <div class="">
       <div></div>
@@ -311,6 +298,33 @@
       <div></div>
     </div>
   </div>
+  
+  <div class="setting" id="set2">
+	<h2 class="settingTittle">外观</h2>
+    <div id="themeColorLi">
+      <img src="images/color-ic.png" class="settingIc ic" />  
+      <div>
+        <p class="">主色调</p><br/>
+        <div class="p2">asdxc</div>
+        <input value="#1565C0" id="themeColor"/>
+      </div>
+    </div>
+    <div class="">
+      <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
+	  <div>
+	    <p class="nop2">强调色</p><br/>
+		<p class="p2"></p>
+	    <input value="#1565C0" id="secondColor"/>
+	  </div>
+    </div>
+    <div class="">
+      <div></div>
+    </div>
+    <div class="">
+      <div></div>
+    </div>
+  </div>
+  
 </body>
 
 </html>

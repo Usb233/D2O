@@ -1,4 +1,4 @@
-//以380px为断电自适应
+//以380px为断点自适应
 
 /*初始化*/
 $(document).ready(function() {
@@ -252,34 +252,74 @@ $(document).ready(function() {
 $(document).ready(function() {
     // settingLi
 	$("#settingLi").parent().click(function() {
-		$(".setting").css("display","block")
+		$(".setting").css("display","block");
 	});
     $("#back").click(function() {
-    	$(".setting").css("display","none")
+    	$(".setting").css("display","none");
 	});
 
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	$(".setting>*>div").css("width", winWidth - 48 + "px");
+	$(".setting>*>div").css("width", winWidth - 65 + "px");
 	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		$(".setting>*>div").css("width", winWidth - 48 + "px")
-	})
+		$(".setting>*>div").css("width", winWidth - 65 + "px");
+	});
     
     //themeColor
+	//此localstorage用法在IE会出错(TдT)
+	if(localStorage.themeColor) {
+		$("#themeColor").val(localStorage.themeColor);
+		themeColor = $("#themeColor").val();
+		localStorage.themeColor = themeColor;
+		$(".themecolor").attr("content",themeColor);
+		$(".top").css("background-color",themeColor);
+		$(".top-bg").css("background-color",themeColor);
+		$(".radio .outer").css("border","3px solid "+themeColor);
+		$("input").focus(function(){$(this).css("border-color",themeColor);});
+		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
+		$(".settingTittle").css("color",themeColor);
+	}
+	
 	$("#themeColor").change(function() {
 		themeColor = $("#themeColor").val();
-		$(".themecolor").attr("theme-color",themeColor);
+		localStorage.themeColor = themeColor;
+		$(".themecolor").attr("content",themeColor);
+		$(".top").css("background-color",themeColor);
+		$(".top-bg").css("background-color",themeColor);
+		$(".radio .outer").css("border","3px solid "+themeColor);
+		$("input").focus(function(){$(this).css("border-color",themeColor);});
+		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
+	    $(".settingTittle").css("color",themeColor);
 	});
 	
+	//secondColor
+	//alert($("::selection").css("background"));
+	/*if(localStorage.secondColor) {
+		$("#themeColor").val(localStorage.themeColor);
+		themeColor = $("#themeColor").val();
+		localStorage.themeColor = themeColor;
+		$(".themecolor").attr("content",themeColor);
+		$(".top").css("background-color",themeColor);
+		$(".top-bg").css("background-color",themeColor);
+		$(".radio .outer").css("border","3px solid "+themeColor);
+		$("input").focus(function(){$(this).css("border-color",themeColor);});
+		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
+		$(".settingTittle").css("color",themeColor);
+	}
+	
+	$("#themeColor").change(function() {
+		themeColor = $("#themeColor").val();
+		localStorage.themeColor = themeColor;
+		$(".themecolor").attr("content",themeColor);
+		$(".top").css("background-color",themeColor);
+		$(".top-bg").css("background-color",themeColor);
+		$(".radio .outer").css("border","3px solid "+themeColor);
+		$("input").focus(function(){$(this).css("border-color",themeColor);});
+		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
+	    $(".settingTittle").css("color",themeColor);
+	});*/
+	
 });
-
-/*主页*/
-/*$(document).ready(function() {
-	$(".home").hide(0);
-	$(".LP > .lazyload").load(function() {
-		$(".home").show(0);
-	});
-});*/
 
 /*卡片开关*/
 $(document).ready(function() {
