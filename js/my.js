@@ -98,7 +98,7 @@ $(document).ready(function() {
 	/*第二界面*/
 	$("#moreList").find("*").click(function() {
 		$(".card").hide();
-		$("h1").fadeOut(400);
+		$("h1").fadeOut(0);
 		$("#back").show();
 		$("#moreIc").hide();
 
@@ -122,7 +122,7 @@ $(document).ready(function() {
 	/*退出第二界面*/
 	$("#back").click(function() {
 		$(".card").show();
-		$("h1").fadeIn(400);
+		$("h1").fadeIn(280);
 		$("#back").hide();
 		$("#moreIc").show();
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -249,20 +249,20 @@ $(document).ready(function() {
 });
 
 /*setting*/
-$(document).ready(function() {
+$(document).ready(function() {  
     // settingLi
 	$("#settingLi").parent().click(function() {
-		$(".setting").css("display","block");
+		$(".set").css("display","block");
 	});
     $("#back").click(function() {
-    	$(".setting").css("display","none");
+    	$(".set").css("display","none");
 	});
 
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-	$(".setting>*>div").css("width", winWidth - 65 + "px");
+	$(".set>*>div").css("width", winWidth - 65 + "px");
 	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		$(".setting>*>div").css("width", winWidth - 65 + "px");
+		$(".set>*>div").css("width", winWidth - 65 + "px");
 	});
     
     //themeColor
@@ -277,7 +277,7 @@ $(document).ready(function() {
 		$(".radio .outer").css("border","3px solid "+themeColor);
 		$("input").focus(function(){$(this).css("border-color",themeColor);});
 		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
-		$(".settingTittle").css("color",themeColor);
+		$(".set > * > *>#themeColor").css('background-color', themeColor);
 	}
 	
 	$("#themeColor").change(function() {
@@ -289,17 +289,23 @@ $(document).ready(function() {
 		$(".radio .outer").css("border","3px solid "+themeColor);
 		$("input").focus(function(){$(this).css("border-color",themeColor);});
 		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
-	    $(".settingTittle").css("color",themeColor);
+	    $(".set > * > *>#themeColor").css('background-color', themeColor);
 	});
 	
 	//secondColor
-	//alert($("::selection").css("background"));
 	if(localStorage.secondColor) {
 		$("#themeColor").val(localStorage.secondColor);
 		secondColor = $("#themeColor").val();
 		localStorage.secondColor = secondColor;
 	    $(".radio .inner").css("background-color",secondColor);
 	    $("option").css("border","1px solid "+ secondColor);
+		$(".settingTittle").css("color",secondColor);
+		$(".set > * > *>#secondColor").css('background-color', secondColor);
+		/*selection text css*/
+		var styleSheet;
+		styleSheet = document.styleSheets[1];
+		styleSheet.deleteRule(0);
+		styleSheet.insertRule("::selection" + "{" + "background:" + secondColor + "}", 0);
 	}
 	
 	$("#secondColor").change(function() {
@@ -307,8 +313,16 @@ $(document).ready(function() {
 		localStorage.secondColor = secondColor;
 	    $(".radio .inner").css("background-color",secondColor);
 	    $("option").css("border","1px solid "+ secondColor);
+	    $(".settingTittle").css("color",secondColor);
+	    $(".set > * > *>#secondColor").css('background-color', secondColor);
+        /*selection text css*/
+		var styleSheet;
+		styleSheet = document.styleSheets[1];
+		styleSheet.deleteRule(0);
+		styleSheet.insertRule("::selection" + "{" + "background:" + secondColor + "}", 0);
 	});
 	
+
 });
 
 /*卡片开关*/

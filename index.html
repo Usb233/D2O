@@ -39,11 +39,11 @@
   <!-- Icon -->
   <link rel="icon" type="image/x-icon" href="images/Icon.png"/>
   <!-- tittle -->
-  <title>特斯拉线圈设计器</title>
+  <title>特斯拉线圈设计器</title> 
 </head>
 
 <body>
-  <!-- 初始化遮罩 -->
+  <!-- 启动动画 -->
   <div id="bg" style="position: fixed; height: 100%; width: 100%; z-index: 999; background-color: #eee"></div>
   <div id ="spinner" style="position:fixed; left: 20%; top:10%; z-index: 1000; width: 60px; height: 60px; margin: 0px; animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;"></div>
   
@@ -282,56 +282,61 @@
     </div>
   </div>
 
-  <div class="setting" id="set1">
-	<h2 class="settingTittle">外观</h2>
-    <div id="themeColorLi">
-      <img src="images/color-ic.png" class="settingIc ic" />  
-      <div>
-        <p class="">主色调</p><br/>
-        <div class="p2">主题主色调，默认为#1565c0</div>
-        <input value="#1565C0" id="themeColor"/>
+  <div class="setting">
+    <div class="set" id="set1">
+      <h2 class="settingTittle">外观</h2>
+      <div id="themeColorLi">
+        <img src="images/color-ic.png" class="settingIc ic" />  
+        <div>
+          <p class="">主色调</p>
+          <br/>  
+          <div class="p2">主题主色调，默认为#1565c0</div>
+          <div value="#1565C0" id="themeColor" class="colorSelect"></div>
+        </div>
+      </div>
+      <div class="">
+        <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
+        <div>
+          <p class="">强调色</p>
+          <br/>  
+          <div class="p2">主题强调色，默认为#f08b3b</div>
+          <div value="#f08b3b" id="secondColor" class="colorSelect"></div>
+        </div>
+      </div>
+      <div class="">
+        <div></div>
+      </div>
+      <div class="">
+        <div></div>
       </div>
     </div>
-    <div class="">
-      <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
-	  <div>
-	    <p class="">强调色</p><br/>
-		<div class="p2">主题强调色，默认为#f08b3b</div>
-	    <input value="#f08b3b" id="secondColor"/>
-	  </div>
-    </div>
-    <div class="">
-      <div></div>
-    </div>
-    <div class="">
-      <div></div>
-    </div>
-  </div>
-  
-  <div class="setting" id="set2">
-	<h2 class="settingTittle">高级</h2>
-    <div id="themeColorLi">
-      <img src="images/color-ic.png" class="settingIc ic" />  
-      <div>
-        <p class="">###</p><br/>
-        <div class="p2">###</div>
+    <div class="set" id="set2">
+      <h2 class="settingTittle">高级</h2>
+      <div id="themeColorLi">
+        <img src="images/color-ic.png" class="settingIc ic" />  
+        <div>
+          <p class="">###</p>
+          <br/>  
+          <div class="p2">###</div>
+        </div>
+      </div>
+      <div class="">
+        <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
+        <div>
+          <p class="nop2">###</p>
+          <br/>  
+          <p class="p2"></p>
+        </div>
+      </div>
+      <div class="">
+        <div></div>
+      </div>
+      <div class="">
+        <div></div>
       </div>
     </div>
-    <div class="">
-      <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
-	  <div>
-	    <p class="nop2">###</p><br/>
-		<p class="p2"></p>
-	  </div>
-    </div>
-    <div class="">
-      <div></div>
-    </div>
-    <div class="">
-      <div></div>
-    </div>
   </div>
-  
+
 </body>
 
 </html>
