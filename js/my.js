@@ -264,7 +264,15 @@ $(document).ready(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		$(".set>*>div").css("width", winWidth - 65 + "px");
 	});
-    
+	
+	//弄不好
+	$(".set > div").mousedown(function(){
+	    //$(this).css("background-color","#492");
+    });
+	$(".set > div").mouseup(function(){
+	    //$(this).css("background-color","#fff");
+    });
+		
     //themeColor
 	//此localstorage用法在IE会出错(TдT)
 	if(localStorage.themeColor) {
