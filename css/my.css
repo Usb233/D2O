@@ -434,6 +434,7 @@
     position          : relative;
     height            : 100%;
     margin-left       : 65px;
+    z-index: 999;
     /*float           : right;*/
     border-bottom     : solid 1px #E0E0E0;
     }
@@ -462,6 +463,7 @@
     border-radius     : 100%;
     width             : 35px;
     height            : 35px;
+    transition        : all 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 	
 	#themeColor{
@@ -471,6 +473,13 @@
 	#secondColor{
 	background-color  : #f08b3b;
 	}
+
+    .colorSelect > input{
+    width             : 96px;
+    top: -8px;
+    left: 0px;
+    background-color  : rgb(235, 235, 228);
+    }
 	
 	.settingTittle{
     position          : relative;
@@ -500,6 +509,7 @@
     left              : 12px;
     font-size         : 18px;
     color             : #202020;
+    transition        : all 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     .nop2{
@@ -512,22 +522,21 @@
     left              : 12px;
     font-size         : 15px;
     color             : #737373;
+    }            
+	
+    .floatLayer{
+    position          : fixed;
+    z-index           : 999;
+    background-color  : #541;
+    width             : 80%;
+    /* need js -->> css */
+    right             : 45px;
+    height            : 80%;
     }
 	
-	.floatLayer{
-	position:absolute;
-	height:80%;
-	max-height:400px;
-	width:80%;
-	max-width:400px;
-	padding:10px 10px 10px 10px;
-	background-color:#fff;
-	box-shadow        : 0 10px 10px 0 rgba(0,0,0,.19), 0 6px 3px 0 rgba(0,0,0,.23);
-	}
-	
-	.TCInput , .SCInput{
-    height:90%!important;
-	margin-left:5%;
+	floatInput{
+   /* height:90%!important;
+	margin-left:5%;*/
     
 	}
 	

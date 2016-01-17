@@ -266,18 +266,18 @@ $(document).ready(function() {
 	});
 	
 	//弄不好
-	$(".set > div").mousedown(function(){
-	    //$(this).css("background-color","#492");
+    /*$(".set > div").mousedown(function(){
+	    $(this).css("background-color","#E0E0E0");
     });
 	$(".set > div").mouseup(function(){
-	    //$(this).css("background-color","#fff");
-    });
+	    $(this).css("background-color","#fff");
+    });*/
 		
     //themeColor
 	//此localstorage用法在IE会出错(TдT)
 	if(localStorage.themeColor) {
-		$("#themeColor").val(localStorage.themeColor);
-		themeColor = $("#themeColor").val();
+		$("#themeColorInput").val(localStorage.themeColor);
+		themeColor = $("#themeColorInput").val();
 		localStorage.themeColor = themeColor;
 		$(".themecolor").attr("content",themeColor);
 		$(".top").css("background-color",themeColor);
@@ -288,8 +288,8 @@ $(document).ready(function() {
 		$(".set > * > *>#themeColor").css('background-color', themeColor);
 	}
 	
-	$("#themeColor").change(function() {
-		themeColor = $("#themeColor").val();
+	$("#themeColorInput").change(function() {
+		themeColor = $("#themeColorInput").val();
 		localStorage.themeColor = themeColor;
 		$(".themecolor").attr("content",themeColor);
 		$(".top").css("background-color",themeColor);
@@ -302,8 +302,8 @@ $(document).ready(function() {
 	
 	//secondColor
 	if(localStorage.secondColor) {
-		$("#themeColor").val(localStorage.secondColor);
-		secondColor = $("#themeColor").val();
+		$("#secondColorInput").val(localStorage.secondColor);
+		secondColor = $("#themeColorInput").val();
 		localStorage.secondColor = secondColor;
 	    $(".radio .inner").css("background-color",secondColor);
 	    $("option").css("border","1px solid "+ secondColor);
@@ -316,8 +316,8 @@ $(document).ready(function() {
 		styleSheet.insertRule("::selection" + "{" + "background:" + secondColor + "}", 0);
 	}
 	
-	$("#secondColor").change(function() {
-		secondColor = $("#secondColor").val();
+	$("#secondColorInput").change(function() {
+		secondColor = $("#secondColorInput").val();
 		localStorage.secondColor = secondColor;
 	    $(".radio .inner").css("background-color",secondColor);
 	    $("option").css("border","1px solid "+ secondColor);
@@ -329,8 +329,24 @@ $(document).ready(function() {
 		styleSheet.deleteRule(0);
 		styleSheet.insertRule("::selection" + "{" + "background:" + secondColor + "}", 0);
 	});
-	
 
+	$(".set > * > *>.colorSelect").click(function() {
+		$(this).css({
+			"border-radius": "2px",
+			"height": "30px",
+			"width": "100px",
+			"background-color": "rgb(235, 235, 228)",
+			"top": "20px"
+		});
+
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth <= 400) {
+			$(this).prev().fadeOut(320);
+			$(this).prev().prev().prev().css('top', '16px');
+		};
+	})
+
+    
 });
 
 /*卡片开关*/
