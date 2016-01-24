@@ -20,8 +20,8 @@ images/ZC-title.png
 images/ZC.png
 images/more-vert-ic.png
 images/back-ic.png
-images/settings-ic
-images/color-ic
+images/settings-ic.png
+images/color-ic.png
 
 # Use from network if available
 NETWORK:
