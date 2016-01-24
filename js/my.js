@@ -1,15 +1,16 @@
-//以380px为断点自适应
+//the small refers to any device screen width <=380px :)
 
-/*初始化*/
+/*initial*/
 $(document).ready(function() {
 	setTimeout(function() {
 		$("#bg").fadeOut(280);
-		$("#spinner").fadeOut(280); /*body{height:100%;:hidden;}*/
+		$("#spinner").fadeOut(280);
 		$("body").css({
 			"overflow": "visible"
 		});
 	}, 500);
 
+	//some bug fix in here~~
 	var top = $(window).scrollTop();
 	if (top > 0) {
 		$("h1").css({
@@ -26,21 +27,13 @@ $(document).ready(function() {
     };
 });
 
-/*闭包*/
-$(document).ready(function() {
-	/*清除localStorage*/
-	function clearLocalStorage() {
-		localStorage.clear();
-	}
-});
-
-/*顶栏动画*/
+/*top bar animation*/
 $(document).ready(function() {
 	$(document).bind("scroll", function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var top = $(window).scrollTop();
 		console.log(top);
-		var topH = $(".top").css("height"); /*top高度*/
+		var topH = $(".top").css("height"); /*top height*/
 		var top_h = topH.substring(0, 2);
 		var top_shadow = 210 - top_h;
 
@@ -91,14 +84,14 @@ $(document).ready(function() {
 	});
 });
 
-/*界面逻辑*/
+/*panel switch*/
 $(document).ready(function() {
 	$("#back").hide();
 
-	/*第二界面*/
+	/*another panel*/
 	$("#moreList").find("*").click(function() {
 		$(".card").hide();
-		$("h1").fadeOut(0);
+		$("h1").html("设置&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
 		$("#back").show();
 		$("#moreIc").hide();
 
@@ -119,10 +112,10 @@ $(document).ready(function() {
 		};
 	});
 
-	/*退出第二界面*/
+	/*exit another panel*/
 	$("#back").click(function() {
 		$(".card").show();
-		$("h1").fadeIn(280);
+		$("h1").html("特斯拉线圈设计器");
 		$("#back").hide();
 		$("#moreIc").show();
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -158,16 +151,16 @@ $(document).ready(function() {
 	});
 });
 
-/*顶栏选项*/
+/*top bar*/
 $(document).ready(function() {
 	$("#moreList>*").css("opacity","0");
 	
-    /*几个动画含树*/
+    /*custom animation function*/
 	function zoomOut(selector) {
-		var n = 100;
+		var n = 50;
 		var intervalID = window.setInterval(myCallback, 13);
 		function myCallback() {
-			n = n - 13;
+			n = n - 7.7;
 			if (n <= 2) {
 				n = 2;
 				window.clearInterval(intervalID);
@@ -180,7 +173,7 @@ $(document).ready(function() {
 		var n = 2;
 		var intervalID = window.setInterval(myCallback, 13);
 		function myCallback() {
-			n = n + 13;
+			n = n + 7.7;
 			if (n >= 100) {
 				n = 100;
 				window.clearInterval(intervalID);
@@ -219,14 +212,14 @@ $(document).ready(function() {
 	$("#blank").hide();
 
 	$("#moreIc").click(function() {
-		$("#moreList").show(240);
+		$("#moreList").show(140);
 		zoomOut("#moreList");
-		setTimeout(function(){opacityOut("#moreList>*")},200);
+		setTimeout(function(){opacityOut("#moreList>*");},200);
 		$("#blank").show();
 	});
 
 	$("#moreList").find("*").click(function() {
-		$("#moreList").hide(240);
+		$("#moreList").hide(140);
 		zoomIn("#moreList");
         opacityIn("#moreList>*");
 		$("#blank").hide();
@@ -234,14 +227,14 @@ $(document).ready(function() {
 
 	$("#blank").mousedown(function() {
 		$(this).hide();
-		$("#moreList").hide(240);
+		$("#moreList").hide(140);
 		zoomIn("#moreList");
-		 opacityIn("#moreList>*");
+	    opacityIn("#moreList>*");
 	});
 
 	$(document).bind("scroll", function() {
 		$("#blank").hide();
-		$("#moreList").hide(240);
+		$("#moreList").hide(140);
 		zoomIn("#moreList");
 		opacityIn("#moreList>*");
 	});
@@ -265,7 +258,7 @@ $(document).ready(function() {
 		$(".set>*>div").css("width", winWidth - 65 + "px");
 	});
 	
-	//弄不好
+	//can't work in Android..
     /*$(".set > div").mousedown(function(){
 	    $(this).css("background-color","#E0E0E0");
     });
@@ -274,7 +267,6 @@ $(document).ready(function() {
     });*/
 		
     //themeColor
-	//此localstorage用法在IE会出错(TдT)
 	if(localStorage.themeColor) {
 		$("#themeColorInput").val(localStorage.themeColor);
 		themeColor = $("#themeColorInput").val();
@@ -283,8 +275,6 @@ $(document).ready(function() {
 		$(".top").css("background-color",themeColor);
 		$(".top-bg").css("background-color",themeColor);
 		$(".radio .outer").css("border","3px solid "+themeColor);
-		$("input").focus(function(){$(this).css("border-color",themeColor);});
-		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
 		$(".set > * > *>#themeColor").css('background-color', themeColor);
 	}
 	
@@ -295,20 +285,19 @@ $(document).ready(function() {
 		$(".top").css("background-color",themeColor);
 		$(".top-bg").css("background-color",themeColor);
 		$(".radio .outer").css("border","3px solid "+themeColor);
-		$("input").focus(function(){$(this).css("border-color",themeColor);});
-		$("input").blur(function(){$(this).css("border-color","#E0E0E0");});
 	    $(".set > * > *>#themeColor").css('background-color', themeColor);
 	});
 	
 	//secondColor
 	if(localStorage.secondColor) {
 		$("#secondColorInput").val(localStorage.secondColor);
-		secondColor = $("#themeColorInput").val();
+		secondColor = $("#secondColorInput").val();
 		localStorage.secondColor = secondColor;
 	    $(".radio .inner").css("background-color",secondColor);
 	    $("option").css("border","1px solid "+ secondColor);
 		$(".settingTittle").css("color",secondColor);
 		$(".set > * > *>#secondColor").css('background-color', secondColor);
+		$("input").focus(function(){$(this).css("border-color",secondColor);});
 		/*selection text css*/
 		var styleSheet;
 		styleSheet = document.styleSheets[1];
@@ -323,33 +312,119 @@ $(document).ready(function() {
 	    $("option").css("border","1px solid "+ secondColor);
 	    $(".settingTittle").css("color",secondColor);
 	    $(".set > * > *>#secondColor").css('background-color', secondColor);
-        /*selection text css*/
+        $("input").focus(function(){$(this).css("border-color",secondColor);});
+		/*selection text css*/
 		var styleSheet;
 		styleSheet = document.styleSheets[1];
 		styleSheet.deleteRule(0);
 		styleSheet.insertRule("::selection" + "{" + "background:" + secondColor + "}", 0);
 	});
 
+	//colorSelect click even
 	$(".set > * > *>.colorSelect").click(function() {
 		$(this).css({
-			"border-radius": "2px",
+			"border-radius": "0px",
 			"height": "30px",
 			"width": "100px",
-			"background-color": "rgb(235, 235, 228)",
+			"background-color": "rgba(235, 235, 228, 0)",
 			"top": "20px"
 		});
-
+		$(this).children().css("display","block");//show input
+        //for small device
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if (winWidth <= 400) {
-			$(this).prev().fadeOut(320);
-			$(this).prev().prev().prev().css('top', '16px');
+			$(this).prev().fadeOut(260,'easeInOutQuart');
+			$(this).prev().prev().prev().animate({ top: '16px' }, 280, 'easeInOutQuart');
 		};
-	})
+		//auto focus
+		$(this).children().focus();
+	});
+	
+	$(".colorSelect").children().blur(function(){
+      $(this).parent().css({
+			"border-radius": "100%",
+			"height": "35px",
+			"width": "35px",
+			"top": "15px",
+		});
+		themeColor = $("#themeColorInput").val();
+		secondColor = $("#secondColorInput").val();
+		$(".set > * > *>#themeColor").css('background-color', themeColor);
+		$(".set > * > *>#secondColor").css('background-color', secondColor);
+		$(this).css("display","none");//hide input
+        //for small device
+		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		if (winWidth <= 400) {
+			$(this).parent().prev().prev().prev().animate({ top: '8px' }, 280, 'easeInOutQuart');
+			$(this).parent().prev().show(520, 'easeInOutQuart');
+		}
+    });
 
+	//clearDate hh~
+	$("#clearDate").click(function(){
+      var r=confirm("确定清除所有用户数据？\n注意:此操作不可逆");
+      if (r==true){
+        localStorage.clear();
+		window.location.reload();
+      }else{}
+    });
     
+	//nightMode
+    function night(){
+	  $("body, #moreList").css("background-color","#303030");
+	  $(".card, .set, input").css("background-color","#424242");
+	  $(".set > * > div").css("border-bottom","solid 1px #494949");
+	  $("hr").css("background-color","#494948");
+	  $(".set > div:last-child > div").css("border-bottom","none");
+	  $("p").css("color","#fff");
+	  $(".p2, label, .label, .form-span, input").css("color","#c1c1c1");
+	  $("input").css("border-color","#494949");
+	  if(localStorage.secondColor) {var secondColor=localStorage.secondColor;}
+	  else{var secondColor= "#f08b3b";}
+	  $("input").focus(function(){$(this).css("border-color",secondColor);});
+	  $("input").blur(function(){$(this).css("border-color","#494949");});
+	  $("legend, #moreList>li>div").css("color","#fff");
+	  $("#moreList>li").addClass("nightList");
+    }
+    function day(){
+	  $("body").css("background-color","#eee");
+	  $(".card, .set,#moreList, input").css("background-color","#fff");
+	  $(".set > * > div").css("border-bottom","solid 1px #E0E0E0");
+	  $("hr").css("background-color","#d4d4d4");
+	  $(".set > div:last-child > div").css("border-bottom","none");
+	  $("p").css("color","#202020");
+	  $(".p2").css("color","#737373");
+	  $("input").css("border-color","#E0E0E0");
+	  if(localStorage.secondColor) {var secondColor=localStorage.secondColor;}
+	  else{var secondColor= "#f08b3b";}
+	  $("input").focus(function(){$(this).css("border-color",secondColor);});
+      $("input").blur(function(){$(this).css("border-color","#E0E0E0");});
+	  $("legend, #moreList>li>div, label, .label, .form-span, input").css("color","#616161");
+      $("#moreList>li").removeClass("nightList");
+	}
+	  
+	if(localStorage.nightMode=="yes"){
+	  $(".onoffswitch-checkbox").attr("checked","ture");
+	  night();
+    }
+    else{
+	  $(".onoffswitch-checkbox").removeAttr("checked");
+	  day();
+	}
+    $("#myonoffswitch").click(function(){
+	  if(localStorage.nightMode!="yes"){
+	    localStorage.nightMode="yes";
+	    night();
+	  }
+	  else{
+	    localStorage.nightMode="no";
+	    day();
+	  }
+     });
+	
 });
 
-/*卡片开关*/
+/*card switch*/
 $(document).ready(function() {
 	var a = 0;
 	$(".toggle").slideUp(0);
@@ -358,11 +433,11 @@ $(document).ready(function() {
 
 	$(".show-ic").click(function() {
 		if ($(this).data("lastClick") == 1) {
-			/*alert("相同");*/
+			/*alert("same");*/
 			$(".show-ic").removeData("lastClick");
 			$(this).data("lastClick", "1");
 		} else {
-			/*alert("不同");*/
+			/*alert("different");*/
 			if ($(this).data("cardSwitch") == "close") {
 				a++;
 			};
@@ -381,15 +456,15 @@ $(document).ready(function() {
 			a = 1;
 		};
 
-		var t = 350;
-		var t2 = 350;//动画时间
+		var t = 100;
+		var t2 = 100;//different transition time
         var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	    if (winWidth <= 380) {t = 0; t2 = 0;};
 		$("legend").css("transition","all "+t2+"ms cubic-bezier(0.455, 0.03, 0.515, 0.955)");
 
 
 		switch (a) {
-			/*(this为.show-ic)*/
+			/*(this is ".show-ic")*/
 			case 1:
 				/*open*/
 				$(this).data("cardSwitch", "open");
@@ -418,15 +493,16 @@ $(document).ready(function() {
 
 	});
 
+	//show-ic bgColor effect
 	$(".show-ic").click(function() {
 		$(this).css("background-color", "#F2F2F2");
 		setTimeout(function() {
-			$(".show-ic").css("background-color", "#fff");
+			$(".show-ic").css("background-color", "");
 		}, 600);
 	});
 });
 
-/*LP计算*/
+/*LP*/
 $(document).ready(function() {
 	if (localStorage.lp_l) {
 		$(".length").val(localStorage.lp_l);
@@ -448,7 +524,7 @@ $(document).ready(function() {
 	});
 });
 
-/*ZC计算*/
+/*ZC*/
 $(document).ready(function() {
 	if (localStorage.zc_fl == 60) {} else {
 		/*if (localStorage.zc_fl) {$(":checked").val(localStorage.zc_fl)}*/
@@ -477,7 +553,7 @@ $(document).ready(function() {
 	});
 });
 
-/*LC计算*/
+/*LC*/
 $(document).ready(function() {
 	if (localStorage.lc_l) {
 		$(".l").val(localStorage.lc_l);
@@ -511,7 +587,7 @@ $(document).ready(function() {
 	});
 });
 
-/*NC计算*/
+/*NC*/
 $(document).ready(function() {
 	if (localStorage.nc_ic) {
 		$(".iC").val(localStorage.nc_ic);
@@ -553,7 +629,7 @@ $(document).ready(function() {
 	});
 });
 
-/*CC计算*/
+/*CC*/
 $(document).ready(function() {
 	if (localStorage.cc_un) {
 		$(".UN").children(":selected").val(localStorage.cc_un);
@@ -597,7 +673,7 @@ $(document).ready(function() {
 	});
 });
 
-/*卡片自适应居中*/
+/*for aligh card*/
 $(document).ready(function() {
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		var pad2 = (winWidth - 632) / 2;
@@ -608,7 +684,7 @@ $(document).ready(function() {
 		if (winWidth > 948) {
 		$(".home").css("padding-left", pad3);};
 
-		// 改变尺寸
+		//resize
 		$(window).resize(function() {
 			var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 			var pad2 = (winWidth - 632) / 2;
@@ -621,7 +697,7 @@ $(document).ready(function() {
 			};
 		});
 
-	/*会引发bug系列
+	/*may lead to bug
 	$(window).resize(function() {
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 		if (winWidth <= 640 && winWidth >= 620) {
@@ -658,7 +734,7 @@ $(document).ready(function() {
 	};
 });
 
-/*自适应相关*/
+/*for different screen size*/
 $(document).ready(function() {
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
@@ -670,11 +746,10 @@ $(document).ready(function() {
 			"box-shadow": "0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23)",
 		});
 		$("h1").css({
-			"font-size": "26px"
-		});
-		$("h1").css({
+			"font-size": "22px",
 			"top": "18px",
-			"font-size":"20px"
+			"left": 290-winWidth+"px",
+			"font-size":"20px",
 		});
 		$(".card").css({
 			"width": "100%",
@@ -691,7 +766,7 @@ $(document).ready(function() {
 	}; 
 });
 
-/*检测平台、设备和操作系统*/
+/*differnt system \ device*/
 $(document).ready(function() {
 	var system = {
 		win: false,
@@ -705,7 +780,7 @@ $(document).ready(function() {
 	system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 	system.ipad = (navigator.userAgent.match(/iPad/i) != null) ? true : false;
 	if (system.win || system.mac || system.xll || system.ipad) {} else {
-		//Android优化
+		//for Android
 		//$("h1").css("top", "14px")
 	};
 	

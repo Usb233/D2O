@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="tcCalc.appcache">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0,initial-scale=1,user-scalable=no">
@@ -7,17 +7,17 @@
   <meta name="keywords" content="tesla coil,tesla caculater, 特斯拉线圈, 特斯拉线圈设计器"/>
   <meta name="description" content="改进版特斯拉线圈设计器"/>
   <meta name="robots" content="all"/>
-  <meta name="author" content="usb, usbfly@gmail.com"/>
-  <!-- 针对手持设备优化 -->
+  <meta name="author" content="usb, jj.tom807564472@gmail.com@gmail.com"/>
+  <!-- mobile device -->
   <meta name="HandheldFriendly" content="true">
-  <!-- web app相关 -->
+  <!-- web app -->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="x5-page-mode" content="app">
   <meta name="browsermode" content="application"/>
-  <!--主题色-->
+  <!-- theme color -->
   <meta name="theme-color" content="#1565C0" class="themecolor"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <!--css-->
+  <!-- css -->
   <link href="css/my.css" rel="stylesheet"/>
   <style type="text/css">
      .none{display: none;}
@@ -44,7 +44,7 @@
 </head>
 
 <body>
-  <!-- 启动动画 -->
+  <!-- initial animation -->
   <div id="bg" style="position: fixed; height: 100%; width: 100%; z-index: 999; background-color: #eee"></div>
   <div id ="spinner" style="position:fixed; left: 20%; top:10%; z-index: 1000; width: 60px; height: 60px; margin: 0px; animation: rotate 1.4s infinite ease-in-out, background 1.4s infinite ease-in-out alternate;"></div>
   
@@ -74,13 +74,14 @@
       </li>
     </ul>
     <div class="blank" id="blank">
-      <!-- 遮罩 --> </div>
+      <!-- extra layer --> 
     </div>
-    <div class="top-bg"></div>
+  </div>
+  <div class="top-bg"></div>
   
   <!-- home content -->
   <div class="home">
-    <!-- LP计算模块 -->
+    <!-- LP Calc -->
     <div class="card LP">
       <img src="images/LP~.jpg" data-src="images/LP.jpg" class="lazyload" alt="电弧长度" title="电弧长度" />
       <img class="img-title" src="images/LP-title.gif"/>
@@ -102,7 +103,7 @@
       </form>
     </div>
 
-    <!-- ZC计算模块 -->
+    <!-- ZC Calc -->
     <div class="card ZC">
       <img src="images/ZC.png" alt="电容组和变压器匹配" title="电容组和变压器匹配" />
       <img class="img-title" src="images/ZC-title.png"/>
@@ -149,7 +150,7 @@
       </form>
     </div>
 
-    <!-- LC计算模块 -->
+    <!-- LC Calc -->
     <div class="card LC">
       <img src="images/LC.png" alt="LC振荡电路频率" title="LC振荡电路频率" />
       <img class="img-title" src="images/LC-title.png"/>
@@ -178,7 +179,7 @@
       </form>
     </div>
 
-    <!-- NC计算模块 -->
+    <!-- NC Calc -->
     <div class="card NC">
       <img src="images/NC.png" alt="电容阵列" title="电容阵列"/>
       <form method="get">
@@ -221,7 +222,7 @@
       </form>
     </div>
 
-    <!-- CC计算模块 -->
+    <!-- CC Calc -->
     <div class="card CC">
       <img src="images/CC.png" alt="平板电容" title="平板电容"/>
       <img class="img-title" src="images/CC-title.png"/>
@@ -230,16 +231,15 @@
         <legend>平板电容器计算:</legend>
         <img class="show-ic" src="images/show-ic.png"/>
         <div class="toggle">
-          <!-- 单位 -->
+          <!-- unit -->
           <label>尺寸单位:</label>
           <select class="UN">
             <option value="0.001" selected>毫米</option>
             <option value="0.0254">英寸</option>
           </select>
           <br/>
-          <!-- 电介质材料 -->
           <label>电介质材料:</label>
-          <!--========= select需改进！！！！！ ===========-->
+          <!--========= select need fix (localStorage) ===========-->
           <select class="DC">
             <option selected="" value="2.3">LDPE/HDPE</option>
             <option value="7.5">Glass</option>
@@ -271,7 +271,7 @@
       </form>
     </div>
 
-    <!-- 数据表 -->
+    <!-- data sheet -->
     <div class="card FO">
       <img src="images/ufo.jpg" alt="数据表" title="数据表"/>
       <form method="get">
@@ -283,6 +283,7 @@
     </div>
   </div>
 
+  <!-- setting -->
   <div class="setting">
     <div class="set" id="set1">
       <h2 class="settingTittle">外观</h2>
@@ -292,7 +293,7 @@
           <p class="p1">主色调</p>
           <br/>  
           <div class="p2">主题主色调，默认为#1565c0</div>
-          <div value="#1565C0" id="themeColor" class="colorSelect"><input id="themeColorInput"/></div>
+          <div id="themeColor" class="colorSelect"><input id="themeColorInput" value="#1565C0"/></div>
         </div>
       </div>
 
@@ -302,29 +303,55 @@
           <p class="p1">强调色</p>
           <br/>  
           <div class="p2">主题强调色，默认为#f08b3b</div>
-          <div value="#f08b3b" id="secondColor" class="colorSelect"><input id="secondColorInput"/></div>
-          <!-- <div class="floatLayer"><input class="floatInput"/></div> -->
+          <div id="secondColor" class="colorSelect"><input id="secondColorInput" value="#f08b3b"/></div>
 		</div>
       </div>
-      <div class="">
-        <div></div>
+	  
+      <div id="nightModeLi">
+        <img src="images/color-ic.png" class="ic"/>  
+        <div>
+          <p class="p1 nop2">夜间模式</p>
+          <div id="nightMode" class=""></div>
+		  <div class="onoffswitch">
+			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+			<label class="onoffswitch-label" for="myonoffswitch"></label>
+		  </div>
+		</div>
       </div>
-      <div class="">
-        <div></div>
+	  
+	  <div id="">
+        <img src="images/color-ic.png" class="settingIc ic"/>  
+        <div>
+          <p class="nop2">###</p>
+          <br/>  
+          <p class="p2"></p>
+        </div>
       </div>
+	  
+	  <div id="">
+        <img src="images/color-ic.png" class="settingIc ic"/>  
+        <div>
+          <p class="nop2">###</p>
+          <br/>  
+          <p class="p2"></p>
+        </div>
+      </div>
+	  
     </div>
 	
     <div class="set" id="set2">
       <h2 class="settingTittle">高级</h2>
-      <div id="themeColorLi">
+	  
+      <div id="clearDate">
         <img src="images/color-ic.png" class="settingIc ic" />  
         <div>
-          <p class="">###</p>
+          <p class="">还原</p>
           <br/>  
-          <div class="p2">###</div>
+          <div class="p2">清除所有用户数据(localStorage)</div>
         </div>
       </div>
-      <div class="">
+	  
+      <div id="">
         <img src="images/color-ic.png" class="settingIc ic" style="opacity:0.4;filter:alpha(opacity=40)"/>  
         <div>
           <p class="nop2">###</p>
@@ -332,12 +359,25 @@
           <p class="p2"></p>
         </div>
       </div>
-      <div class="">
-        <div></div>
+
+      <div id="">
+        <img src="images/color-ic.png" class="settingIc ic"/>  
+        <div>
+          <p class="nop2">###</p>
+          <br/>  
+          <p class="p2"></p>
+        </div>
       </div>
-      <div class="">
-        <div></div>
+	  
+	  <div id="">
+        <img src="images/color-ic.png" class="settingIc ic"/>  
+        <div>
+          <p class="nop2">###</p>
+          <br/>  
+          <p class="p2"></p>
+        </div>
       </div>
+	  
     </div>
   </div>
 

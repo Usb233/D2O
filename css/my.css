@@ -1,7 +1,13 @@
-﻿/*默认样式*/
+﻿/*global*/
+    /*@font-face { 
+    font-family:'Roboto'; 
+    src: url("../Roboto.ttf");
+	}*/
+
     body{
     margin            : 0;
     background-color  : #eee;
+	transition        : background-color 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     *{
@@ -10,22 +16,26 @@
     color             : #616161;
     z-index           : 0;
     font-size         : 25px;
-    font-family       : Verdana,"Microsoft YaHei";
+    font-family       : "Verdana","Microsoft YaHei";
     font-weight       : 300;
     -webkit-tap-highlight-color:rgba(255,255,255,0);
     }
  
     hr{
-    opacity           : 0.3;
-    /* IE 4-9 */  
+    /* opacity        : 0.3; 
     filter            : alpha(opacity=30); 
-    margin-bottom     : 2px;
     height            : 1px;
     border-radius     : 10px;
-    background-color  : #ECEFF1;
+    background-color  : #ECEFF1;*/
+	margin-bottom     : 6px;
+	margin-top        : 2px;
+	border            :0;
+	height            :1px; 
+	background-color  :#d4d4d4;
+	color             :#d4d4d4 /* IE6 */
     }
 
-    /*选中文本时样式*/
+    /*select text style*/
     ::selection {
     background        :#f08b3b;
     color             :#fff
@@ -41,8 +51,8 @@
     color             : #fff;
     }*/
 
- /*自定义滚动条*/
- /* ::-webkit-scrollbar{
+    /*custom scroll bar*/
+    /* ::-webkit-scrollbar{
     width             : 12px;
     height            : 12px;
     background-color  : rgba(200,200,200,0.9);
@@ -56,7 +66,7 @@
     }
  */
 
-/*标题-菜单*/
+/*topbar*/
     .top-bg{
     height            : 210px;
     width             : 100%;
@@ -93,14 +103,14 @@
 
     #moreList{
     min-height        : 80px;
-    min-width         : 60px;
+    min-width         : 120px;
     position          : absolute;
     right             : 5px;
-    top               : 10px;
+    top               : 5px;
     list-style-type   : none;
     z-index           : 3;
     background-color  : #fff;
-    /*border-radius   : 2px;*/
+    border-radius     : 2px;
     box-shadow        : 0 10px 10px 0 rgba(0,0,0,.19), 0 6px 3px 0 rgba(0,0,0,.23);
     }
 
@@ -113,6 +123,7 @@
     line-height       : 45px;
     text-decoration   : none;
     font-size         : 15px;
+	color             : #000;
     font-weight       : 200;
     margin            : 8px 50px 8px 25px;
     }
@@ -120,6 +131,10 @@
     #moreList>li:hover,#moreList>li:active{
     background-color  : rgb(242, 242, 242);
     transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+	
+    .nightList:hover,.nightList:active{
+    background-color  : #444444!important;
     }
 
     h1{
@@ -132,11 +147,11 @@
     margin            : 0; 
     letter-spacing    : 2px;
     text-align        : center;
-    /*测试,js需改进*/
+    /*testing*/
     transition        : all top 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
-    /*自适应*/
+    /*for different screen size*/
     @media (max-width : 480px) {
       /*h1 {font-size : 36px;}*/
       /*.top{height   : 50px!important;}*/
@@ -152,26 +167,24 @@
     min-width         : 270px;
     margin            : 0;
     position          : fixed;
-    /*border-bottom   : solid #eee 2px;*/
     z-index           : 20;
     background-color  : #1976D2;
-   /* box-shadow      : 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 5px 0 rgba(0,0,0,0.23);
-   */ transition      : height top 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition        : height top 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     .blank{
     position          : absolute;
     z-index           : 2;
-    height            : 1500%;/*貌似有点bug= =*/
+    height            : 1500%;
     width             : 100%;
     top               : 0px;
     background-color  : rgba(0,0,0,0);
     }
  
-/*主页-卡片*/
+/*homepage*/
     .home {
     /*text-align      : center;*/
-    /*min-height        : 1000px;*/
+    /*min-height      : 1000px;*/
     transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
@@ -186,7 +199,7 @@
     margin            : 0px 8px 15px 8px;
     border-radius     : 2px;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
-    /*试验性*/
+    /*testing*/
     transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     } 
 
@@ -195,6 +208,7 @@
     border-top-right-radius: 2px;
     width             : 100%;
     height            : 213px;
+	/*opacity:.4;*/   /*will add to setting!*/
     }
 
     .img-title{
@@ -206,12 +220,12 @@
     top               : -55px;
     left              : 0px;
     opacity           : 0.5;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=50); 
+    /* IE 4-9 */filter: alpha(opacity=50); 
     color             : #fff;
     text-align        : center;
     line-height       : 48px;
-    background-color  : #000;   
+    background-color  : #000;
+	/*opacity:.2;*/   /*will add to setting!*/
     }
 
     .ZC >img:first-of-type{
@@ -234,7 +248,7 @@
     background-color  : #E3D3B0;
     }
 
-/*表单*/ 
+/*form*/ 
     form{
     position          : relative;
     bottom            : 20px;
@@ -272,7 +286,7 @@
     font-size         : 20px;
     }
 
-    input/*[type=number]*/{
+    input{
     font-size         : 20px;
     position          : relative;
     width             : 55%;
@@ -283,8 +297,8 @@
     padding-left      : 4px;
     }
 
-    input/*[type=number]*/:focus{
-    border-color      : #1976D2;
+    input:focus{
+    border-color      : #f08b3b;
     transition        : all 350ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
@@ -321,16 +335,14 @@
     -ms-transform     : scale(0.5);
     transform         : scale(0.5);
     opacity           : 0.5;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=50); 
+    /* IE 4-9 */filter: alpha(opacity=50); 
     }
  
     .radio input {
     width             : 1px;
     height            : 1px;
     opacity           : 0;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=0); 
+    /* IE 4-9 */filter: alpha(opacity=0); 
     }
  
     .radio input:checked + .outer .inner {
@@ -338,8 +350,7 @@
     -ms-transform     : scale(1);
     transform         : scale(1);
     opacity           : 1;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=100); 
+    /* IE 4-9 */filter: alpha(opacity=100); 
     }
  
     .radio input:checked + .outer { 
@@ -351,8 +362,7 @@
     -ms-transform     : scale(1);
     transform         : scale(1);
     opacity           : 1;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=100); 
+    /* IE 4-9 */filter: alpha(opacity=100); 
     background-color  : #e67012;
     }
  
@@ -381,9 +391,55 @@
     border-radius     : 50%;
     background-color  : #f08b3b;
     opacity           : 0;
-    /* IE 4-9 */  
-    filter            : alpha(opacity=0); 
+    /* IE 4-9 */filter: alpha(opacity=0); 
     }
+	
+/***material button***/
+.onoffswitch {
+    position: relative;
+	width: 30px;float:right;top:22px;right:10px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 16px; padding: 0; line-height: 20px;
+    border: 0px solid #FFFFFF; border-radius: 31px;
+    background-color: #9E9E9E;
+}
+
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 22px;height:22px; margin: -5.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 19px;top:2px;
+	transition : right 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    border-radius: 31px;
+    box-shadow: 0 6px 12px 0px #757575;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #42A5F5;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #42A5F5;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+    background-color: #2196F3; 
+    box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+}
    
 /*select*/ 
     select{
@@ -414,7 +470,8 @@
 	margin-top        : 5px;
     position          : relative;
     box-shadow        : 0 1px 1.5px 0 rgba(0,0,0,0.12), 0 1px 1px 0 rgba(0,0,0,0.24);
-    }
+    transition        : background-color 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}
 	
 	#set1{
 	margin-top        : 40px;
@@ -434,13 +491,12 @@
     position          : relative;
     height            : 100%;
     margin-left       : 65px;
-    z-index: 999;
-    /*float           : right;*/
     border-bottom     : solid 1px #E0E0E0;
+	transition        : border-bottom 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 	
     .set > *:nth-child(2) {
-    /*margin-top      :40px;*/
+    /*margin-top      : 40px;*/
     }
 
     .set > div:last-child > div{
@@ -456,14 +512,16 @@
     display           : inline-block;
     }
 
-    .set > * > *>.colorSelect{
+    .set > * > * >.colorSelect{
     position          : absolute;
     top               : 15px;
     right             : 10px;
     border-radius     : 100%;
     width             : 35px;
     height            : 35px;
-    transition        : all 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	/*testing..*/
+    transition        : height 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955),border-radius 320ms
+	cubic-bezier(0.455, 0.03, 0.515, 0.955),top 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955)
     }
 	
 	#themeColor{
@@ -475,16 +533,17 @@
 	}
 
     .colorSelect > input{
+	display           : none;
     width             : 96px;
-    top: -8px;
-    left: 0px;
+    top               : -8px;
+    left              : 0px;
     background-color  : rgb(235, 235, 228);
     }
 	
 	.settingTittle{
     position          : relative;
     font-size         : 16px;
-	color             : #1976D2;
+	color             : #f08b3b;
 	width             : 100px;
 	top               : 16px;
 	margin-left       : 20px;
@@ -509,7 +568,7 @@
     left              : 12px;
     font-size         : 18px;
     color             : #202020;
-    transition        : all 320ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
 
     .nop2{
@@ -522,21 +581,6 @@
     left              : 12px;
     font-size         : 15px;
     color             : #737373;
+	transition        : all 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }            
-	
-    .floatLayer{
-    position          : fixed;
-    z-index           : 999;
-    background-color  : #541;
-    width             : 80%;
-    /* need js -->> css */
-    right             : 45px;
-    height            : 80%;
-    }
-	
-	floatInput{
-   /* height:90%!important;
-	margin-left:5%;*/
-    
-	}
 	
