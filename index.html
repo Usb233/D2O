@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="tcCalc.appcache">
+<html manifest000="tcCalc.appcache">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0,initial-scale=1,user-scalable=no">
@@ -61,6 +61,9 @@
   <div class="top">
     <img src="images/back-ic.png" id="back" alt="返回"/>
     <h1>特斯拉线圈设计器</h1>
+	<div id="h1Set" class="h1">设置</div>
+	<div id="h1About" class="h1">关于</div>
+	<div id="h1Help" class="h1">帮助</div>
     <img src="images/more-vert-ic.png" id="moreIc" alt="选项"/>    
 	<ul id="moreList">
       <li>
@@ -287,6 +290,19 @@
   <div class="setting">
     <div class="set" id="set1">
       <h2 class="settingTittle">外观</h2>
+
+      <div id="nightModeLi">
+        <img src="images/color-ic.png" class="ic"/>  
+        <div>
+          <p class="p1 nop2">夜间模式</p>
+          <div id="nightMode" class=""></div>
+		  <div class="onoffswitch">
+			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+			<label class="onoffswitch-label" for="myonoffswitch"></label>
+		  </div>
+		</div>
+      </div>
+	  
       <div id="themeColorLi">
         <img src="images/color-ic.png" class="ic"/>  
         <div>
@@ -303,28 +319,17 @@
           <p class="p1">强调色</p>
           <br/>  
           <div class="p2">主题强调色，默认为#f08b3b</div>
-          <div id="secondColor" class="colorSelect"><input id="secondColorInput" value="#f08b3b"/></div>
+          <div id="secondColor" class="colorSelect"><input id="secondColorInput" value="#f08b3b"/></div>-->
 		</div>
       </div>
-	  
-      <div id="nightModeLi">
-        <img src="images/color-ic.png" class="ic"/>  
-        <div>
-          <p class="p1 nop2">夜间模式</p>
-          <div id="nightMode" class=""></div>
-		  <div class="onoffswitch">
-			<input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
-			<label class="onoffswitch-label" for="myonoffswitch"></label>
-		  </div>
-		</div>
-      </div>
-	  
+	
 	  <div id="">
         <img src="images/color-ic.png" class="settingIc ic"/>  
         <div>
-          <p class="nop2">###</p>
+          <p class="">图片透明度</p>
           <br/>  
-          <p class="p2"></p>
+          <div class="p2">仅用于把玩∠( ᐛ 」∠)＿</div>
+		  <!--<div id="opacity" class="colorSelect"><input id="opacityInput" value="#fff"/></div>-->
         </div>
       </div>
 	  
@@ -333,7 +338,7 @@
         <div>
           <p class="nop2">###</p>
           <br/>  
-          <p class="p2"></p>
+          <div class="p2"></div>
         </div>
       </div>
 	  
@@ -356,7 +361,7 @@
         <div>
           <p class="nop2">###</p>
           <br/>  
-          <p class="p2"></p>
+          <div class="p2"></div>
         </div>
       </div>
 
@@ -365,7 +370,7 @@
         <div>
           <p class="nop2">###</p>
           <br/>  
-          <p class="p2"></p>
+          <div class="p2"></div>
         </div>
       </div>
 	  
@@ -374,7 +379,7 @@
         <div>
           <p class="nop2">###</p>
           <br/>  
-          <p class="p2"></p>
+          <div class="p2"></div>
         </div>
       </div>
 	  

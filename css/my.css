@@ -150,6 +150,15 @@
     /*testing*/
     transition        : all top 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     }
+	
+	.h1{
+	display:none;
+	font-size:20px;
+	position:absolute;
+	color:#fff;
+	left:50px;
+	top:18px;
+	}
 
     /*for different screen size*/
     @media (max-width : 480px) {
@@ -397,7 +406,7 @@
 /***material button***/
 .onoffswitch {
     position: relative;
-	width: 30px;float:right;top:22px;right:10px;
+	width: 26px;float:right;top:22px;right:18px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 
@@ -414,10 +423,10 @@
 
 .onoffswitch-label:before {
     content: "";
-    display: block; width: 22px;height:22px; margin: -5.5px;
+    display: block; width: 20px;height:20px; margin: -5.5px;
     background: #FFFFFF;
-    position: absolute; top: 0; bottom: 0;
-    right: 19px;top:2px;
+    position: absolute; bottom: 0;
+    right: 19px;top:3px;
 	transition : right 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     border-radius: 31px;
     box-shadow: 0 6px 12px 0px #757575;

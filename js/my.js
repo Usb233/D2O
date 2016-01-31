@@ -91,7 +91,8 @@ $(document).ready(function() {
 	/*another panel*/
 	$("#moreList").find("*").click(function() {
 		$(".card").hide();
-		$("h1").html("设置&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
+		$("h1").hide();//html("设置&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
+		
 		$("#back").show();
 		$("#moreIc").hide();
 
@@ -115,7 +116,7 @@ $(document).ready(function() {
 	/*exit another panel*/
 	$("#back").click(function() {
 		$(".card").show();
-		$("h1").html("特斯拉线圈设计器");
+		$("h1").show();//html("特斯拉线圈设计器");
 		$("#back").hide();
 		$("#moreIc").show();
 		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
@@ -246,9 +247,11 @@ $(document).ready(function() {
     // settingLi
 	$("#settingLi").parent().click(function() {
 		$(".set").css("display","block");
+		$("#h1Set").css("display","block");
 	});
     $("#back").click(function() {
     	$(".set").css("display","none");
+		$("#h1Set").css("display","none");
 	});
 
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
