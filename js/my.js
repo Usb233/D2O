@@ -363,7 +363,7 @@ $(document).ready(function() {
 		}
     });
 
-	//clearDate hh~
+	//clearDate
 	$("#clearDate").click(function(){
       var r=confirm("确定清除所有用户数据？\n注意:此操作不可逆");
       if (r==true){
@@ -424,7 +424,30 @@ $(document).ready(function() {
 	    day();
 	  }
      });
-	
+
+    //imgOpacity
+    var opa = $("#opacityInput").val();
+    $("#opacitySet").css("opacity",opa);/*背板透明度*/
+    $("#opacitySet").children().blur(function(){
+    	opa = $("#opacityInput").val();
+    	/*if (opa <= 0.5) {opa = 0.5};*/
+    	$(this).parent().css("background-color","#000");
+        $(this).parent().css("opacity",opa);/*背板透明度*/
+        $("#opacityInput").css("opacity","1");
+
+        localStorage.imgOpacity = opa;
+        $(".card > img:first-child").css('opacity', opa);
+        $(".img-title").css('opacity', opa-0.5);
+        $("legend").css('opacity', opa);
+    });
+    if (localStorage.imgOpacity) {
+    	opa = localStorage.imgOpacity;
+        $(".card > img:first-child").css('opacity', opa);
+        $(".img-title").css('opacity', opa-0.5);
+        $("legend").css('opacity', opa);
+        $("#opacityInput").val(opa)
+	};
+        
 });
 
 /*card switch*/
