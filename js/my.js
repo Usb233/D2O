@@ -388,11 +388,10 @@ $(document).ready(function() {
 	function night() {
 		$("body, #moreList").css("background-color", "#303030");
 		$(".card, .set, input").css("background-color", "#424242");
-		$(".set > * > div").css("border-bottom", "solid 1px #494949");
+		$(".set > * > div, tr").css("border-bottom", "solid 1px #494949");
 		$("hr").css("background-color", "#494948");
 		$(".set > div:last-child > div").css("border-bottom", "none");
-		$("p").css("color", "#fff");
-		$(".p2, label, .label, .form-span, input").css("color", "#c1c1c1");
+		$(".p2, label, .label, .form-span, input, th, td").css("color", "#c1c1c1");
 		$("input").css("border-color", "#494949");
 		if (localStorage.secondColor) {
 			var secondColor = localStorage.secondColor;
@@ -405,14 +404,14 @@ $(document).ready(function() {
 		$("input").blur(function() {
 			$(this).css("border-color", "#494949");
 		});
-		$("legend, #moreList>li>div").css("color", "#fff");
+		$("legend, #moreList>li>div, p").css("color", "#eee");
 		$("#moreList>li").addClass("nightList");
 	}
 
 	function day() {
 		$("body").css("background-color", "#eee");
 		$(".card, .set,#moreList, input").css("background-color", "#fff");
-		$(".set > * > div").css("border-bottom", "solid 1px #E0E0E0");
+		$(".set > * > div, tr").css("border-bottom", "solid 1px #E0E0E0");
 		$("hr").css("background-color", "#d4d4d4");
 		$(".set > div:last-child > div").css("border-bottom", "none");
 		$("p").css("color", "#202020");
@@ -429,7 +428,7 @@ $(document).ready(function() {
 		$("input").blur(function() {
 			$(this).css("border-color", "#E0E0E0");
 		});
-		$("legend, #moreList>li>div, label, .label, .form-span, input").css("color", "#616161");
+		$("legend, #moreList>li>div, label, .label, .form-span, input, th, td").css("color", "#616161");
 		$("#moreList>li").removeClass("nightList");
 	}
 
@@ -455,10 +454,12 @@ $(document).ready(function() {
 	$("#opacitySet").css("opacity", opa); /*背板透明度*/
 	$("#opacitySet").children().blur(function() {
 		opa = $("#opacityInput").val();
-		/*if (opa <= 0.5) {opa = 0.5};*/
+		if (opa <= 0.1) {opa = 0.1};
+		if (opa >= 1) {opa = 1};
 		$(this).parent().css("background-color", "#000");
 		$(this).parent().css("opacity", opa); /*背板透明度*/
 		$("#opacityInput").css("opacity", "1");
+		$("#opacityInput").val(opa);
 
 		localStorage.imgOpacity = opa;
 		$(".card > img:first-child").css('opacity', opa);
