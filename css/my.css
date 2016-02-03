@@ -254,10 +254,13 @@
     background-color  : #FFEBEE;
     }
 
-    .FO > img:first-of-type{
-    background-color  : #E3D3B0;
+    .LL > img:first-of-type{
+    background-color  : #888;
     }
 
+    .FO > img:first-of-type{
+    background-color  : #C5CAE9;
+    }
 
 /*form*/
     form{
@@ -334,7 +337,7 @@
 
 /*table*/
     table{
-    border-           : collapse;
+    border-collapse   :collapse;
     margin-top        : 12px;
     }
 
