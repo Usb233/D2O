@@ -728,6 +728,67 @@ $(document).ready(function() {
 	});
 });
 
+/*LL*/
+$(document).ready(function() {
+	if (localStorage.ll_d) {
+		$(".llD").val(localStorage.ll_d);
+	}
+	if (localStorage.ll_n) {
+		$(".llN").val(localStorage.ll_n);
+	}
+	if (localStorage.ll_w) {
+		$(".llW").val(localStorage.ll_w);
+	}
+	if (localStorage.ll_s) {
+		$(".llS").val(localStorage.ll_s);
+	}
+	if (localStorage.ll_h) {
+		$(".llH").val(localStorage.ll_h);
+	}
+	if (localStorage.ll_lo) {
+		$(".llLo").val(localStorage.ll_lo);
+	}
+	if (localStorage.ll_l) {
+		$(".llL").val(localStorage.ll_l);
+	}
+	if (localStorage.ll_c) {
+		$(".llC").val(localStorage.ll_c);
+	}
+
+	$(".LL>form>.toggle>input").change(function() {
+		llD = $(".llD").val()*1;
+		llN = $(".llN").val()*1;
+		llW = $(".llW").val()*1;
+		llS = $(".llS").val()*1;
+
+		llH = $(".llH").val()*1;
+		llLo = $(".llLo").val()*1;
+		llL = $(".llL").val()*1;
+
+		llH = (llW + llS) * llN
+		llH = llH * 1e+3;
+    llH = parseInt(llH);
+    llH = llH / 1e+3;/*console.log(llH)*/
+    $(".llH").val(llH);
+    llR = (llD / 2 )/1000;/*unit[mm >> m]*/
+
+		llLo = 2 * Math.PI * llR * llN
+		$(".llLo").val(llLo.toFixed(3))
+
+		llL = (llN*llN*llR*llR)/(9*llR+10*llH/1000)
+		$(".llL").val(llL/*.toFixed(3)*/)
+
+
+/*		localStorage.cc_un = u;
+		localStorage.cc_dc = dc;
+		localStorage.cc_n = n;
+		localStorage.cc_d = $(".D").val();
+		localStorage.cc_l = $(".L").val();
+		localStorage.cc_w = $(".W").val();
+		localStorage.cc_c = $(".C").val();*/
+	});
+});
+
 /*for aligh card*/
 $(document).ready(function() {
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;

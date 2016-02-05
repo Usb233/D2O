@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0,initial-scale=1,user-scalable=no">
   <!-- seo -->
   <meta name="keywords" content="tesla coil,tesla caculater, 特斯拉线圈, 特斯拉线圈设计器"/>
-  <meta name="description" content="改进版特斯拉线圈设计器"/>
+  <meta name="description" content="基于 http://bbs.kechuang.org/tool/tc/teslacoil/HelicalCoil.html 设计的特斯拉线圈设计器"/>
   <meta name="robots" content="all"/>
-  <meta name="author" content="usb, jj.tom807564472@gmail.com@gmail.com"/>
+  <meta name="author" content="usb, 807564472@qq.com"/>
   <!-- mobile device -->
   <meta name="HandheldFriendly" content="true">
   <!-- web app -->
@@ -278,7 +278,7 @@
     <!-- LL Calc -->
     <div class="card LL">
       <img id="llImg" src="images/LL.png" alt="螺线管电感" title="螺线管电感" />
-      <img class="img-title" src="images/LL-tittle-min.png"/>
+      <img class="img-title" src="images/LL-tittle.png"/>
       <form method="get">
       <!--[if IE 8]><div class="ie8"></div><![endif]-->
         <legend>螺线管线圈:</legend>
@@ -286,45 +286,74 @@
         <div class="toggle">
           <!-- radio -->
           <!--[if IE 8]><div class="ie8-small"></div><![endif]-->
-          <div class="label">电源频率（FL）:</div>
+          <!-- <div class="label">单位:</div>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="50" checked/>
+            <input type="radio" name="radios" name="units" value="" checked/>
             <span class="outer">
               <span class="inner"></span>
             </span>
-            50HZ
+            毫米
           </label>
           <label class="radio">
-            <input type="radio" name="radios" name="units" value="60" />
+            <input type="radio" name="radios" name="units" value="" />
             <span class="outer">
               <span class="inner"></span>
             </span>
-            60HZ
+            英寸
           </label>
+          <hr/> -->
+          <!-- D -->
+          <label>螺线管直径(D):</label>
+          <br/>
+          <input type="number" value="152.4" class="llD" />
+          <span class="form-span">mm</span>
+          <br/>
+          <!-- N -->
+          <label>线圈匝数(N):</label>
+          <br/>
+          <input type="number" value="10" class="llN"/>
           <hr/>
-          <!-- E -->
-          <label>电压 (E) :</label>
+          <!-- W -->
+          <label>绕线线径 (W):</label>
           <br/>
-          <input type="number" value="10000" />
-          <span class="form-span">V</span>
+          <input type="number" value="7.62" class="llW"/>
+          <span class="form-span">mm</span>
           <br/>
-          <!-- I -->
-          <label>电流(I) :</label>
+          <!-- S -->
+          <label>匝间距(S):</label>
           <br/>
-          <input type="number" value="100" />
-          <span class="form-span">mA</span>
+          <input type="number" value="7.62" class="llS"/>
+          <span class="form-span">mm</span>
           <hr/>
-          <!-- C -->
-          <label>C =:</label>
-          <input disabled type="number" class="disabled" value="0.0318"/>
-          <span class="form-span">uF</span>
+          <!-- result -->
+          <!-- H -->
+          <label>螺线管高度(H):*</label>
+          <br/>
+          <input disabled type="number" class="disabled llH" value="152.4"/>
+          <span class="form-span">mm</span>
+          <br/>
+          <!-- xL -->
+          <label>漆包线长度:</label>
+          <br/>
+          <input disabled type="number" class="disabled llLo" value="4.787"/>
+          <span class="form-span">metre</span>
+          <br/>
+          <!-- L -->
+          <label>电感量(L):*</label>
+          <input disabled type="number" class="disabled llL" value="10.344"/>
+          <span class="form-span">uH</span>
+          <br/>
+          <!-- jF -->
+          <label>寄生电容:</label>
+          <input disabled type="number" class="disabled llC" value="7.03"/>
+          <span class="form-span">pF</span>
         </div>
       </form>
     </div>
 
     <!-- data sheet -->
     <div class="card FO">
-      <img src="images/extension-ic-min.png" alt="数据表" title="数据表"/>
+      <img src="images/extension-ic.png" alt="数据表" title="数据表"/>
       <form method="get">
       <!--[if IE 8]><div class="ie8"></div><![endif]-->
         <legend>漆包线数据表</legend>
@@ -332,7 +361,6 @@
         <div class="toggle">
           <table id="tab1">
           <!-- <caption>漆包线数据表</caption> -->
-
             <tr>
               <th id="th1"> 铜线直径 (mm)</th>
               <th id="th2">AWG</th>
