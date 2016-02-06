@@ -760,32 +760,35 @@ $(document).ready(function() {
 		llN = $(".llN").val()*1;
 		llW = $(".llW").val()*1;
 		llS = $(".llS").val()*1;
-
 		llH = $(".llH").val()*1;
 		llLo = $(".llLo").val()*1;
 		llL = $(".llL").val()*1;
-
-		llH = (llW + llS) * llN
+		llH = (llW + llS) * llN;
 		llH = llH * 1e+3;
     llH = parseInt(llH);
     llH = llH / 1e+3;/*console.log(llH)*/
     $(".llH").val(llH);
     llR = (llD / 2 )/1000;/*unit[mm >> m]*/
+		llLo = 2 * Math.PI * llR * llN;
+		$(".llLo").val(llLo.toFixed(3));
+		llL = ((llN * llN * llR * 2 * llR * 2) / ((36 * llR) + (40 * llH / 1000) )) * (0.000001 / 0.0254) * 1000000;
+		$(".llL").val(llL.toFixed(3));
+		u = 25.4;
+		llC = 5.08 * llR * 1000 / u * (0.0563 * ((llH / u) / (llR *1000 / u)) + 0.08 + 0.38 * Math.sqrt(1 / ((llH / u) / (llR * 1000 / u))));
+		/*console.log("u="+u,"h="+llH,"r="+llR)*/
+		llC = llC * 1e+3;
+		llC = parseInt(llC);
+		llC = llC / 1e+3;
+		$(".llC").val(llC.toFixed(3));
 
-		llLo = 2 * Math.PI * llR * llN
-		$(".llLo").val(llLo.toFixed(3))
-
-		llL = (llN*llN*llR*llR)/(9*llR+10*llH/1000)
-		$(".llL").val(llL/*.toFixed(3)*/)
-
-
-/*		localStorage.cc_un = u;
-		localStorage.cc_dc = dc;
-		localStorage.cc_n = n;
-		localStorage.cc_d = $(".D").val();
-		localStorage.cc_l = $(".L").val();
-		localStorage.cc_w = $(".W").val();
-		localStorage.cc_c = $(".C").val();*/
+		localStorage.ll_d = $(".llD").val();
+		localStorage.ll_n = $(".llN").val();
+		localStorage.ll_w = $(".llW").val();
+		localStorage.ll_s = $(".llS").val();
+		localStorage.ll_h = $(".llH").val();
+		localStorage.ll_lo = $(".llLo").val();
+		localStorage.ll_l = $(".llL").val();
+		localStorage.ll_c = $(".llC").val();
 	});
 });
 
