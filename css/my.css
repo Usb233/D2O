@@ -258,6 +258,10 @@
     background-color  : #888;
     }
 
+    .LL > img:first-of-type{
+    background-color  : #212121;
+    }
+
     .FO > img:first-of-type{
     background-color  : #C5CAE9;
     }
