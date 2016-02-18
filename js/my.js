@@ -85,7 +85,7 @@ $(document).ready(function() {
 	$("#back").hide();
 
 	/*another panel*/
-	$("#moreList").find("*").click(function() {
+	function toAn() {
 		$(".card").hide();
 		$("h1").hide();
 
@@ -108,7 +108,10 @@ $(document).ready(function() {
 			});
 		};
 
+	}
 
+	$("#moreList").find("*").click(function() {
+		toAn();
 	});
 
 	/*exit another panel*/
@@ -150,9 +153,7 @@ $(document).ready(function() {
 
 	$("#back").click(function() {
 		exit();
-
 	});
-
 
 	/*top bar*/
 	$("#moreList>*").css("opacity", "0");
@@ -484,7 +485,6 @@ $(document).ready(function() {
 
 
 	/*about*/
-	// aboutnLi
 	$("#aboutLi").parent().click(function() {
 		$(".about").css("display", "block");
 		$("#h1About").css("display", "block");
@@ -492,7 +492,6 @@ $(document).ready(function() {
 	});
 
 	/*help*/
-	// helpLi
 	$("#helpLi").parent().click(function() {
 		$(".help").css("display", "block");
 		$("#h1Help").css("display", "block");
@@ -500,20 +499,31 @@ $(document).ready(function() {
 	});
 
 	/*hash check*/
-	window.onhashchange = function() {
+	var hashcheck = function() {
 		var hash = location.hash;
-		if (hash == "#home" || hash == "" ) {
+		if (hash == "#home" || hash == "") {
 			exit();
 			$(".set,.about,.help").css("display", "none");
 			$("#h1Set,#h1About,#h1Help").css("display", "none");
 
+		} else if (hash == "#setting") {
+			toAn();
+			$(".set").css("display", "block");
+			$("#h1Set").css("display", "block");
+		} else if (hash == "#about") {
+			toAn();
+			$(".about").css("display", "block");
+			$("#h1About").css("display", "block");
+		} else if (hash == "#help") {
+			toAn();
+			$(".help").css("display", "block");
+			$("#h1Help").css("display", "block");
 		}
-		else if (hash == "#setting") {
 
-		}
-		//....
 	}
 
+	hashcheck();
+	window.onhashchange = hashcheck;
 
 	/*card switch*/
 	var a = 0;
@@ -755,8 +765,8 @@ $(document).ready(function() {
 		localStorage.cc_c = $(".C").val();
 	});
 
-/*for aligh card*/
-/*LL*/
+	/*for aligh card*/
+	/*LL*/
 	if (localStorage.ll_d) {
 		$(".llD").val(localStorage.ll_d);
 	}
@@ -783,25 +793,25 @@ $(document).ready(function() {
 	}
 
 	$(".LL>form>.toggle>input").change(function() {
-		llD = $(".llD").val()*1;
-		llN = $(".llN").val()*1;
-		llW = $(".llW").val()*1;
-		llS = $(".llS").val()*1;
-		llH = $(".llH").val()*1;
-		llLo = $(".llLo").val()*1;
-		llL = $(".llL").val()*1;
+		llD = $(".llD").val() * 1;
+		llN = $(".llN").val() * 1;
+		llW = $(".llW").val() * 1;
+		llS = $(".llS").val() * 1;
+		llH = $(".llH").val() * 1;
+		llLo = $(".llLo").val() * 1;
+		llL = $(".llL").val() * 1;
 		llH = (llW + llS) * llN;
 		llH = llH * 1e+3;
-    llH = parseInt(llH);
-    llH = llH / 1e+3;/*console.log(llH)*/
-    $(".llH").val(llH);
-    llR = (llD / 2 )/1000;/*unit[mm >> m]*/
+		llH = parseInt(llH);
+		llH = llH / 1e+3; /*console.log(llH)*/
+		$(".llH").val(llH);
+		llR = (llD / 2) / 1000; /*unit[mm >> m]*/
 		llLo = 2 * Math.PI * llR * llN;
 		$(".llLo").val(llLo.toFixed(3));
-		llL = ((llN * llN * llR * 2 * llR * 2) / ((36 * llR) + (40 * llH / 1000) )) * (0.000001 / 0.0254) * 1000000;
+		llL = ((llN * llN * llR * 2 * llR * 2) / ((36 * llR) + (40 * llH / 1000))) * (0.000001 / 0.0254) * 1000000;
 		$(".llL").val(llL.toFixed(3));
 		u = 25.4;
-		llC = 5.08 * llR * 1000 / u * (0.0563 * ((llH / u) / (llR *1000 / u)) + 0.08 + 0.38 * Math.sqrt(1 / ((llH / u) / (llR * 1000 / u))));
+		llC = 5.08 * llR * 1000 / u * (0.0563 * ((llH / u) / (llR * 1000 / u)) + 0.08 + 0.38 * Math.sqrt(1 / ((llH / u) / (llR * 1000 / u))));
 		/*console.log("u="+u,"h="+llH,"r="+llR)*/
 		llC = llC * 1e+3;
 		llC = parseInt(llC);
@@ -818,7 +828,7 @@ $(document).ready(function() {
 		localStorage.ll_c = $(".llC").val();
 	});
 
-/*for aligh card*/
+	/*for aligh card*/
 	var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 	var pad2 = (winWidth - 632) / 2;
 	var pad3 = (winWidth - 948) / 2;
