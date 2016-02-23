@@ -729,6 +729,7 @@ $(document).ready(function() {
 	}
 	if (localStorage.cc_dc) {
 		$(".DC").children(":selected").val(localStorage.cc_dc);
+		$(".cusDC").val(localStorage.cc_dc);
 	}
 	if (localStorage.cc_n) {
 		$(".N").val(localStorage.cc_n);
@@ -746,26 +747,30 @@ $(document).ready(function() {
 		$(".C").val(localStorage.cc_c);
 	}
 
-	$(".CC>form>.toggle>input").change(function() {
-		u = $(".UN").children(":selected").val();
-		d = $(".D").val() * u;
-		a = ($(".L").val() * u) * (($(".W").val() * u));
-		n = $(".N").val();
-		dc = $(".DC").children(":selected").val();
-		c = ((8.85e-12 * dc * a) / d) * (n - 1);
-		c *= 1e+12;
-		c = parseInt(c) / 1e+6;
-		$(".C").val(c);
-		localStorage.cc_un = u;
-		localStorage.cc_dc = dc;
-		localStorage.cc_n = n;
-		localStorage.cc_d = $(".D").val();
-		localStorage.cc_l = $(".L").val();
-		localStorage.cc_w = $(".W").val();
-		localStorage.cc_c = $(".C").val();
-	});
+	$(".CC>form>.toggle>.DC").first().text("233");
 
-	/*for aligh card*/
+	$(".CC>form>.toggle>input , .CC>form>.toggle>select").change(
+		function() {
+			u = $(".UN").children(":selected").val();
+			d = $(".D").val() * u;
+			a = ($(".L").val() * u) * (($(".W").val() * u));
+			n = $(".N").val();
+			dc = $(".DC").children(":selected").val();
+			c = ((8.85e-12 * dc * a) / d) * (n - 1);
+			c *= 1e+12;
+			c = parseInt(c) / 1e+6;
+			$(".C").val(c);
+      $(".cusDC").val(dc);
+			localStorage.cc_un = u;
+			localStorage.cc_dc = dc;
+			localStorage.cc_n = n;
+			localStorage.cc_d = $(".D").val();
+			localStorage.cc_l = $(".L").val();
+			localStorage.cc_w = $(".W").val();
+			localStorage.cc_c = $(".C").val();
+		}
+	);
+
 	/*LL*/
 	if (localStorage.ll_d) {
 		$(".llD").val(localStorage.ll_d);

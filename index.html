@@ -238,18 +238,21 @@
           <!-- unit -->
           <label>尺寸单位:</label>
           <select class="UN">
-            <option value="0.001" selected>毫米</option>
+            <option value="0.001">毫米</option>
             <option value="0.0254">英寸</option>
           </select>
           <br/>
           <label>电介质材料:</label>
           <!--========= select need fix (localStorage) ===========-->
           <select class="DC">
-            <option selected="" value="2.3">LDPE/HDPE</option>
+            <option value="2.3">LDPE/HDPE</option>
             <option value="7.5">Glass</option>
             <option value="1.0">Air</option>
             <option value="4.6">PVC</option>
           </select>
+          <!-- cusDC -->
+          <label id="cusDC">DC=</label>
+          <input type="number" class="cusDC"/>
           <br/>
           <!-- N -->
           <label>电极板片数(N):</label>

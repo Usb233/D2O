@@ -339,6 +339,15 @@
     font-size         : 20px;
     }
 
+    .cusDC{
+    font-size: 16px;
+    height: 24px;
+    margin-bottom: 2px;
+    }
+    #cusDC{
+    margin-left: 70px;
+    }
+
 /*table*/
     table{
     border-collapse   :collapse;
