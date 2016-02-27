@@ -464,7 +464,7 @@
     position          : relative;
     width             : 26px;
     float             : right;
-    top               : 22px;
+    top               : 24px;
     right             : 18px;
     -webkit-user-select:none;
     -moz-user-select  :none;
@@ -515,6 +515,66 @@
     }
 
     .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right             : 0px;
+    background-color  : #2196F3;
+    box-shadow        : 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+    }
+/**********************/
+    .onoffswitch2 {
+    position          : relative;
+    width             : 26px;
+    float             : right;
+    top               : -10px;
+    right             : 18px;
+    -webkit-user-select: none;
+    -moz-user-select  : none;
+    -ms-user-select   : none;
+    }
+
+    .onoffswitch-checkbox2 {
+    display           : none;
+    }
+
+    .onoffswitch-label2 {
+    display           : block;
+    overflow          : hidden;
+    cursor            : pointer;
+    height            : 16px;
+    padding           : 0;
+    line-height       : 20px;
+    border            : 0px solid #FFFFFF;
+    border-radius     : 31px;
+    background-color  : #9E9E9E;
+    }
+
+    .onoffswitch-label2:before {
+    content           : "";
+    display           : block;
+    width             : 20px;
+    height            : 20px; margin: -5.5px;
+    background        : #FFFFFF;
+    position          : absolute;
+    bottom            : 0;
+    right             : 19px;
+    top               : 3px;
+    border-radius     : 31px;
+    box-shadow        : 0 6px 12px 0px #757575;
+    transition        : right 280ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    }
+
+    .onoffswitch-checkbox2:checked + .onoffswitch-label2 {
+    background-color  : #42A5F5;
+    }
+
+    .onoffswitch-checkbox2:checked + .onoffswitch-label2, .onoffswitch-checkbox2:checked + .onoffswitch-label2:before {
+    border-color      : #42A5F5;
+    }
+
+    .onoffswitch-checkbox2:checked + .onoffswitch-label2 .onoffswitch-inner {
+    margin-left       : 0;
+    }
+
+    .onoffswitch-checkbox2:checked + .onoffswitch-label2:before {
     right             : 0px;
     background-color  : #2196F3;
     box-shadow        : 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
@@ -647,7 +707,7 @@
 
     p{
     position          : relative;
-    top               : 8px;
+    top               : 5px;
     left              : 12px;
     font-size         : 18px;
     color             : #202020;
@@ -655,11 +715,12 @@
     }
 
     .nop2{
-    top               : 17px;
+    top               : 15px;
     }
 
     .p2{
     position          : relative;
+    top: -5px;
     left              : 12px;
     font-size         : 15px;
     color             : #737373;

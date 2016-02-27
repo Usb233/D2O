@@ -483,7 +483,42 @@ $(document).ready(function() {
 		$("#opacityInput").val(opa)
 	};
 
+  /*cardtime control*/
+	t = 100;
+	t2 = 100; //different transition time
 
+	if (winWidth <= 380) {
+		t = 0;
+		t2 = 0;
+	};
+
+	if (localStorage.t == "100") {
+		$(".onoffswitch-checkbox2").attr("checked", "ture");
+	} else {
+		$(".onoffswitch-checkbox2").removeAttr("checked");
+		if (localStorage.t == "0") {
+			t = t2 = 0;
+			$("#cardTime > div > .p2").text("过渡动画已关闭")
+		}
+	}
+
+	$("#myonoffswitch2").click(function() {
+		if (localStorage.t != "100") {
+			localStorage.t = "100";
+			t = t2 = 100;
+			$("#cardTime > div > .p2").text("过渡动画已开启")
+		} else {
+			localStorage.t = "0";
+			t = t2 = 0;
+			$("#cardTime > div > .p2").text("过渡动画已关闭")
+		}
+	});
+
+	if (t == 0) {
+		$("#cardTime > div > .p2").text("过渡动画已关闭")
+	} else {
+		$("#cardTime > div > .p2").text("过渡动画已开启")
+	}
 	/*about*/
 	$("#aboutLi").parent().click(function() {
 		$(".about").css("display", "block");
@@ -556,13 +591,7 @@ $(document).ready(function() {
 			a = 1;
 		};
 
-		var t = 100;
-		var t2 = 100; //different transition time
-		var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-		if (winWidth <= 380) {
-			t = 0;
-			t2 = 0;
-		};
+		if (true) {}
 		$("legend").css("transition", "all " + t2 + "ms cubic-bezier(0.455, 0.03, 0.515, 0.955)");
 
 

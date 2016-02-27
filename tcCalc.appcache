@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# v1.92 2015-2-15
+# v1.93 2015-2-27
 index.html
 css/my.css
 js/jquery.js
@@ -26,6 +26,7 @@ images/credit-card-ic.png
 images/LL.png
 images/LL-tittle.png
 images/extension-ic.png
+images/timelapse-ic.png
 
 # Use from network if available
 NETWORK:
