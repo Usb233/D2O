@@ -776,7 +776,7 @@ $(document).ready(function() {
 		$(".C").val(localStorage.cc_c);
 	}
 
-	$(".CC>form>.toggle>.DC").first().text("233");
+	/*$(".CC>form>.toggle>.DC").text("233");*/
 
 	$(".CC>form>.toggle>input , .CC>form>.toggle>select").change(
 		function() {
